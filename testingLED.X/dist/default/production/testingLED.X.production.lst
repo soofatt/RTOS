@@ -1,0 +1,285 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.33 build 59893 
+                                                                                               Mon Sep 29 10:32:55 2014
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 59893
+     1                           	processor	18F4520
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	text1,global,reloc=2,class=CODE,delta=1
+     9                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    10                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    11  0000                     _PORTD	set	3971
+    12  0000                     _TRISD	set	3989
+    13                           
+    14                           ; 0 bytes @ 0x2
+    15 ;;
+    16 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+    17 ;;
+    18 ;; *************** function _main *****************
+    19 ;; Defined at:
+    20 ;;		line 10 in file "testingLED.c"
+    21 ;; Parameters:    Size  Location     Type
+    22 ;;		None
+    23 ;; Auto vars:     Size  Location     Type
+    24 ;;		None
+    25 ;; Return value:  Size  Location     Type
+    26 ;;		None               void
+    27 ;; Registers used:
+    28 ;;		wreg, status,2, status,0, cstack
+    29 ;; Tracked objects:
+    30 ;;		On entry : 0/0
+    31 ;;		On exit  : 0/0
+    32 ;;		Unchanged: 0/0
+    33 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+    34 ;;      Params:         0       0       0       0       0       0       0
+    35 ;;      Locals:         0       0       0       0       0       0       0
+    36 ;;      Temps:          0       0       0       0       0       0       0
+    37 ;;      Totals:         0       0       0       0       0       0       0
+    38 ;;Total ram usage:        0 bytes
+    39 ;; Hardware stack levels required when called:    1
+    40 ;; This function calls:
+    41 ;;		_delay
+    42 ;; This function is called by:
+    43 ;;		Startup code after reset
+    44 ;; This function uses a non-reentrant model
+    45 ;;
+    46                           
+    47                           	psect	text0
+    48  007FC2                     __ptext0:
+    49                           	opt stack 0
+    50  007FC2                     _main:
+    51                           	opt stack 30
+    52                           
+    53                           ;testingLED.c: 11: TRISD = 0;
+    54                           
+    55                           ;incstack = 0
+    56  007FC2  0E00               	movlw	0
+    57  007FC4  6E95               	movwf	3989,c	;volatile
+    58  007FC6                     l12:
+    59                           
+    60                           ;testingLED.c: 13: PORTD = 1;
+    61  007FC6  0E01               	movlw	1
+    62  007FC8  6E83               	movwf	3971,c	;volatile
+    63                           
+    64                           ;testingLED.c: 14: delay();
+    65  007FCA  ECEC  F03F         	call	_delay	;wreg free
+    66                           
+    67                           ;testingLED.c: 15: PORTD = 0;
+    68  007FCE  0E00               	movlw	0
+    69  007FD0  6E83               	movwf	3971,c	;volatile
+    70                           
+    71                           ;testingLED.c: 16: delay();
+    72  007FD2  ECEC  F03F         	call	_delay	;wreg free
+    73  007FD6  D7F7               	goto	l12
+    74  007FD8                     __end_of_main:
+    75                           	opt stack 0
+    76                           
+    77                           	psect	cinit
+    78  007FBC                     __pcinit:
+    79                           	opt stack 0
+    80  007FBC                     start_initialization:
+    81                           	opt stack 0
+    82  007FBC                     __initialization:
+    83                           	opt stack 0
+    84  007FBC                     end_of_initialization:
+    85                           	opt stack 0
+    86  007FBC                     __end_of__initialization:
+    87                           	opt stack 0
+    88  007FBC  0100               	movlb	0
+    89  007FBE  EFE1  F03F         	goto	_main	;jump to C main() function
+    90                           
+    91                           	psect	cstackCOMRAM
+    92  000001                     __pcstackCOMRAM:
+    93                           	opt stack 0
+    94  000001                     delay@counter:
+    95                           	opt stack 0
+    96                           
+    97                           ; 2 bytes @ 0x0
+    98  000001                     	ds	2
+    99  000003                     
+   100 ;; *************** function _delay *****************
+   101 ;; Defined at:
+   102 ;;		line 3 in file "testingLED.c"
+   103 ;; Parameters:    Size  Location     Type
+   104 ;;		None
+   105 ;; Auto vars:     Size  Location     Type
+   106 ;;  counter         2    0[COMRAM] int 
+   107 ;; Return value:  Size  Location     Type
+   108 ;;		None               void
+   109 ;; Registers used:
+   110 ;;		wreg, status,2, status,0
+   111 ;; Tracked objects:
+   112 ;;		On entry : 0/0
+   113 ;;		On exit  : 0/0
+   114 ;;		Unchanged: 0/0
+   115 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   116 ;;      Params:         0       0       0       0       0       0       0
+   117 ;;      Locals:         2       0       0       0       0       0       0
+   118 ;;      Temps:          0       0       0       0       0       0       0
+   119 ;;      Totals:         2       0       0       0       0       0       0
+   120 ;;Total ram usage:        2 bytes
+   121 ;; Hardware stack levels used:    1
+   122 ;; This function calls:
+   123 ;;		Nothing
+   124 ;; This function is called by:
+   125 ;;		_main
+   126 ;; This function uses a non-reentrant model
+   127 ;;
+   128                           
+   129                           	psect	text1
+   130  007FD8                     __ptext1:
+   131                           	opt stack 0
+   132  007FD8                     _delay:
+   133                           	opt stack 30
+   134                           
+   135                           ;testingLED.c: 4: int counter = 0;
+   136                           
+   137                           ;incstack = 0
+   138  007FD8  0E00               	movlw	0
+   139  007FDA  6E02               	movwf	delay@counter+1,c
+   140  007FDC  0E00               	movlw	0
+   141  007FDE  6E01               	movwf	delay@counter,c
+   142                           
+   143                           ;testingLED.c: 5: for(counter = 0; counter<10000; counter++){
+   144  007FE0  0E00               	movlw	0
+   145  007FE2  6E02               	movwf	delay@counter+1,c
+   146  007FE4  0E00               	movlw	0
+   147  007FE6  6E01               	movwf	delay@counter,c
+   148  007FE8  5002               	movf	delay@counter+1,w,c
+   149  007FEA  0A80               	xorlw	128
+   150  007FEC  0F59               	addlw	-167
+   151  007FEE  0E10               	movlw	16
+   152  007FF0  B4D8               	btfsc	status,2,c
+   153  007FF2  5C01               	subwf	delay@counter,w,c
+   154  007FF4  B0D8               	btfsc	status,0,c
+   155  007FF6  D003               	goto	l9
+   156  007FF8  4A01               	infsnz	delay@counter,f,c
+   157  007FFA  2A02               	incf	delay@counter+1,f,c
+   158  007FFC  D7F5               	goto	L1
+   159  007FFE                     l9:
+   160  007FFE  0012               	return	
+   161  008000                     __end_of_delay:
+   162                           	opt stack 0
+   163  0000                     status	equ	0xFD8
+   164                           status	equ	0xFD8
+   165                           
+   166                           	psect	rparam
+   167  0000                     status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM          127      2       2
+    BANK0           128      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _main->_delay
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0      30
+                              _delay
+ ---------------------------------------------------------------------------------
+ (1) _delay                                                2     2      0      30
+                                              0 COMRAM     2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _delay
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           7F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              7F      2       2       1        1.6%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            80      0       0       4        0.0%
+BANK0               80      0       0       5        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BANK5              100      0       0      14        0.0%
+ABS                  0      0       0      15        0.0%
+BITBANK5           100      0       0      16        0.0%
+BIGRAM             5FF      0       0      17        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.33 build 59893 
+Symbol Table                                                                                   Mon Sep 29 10:32:55 2014
+
+                      l9 7FFE                       l12 7FC6                     _main 7FC2  
+                   start 0000                    ?_main 0001                    _PORTD 000F83  
+                  _TRISD 000F95                    _delay 7FD8                    status 000FD8  
+        __initialization 7FBC             __end_of_main 7FD8                   ??_main 0003  
+          __activetblptr 000000                   ?_delay 0001               __accesstop 0080  
+__end_of__initialization 7FBC           __pcstackCOMRAM 0001            __end_of_delay 8000  
+                ??_delay 0001                  __Hparam 0000                  __Lparam 0000  
+                __pcinit 7FBC                  __ramtop 0600                  __ptext0 7FC2  
+                __ptext1 7FD8     end_of_initialization 7FBC      start_initialization 7FBC  
+         __size_of_delay 0028             delay@counter 0001                 __Hrparam 0000  
+               __Lrparam 0000            __size_of_main 0016  
