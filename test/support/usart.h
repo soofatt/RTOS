@@ -591,7 +591,11 @@ Arguments   : None
  
 Returns     : Returns the status of Receive interrupt flag bit status
 ***********************************************************************************/
+#if defined(__XC) || defined(__18CXX)
 #define DataRdyUSART( ) (PIR1bits.RCIF)
+#else
+  char DataRdyUSART(void);
+#endif
 
 char ReadUSART (void);
 void WriteUSART ( char data);
@@ -608,7 +612,11 @@ Arguments   : None
  
 Remarks     : None 
 ***************************************************************************/
+#if defined(__XC) || defined(__18CXX)
 #define getcUSART ReadUSART
+#else
+  char getcUSART(void);
+#endif
 
 /**************************************************************************
 Macro       : putcUSART
@@ -619,7 +627,11 @@ Arguments   : None
  
 Remarks     : None 
 ***************************************************************************/
+#if defined(__XC) || defined(__18CXX)
 #define putcUSART WriteUSART
+#else
+  void putcUSART(char data);
+#endif
 
 /***********************************************************************************
 Macro       : CloseUSART()
@@ -632,7 +644,12 @@ Arguments   : None
  
 Returns     : disables the interrupts, transmitter and receiver for the specified usart
 ***********************************************************************************/
+#if defined(__XC) || defined(__18CXX)
 #define CloseUSART( ) RCSTA&=0b01001111,TXSTAbits.TXEN=0,PIE1&=0b11001111
+#else
+  void CloseUSART(void);
+#endif
+  
 
 /***********************************************************************************
 Macro       : BusyUSART()
@@ -646,7 +663,11 @@ Arguments   : None
 Returns     : Returns a value indicating if the usart transmitter is currently busy. 
 		This Macro should be used prior to commencing a new transmission
 ***********************************************************************************/
+#if defined(__XC) || defined(__18CXX)
 #define BusyUSART( ) (!TXSTAbits.TRMT)
+#else
+  void BusyUSART(void);
+#endif
 
 #endif
 
