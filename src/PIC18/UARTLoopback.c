@@ -1,7 +1,7 @@
 #include "UARTLoopback.h"
 
 void uartLoopbackSM(LoopbackState *statePtr){
-  char data;
+  char data = 0x00;
 
   switch(*statePtr){
     case WAIT_DATA:
@@ -9,9 +9,15 @@ void uartLoopbackSM(LoopbackState *statePtr){
         break;
       data = getcUSART();
       *statePtr = WAIT_TO_TX;
+      break;
 
     case WAIT_TO_TX:
+      if(BusyUSART() == 1)
+        break;
+      putcUSART(data);
+      *statePtr = WAIT_DATA;
       break;
+      
     default:
       break;
   }

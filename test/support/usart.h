@@ -666,7 +666,7 @@ Returns     : Returns a value indicating if the usart transmitter is currently b
 #if defined(__XC) || defined(__18CXX)
 #define BusyUSART( ) (!TXSTAbits.TRMT)
 #else
-  void BusyUSART(void);
+  char BusyUSART(void);
 #endif
 
 #endif
