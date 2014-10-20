@@ -143,6 +143,44 @@ void configureLED();
 void onLED();
 void offLED();
 
+# 4 "../src/PIC18/Clock.h"
+static unsigned long clock;
+
+void initClock();
+unsigned long getClock();
+char isTimer0Overflowed();
+void clearTimer0OverflowFlag();
+
+# 4 "../src/PIC18/UARTLoopback.h"
+typedef enum {
+WAIT_DATA,
+WAIT_TO_TX
+} LoopbackState;
+
+typedef struct LoopbackData LoopbackData;
+struct LoopbackData{
+LoopbackState state;
+char dataByte;
+};
+
+void uartLoopbackSM(LoopbackData *data);
+
+# 4 "../src/PIC18/LEDSM.h"
+typedef enum {
+LED_START,
+LED_ON,
+LED_OFF
+} LEDState;
+
+typedef struct LEDData LEDData;
+struct LEDData{
+LEDState state;
+unsigned long currentClock;
+};
+
+void LEDStateMachine(LEDData *data);
+void initLEDStateMachine(LEDData *data);
+
 # 4 "../src/PIC18/Loopback.h"
 void usartLoopback();
 
@@ -5135,17 +5173,22 @@ extern __nonreentrant void _delaywdt(unsigned long);
 extern __nonreentrant void _delay3(unsigned char);
 
 
-# 12 "../src/PIC18/main.c"
+# 15 "../src/PIC18/main.c"
 #pragma config OSC = INTIO67, PWRT = ON, WDT = OFF, LVP = OFF, DEBUG = ON
 
-# 24
+# 27
 void main(void) {
 (OSCCONbits.IRCF = 7);
 OpenUSART(0b01111111 & 0b10111111 & 0b11111110 & 0b11111101 & 0b11111111 & 0b11111111, 51);;
+LoopbackData loopbackData;
+LEDData ledData;
+initLEDStateMachine(&ledData);
+initClock();
+initUartLoopback(&loopbackData);
 
 while(1) {
-usartLoopback();
-onLED();
+uartLoopbackSM();
+LEDStateMachine();
 }
 
 RCSTA&=0b01001111,TXSTAbits.TXEN=0,PIE1&=0b11001111;

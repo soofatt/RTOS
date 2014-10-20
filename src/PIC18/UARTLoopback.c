@@ -1,7 +1,9 @@
 #include "UARTLoopback.h"
+#include "18c.h"
 
 void initUartLoopback(LoopbackData *data){
-  
+  data->state = WAIT_DATA;
+  data->dataByte = 0;
 }
 
 void uartLoopbackSM(LoopbackData *data){

@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Blinky.h"
+#include "Clock.h"
+#include "UARTLoopback.h"
+#include "LEDSM.h"
 #include "Loopback.h"
 #include "../18c.h"
 #if !(defined(__XC) || defined(__18CXX))
@@ -24,10 +27,15 @@
 void main(void) {
   setFreq8MHz();
   configureUsartTo8Bits9600Baud();
+  LoopbackData loopbackData;
+  LEDData ledData;
+  initLEDStateMachine(&ledData);
+  initClock();
+  initUartLoopback(&loopbackData);
   
   while(1) {
-    usartLoopback();
-    onLED();
+      uartLoopbackSM();
+      LEDStateMachine();
   }
 
   CloseUSART();

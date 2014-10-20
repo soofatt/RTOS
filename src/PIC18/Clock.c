@@ -1,12 +1,13 @@
 #include "Clock.h"
 #include "18c.h"
+#include "timers.h"
 
 void initClock(){
   clock = 0;
-  // OpenTimer0( TIMER_INT_OFF &
-              // T0_8BIT &
-              // T0_SOURCE_INT &
-              // T0_PS_1_8 );
+  OpenTimer0( TIMER_INT_OFF &
+              T0_8BIT &
+              T0_SOURCE_INT &
+              T0_PS_1_8 );
               
   INTCONbits.TMR0IF = 0;
 }
