@@ -6,6 +6,12 @@ typedef enum {
   WAIT_TO_TX
 } LoopbackState;
 
-void uartLoopbackSM(LoopbackState *statePtr);
+typedef struct LoopbackData LoopbackData;
+struct LoopbackData{
+  LoopbackState state;
+  char dataByte;
+};
+
+void uartLoopbackSM(LoopbackData *data);
 
 #endif // UARTLoopback_H

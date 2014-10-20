@@ -1,21 +1,24 @@
 #include "UARTLoopback.h"
 
-void uartLoopbackSM(LoopbackState *statePtr){
-  char data = 0x00;
+void initUartLoopback(LoopbackData *data){
+  
+}
 
-  switch(*statePtr){
+void uartLoopbackSM(LoopbackData *data){
+
+  switch(data->state){
     case WAIT_DATA:
       if(DataRdyUSART() == 0)
         break;
-      data = getcUSART();
-      *statePtr = WAIT_TO_TX;
+      data->dataByte = getcUSART();
+      data->state = WAIT_TO_TX;
       break;
 
     case WAIT_TO_TX:
       if(BusyUSART() == 1)
         break;
-      putcUSART(data);
-      *statePtr = WAIT_DATA;
+      putcUSART(data->dataByte);
+      data->state = WAIT_DATA;
       break;
       
     default:
