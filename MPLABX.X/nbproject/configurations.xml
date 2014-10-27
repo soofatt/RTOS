@@ -8,8 +8,8 @@
       <itemPath>../src/PIC18/Blinky.h</itemPath>
       <itemPath>../src/PIC18/Clock.h</itemPath>
       <itemPath>../src/PIC18/LEDSM.h</itemPath>
-      <itemPath>../src/PIC18/Loopback.h</itemPath>
       <itemPath>../src/PIC18/UARTLoopback.h</itemPath>
+      <itemPath>../src/PIC18/SevenSeg.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -19,11 +19,11 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>../src/PIC18/Blinky.c</itemPath>
-      <itemPath>../src/PIC18/Loopback.c</itemPath>
       <itemPath>../src/PIC18/main.c</itemPath>
       <itemPath>../src/PIC18/Clock.c</itemPath>
       <itemPath>../src/PIC18/LEDSM.c</itemPath>
       <itemPath>../src/PIC18/UARTLoopback.c</itemPath>
+      <itemPath>../src/PIC18/SevenSeg.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

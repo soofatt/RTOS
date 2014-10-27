@@ -1,8 +1,7 @@
 #include "LEDSM.h"
 #include "Blinky.h"
-#include "18c.h"
-
-#define CLK_OV 488 //0.5s
+#include "Clock.h"
+#include "../18c.h"
 
 void initLEDStateMachine(LEDData *data){
   data->state = LED_START;
@@ -20,6 +19,7 @@ void LEDStateMachine(LEDData *data){
     case LED_OFF:
       if(getClock() - data->currentClock >= CLK_OV){
         data->currentClock = getClock();
+        offLED();
         data->state = LED_ON;
         break;
       }
@@ -28,6 +28,7 @@ void LEDStateMachine(LEDData *data){
     case LED_ON:
       if(getClock() - data->currentClock >= CLK_OV){
         data->currentClock = getClock();
+        onLED();
         data->state = LED_OFF;
         break;
       }

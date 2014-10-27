@@ -1,8 +1,6 @@
-_OpenUSART: CODE, 32664 0 104
-_main: CODE, 32634 0 30
-_usartLoopback: CODE, 32582 0 22
-__initialization: CODE, 32556 0 2
-_onLED: CODE, 32552 0 4
-_WriteUSART: CODE, 32564 0 18
-_ReadUSART: CODE, 32604 0 30
-Total: 210
+_delay: CODE, 32638 0 40
+_OpenSPI: CODE, 32678 0 90
+_main: CODE, 32612 0 26
+__initialization: CODE, 32566 0 12
+_WriteSPI: CODE, 32588 0 24
+Total: 192

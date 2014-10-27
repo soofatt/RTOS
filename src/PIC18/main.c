@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Blinky.h"
+#include "SevenSeg.h"
 #include "Clock.h"
 #include "UARTLoopback.h"
 #include "LEDSM.h"
-#include "Loopback.h"
 #include "../18c.h"
 #if !(defined(__XC) || defined(__18CXX))
   #include "usart.h"
@@ -25,18 +25,25 @@
                     USART_BRGH_HIGH, 51);
 
 void main(void) {
-  setFreq8MHz();
-  configureUsartTo8Bits9600Baud();
-  LoopbackData loopbackData;
-  LEDData ledData;
-  initLEDStateMachine(&ledData);
-  initClock();
-  initUartLoopback(&loopbackData);
-  
-  while(1) {
-      uartLoopbackSM();
-      LEDStateMachine();
-  }
-
-  CloseUSART();
+  //setFreq8MHz();
+  //configureUsartTo8Bits9600Baud();
+  //LoopbackData loopbackData;
+  //LEDData ledData;
+  //initLEDStateMachine(&ledData);
+  //initClock();
+  //initUartLoopback(&loopbackData);
+  //initSevenSeg();
+  //turnOnSevenSeg();
+  //TRISC = 0;
+  OpenSPI(SPI_FOSC_4, MODE_11, SMPEND);
+  while(1){
+  WriteSPI(0x20);
+  delay();}
+  //while(1) {
+      
+      //uartLoopbackSM(&loopbackData);
+      //LEDStateMachine(&ledData);
+  //}
+  CloseSPI();
+  //CloseUSART();
 }

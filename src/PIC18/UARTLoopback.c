@@ -1,10 +1,16 @@
 #include "UARTLoopback.h"
-#include "18c.h"
+#include "../18c.h"
 
-void initUartLoopback(LoopbackData *data){
-  data->state = WAIT_DATA;
-  data->dataByte = 0;
-}
+#if !(defined(__XC) || defined(__18CXX))
+  #include "usart.h"
+#endif // __18CXX
+
+#pragma config OSC = INTIO67, DEBUG = ON, LVP = OFF, WDT = OFF, PWRT = ON
+
+//void initUartLoopback(LoopbackData *data){
+//  data->state = WAIT_DATA;
+//  data->dataByte = 0;
+//}
 
 void uartLoopbackSM(LoopbackData *data){
 

@@ -1,64 +1,13 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"6372 C:\Program Files\Microchip\xc8\v1.33\include\pic18f4520.h
-[s S344 :2 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S344 . SCS IOFS OSTS IRCF IDLEN ]
-"6379
-[s S345 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S345 . SCS0 SCS1 FLTS . IRCF0 IRCF1 IRCF2 ]
-"6371
-[u S343 `S344 1 `S345 1 ]
-[n S343 . . . ]
-"6389
-[v _OSCCONbits `VS343 ~T0 @X0 0 e@4051 ]
-"581 C:\Program Files\Microchip\xc8\v1.33\include\plib\usart.h
-[v _OpenUSART `(v ~T0 @X0 0 ef2`uc`ui ]
-"4 ../src/PIC18/Loopback.h
-[v _usartLoopback `(v ~T0 @X0 0 ef ]
-"11 ../src/PIC18/Blinky.h
-[v _onLED `(v ~T0 @X0 0 ef ]
-"3354 C:\Program Files\Microchip\xc8\v1.33\include\pic18f4520.h
-[v _RCSTA `Vuc ~T0 @X0 0 e@4011 ]
-"3574
-[s S186 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S186 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
-"3584
-[s S187 :2 `uc 1 :1 `uc 1 ]
-[n S187 . . BRGH1 ]
-"3588
-[s S188 :7 `uc 1 :1 `uc 1 ]
-[n S188 . . CSRC1 ]
-"3592
-[s S189 :3 `uc 1 :1 `uc 1 ]
-[n S189 . . SENDB1 ]
-"3596
-[s S190 :4 `uc 1 :1 `uc 1 ]
-[n S190 . . SYNC1 ]
-"3600
-[s S191 :1 `uc 1 :1 `uc 1 ]
-[n S191 . . TRMT1 ]
-"3604
-[s S192 :6 `uc 1 :1 `uc 1 ]
-[n S192 . . TX91 ]
-"3608
-[s S193 :1 `uc 1 ]
-[n S193 . TX9D1 ]
-"3611
-[s S194 :5 `uc 1 :1 `uc 1 ]
-[n S194 . . TXEN1 ]
-"3615
-[s S195 :6 `uc 1 :1 `uc 1 ]
-[n S195 . . TX8_9 ]
-"3619
-[s S196 :1 `uc 1 ]
-[n S196 . TXD8 ]
-"3573
-[u S185 `S186 1 `S187 1 `S188 1 `S189 1 `S190 1 `S191 1 `S192 1 `S193 1 `S194 1 `S195 1 `S196 1 ]
-[n S185 . . . . . . . . . . . . ]
-"3623
-[v _TXSTAbits `VS185 ~T0 @X0 0 e@4012 ]
-"2839
-[v _PIE1 `Vuc ~T0 @X0 0 e@3997 ]
+"584 C:\Program Files\Microchip\xc8\v1.33\include\plib\spi.h
+[v _OpenSPI `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"588
+[v _WriteSPI `(c ~T0 @X0 0 ef1`uc ]
+"9 ../src/PIC18/Blinky.h
+[v _delay `(v ~T0 @X0 0 ef ]
+"5284 C:\Program Files\Microchip\xc8\v1.33\include\pic18f4520.h
+[v _SSPCON1 `Vuc ~T0 @X0 0 e@4038 ]
 [; ;stdio.h: 8: typedef int ptrdiff_t;
 [; ;stdio.h: 9: typedef unsigned size_t;
 [; ;stdio.h: 10: typedef unsigned short wchar_t;
@@ -147,7 +96,38 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Blinky.h: 10: void configureLED();
 [; ;Blinky.h: 11: void onLED();
 [; ;Blinky.h: 12: void offLED();
-[; ;Loopback.h: 4: void usartLoopback();
+[; ;SevenSeg.h: 4: void initSevenSeg();
+[; ;SevenSeg.h: 5: void turnOnSevenSeg();
+[; ;SevenSeg.h: 6: void turnOffSevenSeg();
+"4 ../src/PIC18/Clock.h
+[v _clock `ul ~T0 @X0 1 s ]
+[; ;Clock.h: 4: static unsigned long clock;
+[; ;Clock.h: 6: void initClock();
+[; ;Clock.h: 7: unsigned long getClock();
+[; ;Clock.h: 8: char isTimer0Overflowed();
+[; ;Clock.h: 9: void clearTimer0OverflowFlag();
+[; ;UARTLoopback.h: 4: typedef enum {
+[; ;UARTLoopback.h: 5: WAIT_DATA,
+[; ;UARTLoopback.h: 6: WAIT_TO_TX
+[; ;UARTLoopback.h: 7: } LoopbackState;
+[; ;UARTLoopback.h: 9: typedef struct LoopbackData LoopbackData;
+[; ;UARTLoopback.h: 10: struct LoopbackData{
+[; ;UARTLoopback.h: 11: LoopbackState state;
+[; ;UARTLoopback.h: 12: char dataByte;
+[; ;UARTLoopback.h: 13: };
+[; ;UARTLoopback.h: 15: void uartLoopbackSM(LoopbackData *data);
+[; ;LEDSM.h: 4: typedef enum {
+[; ;LEDSM.h: 5: LED_START,
+[; ;LEDSM.h: 6: LED_ON,
+[; ;LEDSM.h: 7: LED_OFF
+[; ;LEDSM.h: 8: } LEDState;
+[; ;LEDSM.h: 10: typedef struct LEDData LEDData;
+[; ;LEDSM.h: 11: struct LEDData{
+[; ;LEDSM.h: 12: LEDState state;
+[; ;LEDSM.h: 13: unsigned long currentClock;
+[; ;LEDSM.h: 14: };
+[; ;LEDSM.h: 16: void LEDStateMachine(LEDData *data);
+[; ;LEDSM.h: 17: void initLEDStateMachine(LEDData *data);
 [; ;htc.h: 21: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 24: extern void __builtin_software_breakpoint(void);
 [; ;pic18f4520.h: 47: extern volatile unsigned char PORTA @ 0xF80;
@@ -3899,45 +3879,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 147: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 149: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 151: extern __nonreentrant void _delay3(unsigned char);
-"12 ../src/PIC18/main.c
+"15 ../src/PIC18/main.c
 [p x OSC=INTIO67 ]
 [p x PWRT=ON ]
 [p x WDT=OFF ]
 [p x LVP=OFF ]
 [p x DEBUG=ON ]
-"24
+"27
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 24: void main(void) {
+[; ;main.c: 27: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 25: (OSCCONbits.IRCF = 7);
-"25
-[e = . . _OSCCONbits 0 3 -> -> 7 `i `uc ]
-[; ;main.c: 26: OpenUSART(0b01111111 & 0b10111111 & 0b11111110 & 0b11111101 & 0b11111111 & 0b11111111, 51);;
-"26
-[e ( _OpenUSART (2 , -> & & & & & -> 127 `i -> 191 `i -> 254 `i -> 253 `i -> 255 `i -> 255 `i `uc -> -> 51 `i `ui ]
-[; ;main.c: 28: while(1) {
-"28
-[e :U 409 ]
+[; ;main.c: 38: OpenSPI(0b00000000, 0b00000011, 0b10000000);
+"38
+[e ( _OpenSPI (3 , , -> -> 0 `i `uc -> -> 3 `i `uc -> -> 128 `i `uc ]
+[; ;main.c: 39: while(1){
+"39
+[e :U 411 ]
 {
-[; ;main.c: 29: usartLoopback();
-"29
-[e ( _usartLoopback ..  ]
-[; ;main.c: 30: onLED();
-"30
-[e ( _onLED ..  ]
-"31
+[; ;main.c: 40: WriteSPI(0x20);
+"40
+[e ( _WriteSPI (1 -> -> 32 `i `uc ]
+[; ;main.c: 41: delay();}
+"41
+[e ( _delay ..  ]
 }
-[e :U 408 ]
-"28
-[e $U 409  ]
 [e :U 410 ]
-[; ;main.c: 31: }
-[; ;main.c: 33: RCSTA&=0b01001111,TXSTAbits.TXEN=0,PIE1&=0b11001111;
-"33
-[e ; ; =& _RCSTA -> -> 79 `i `uc = . . _TXSTAbits 0 5 -> -> 0 `i `uc =& _PIE1 -> -> 207 `i `uc ]
-[; ;main.c: 34: }
-"34
-[e :UE 407 ]
+"39
+[e $U 411  ]
+[e :U 412 ]
+[; ;main.c: 47: (SSPCON1 &=0xDF);
+"47
+[e =& _SSPCON1 -> -> 223 `i `uc ]
+[; ;main.c: 49: }
+"49
+[e :UE 409 ]
 }

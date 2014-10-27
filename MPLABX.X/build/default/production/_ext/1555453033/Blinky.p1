@@ -3885,11 +3885,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _counter `i ~T0 @X0 1 a ]
 [; ;Blinky.c: 14: int counter = 0;
 [e = _counter -> 0 `i ]
-[; ;Blinky.c: 15: for(counter = 0; counter<500; counter++){
+[; ;Blinky.c: 15: for(counter = 0; counter<25000; counter++){
 "15
 {
 [e = _counter -> 0 `i ]
-[e $ < _counter -> 500 `i 408  ]
+[e $ < _counter -> 25000 `i 408  ]
 [e $U 409  ]
 [e :U 408 ]
 {
@@ -3897,7 +3897,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "15
 [e ++ _counter -> 1 `i ]
-[e $ < _counter -> 500 `i 408  ]
+[e $ < _counter -> 25000 `i 408  ]
 [e :U 409 ]
 "17
 }

@@ -5133,7 +5133,7 @@ void delay();
 
 void delay(){
 int counter = 0;
-for(counter = 0; counter<500; counter++){
+for(counter = 0; counter<25000; counter++){
 
 }
 }
