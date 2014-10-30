@@ -1,13 +1,98 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
+"6372 C:\Program Files\Microchip\xc8\v1.33\include\pic18f4520.h
+[s S347 :2 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S347 . SCS IOFS OSTS IRCF IDLEN ]
+"6379
+[s S348 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S348 . SCS0 SCS1 FLTS . IRCF0 IRCF1 IRCF2 ]
+"6371
+[u S346 `S347 1 `S348 1 ]
+[n S346 . . . ]
+"6389
+[v _OSCCONbits `VS346 ~T0 @X0 0 e@4051 ]
+"581 C:\Program Files\Microchip\xc8\v1.33\include\plib\usart.h
+[v _OpenUSART `(v ~T0 @X0 0 ef2`uc`ui ]
 "584 C:\Program Files\Microchip\xc8\v1.33\include\plib\spi.h
 [v _OpenSPI `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"588
-[v _WriteSPI `(c ~T0 @X0 0 ef1`uc ]
-"9 ../src/PIC18/Blinky.h
-[v _delay `(v ~T0 @X0 0 ef ]
+"32 ../src/PIC18/main.c
+[c E211 0 1 .. ]
+[n E211 . WAIT_DATA WAIT_TO_TX  ]
+"10 ../src/PIC18/UARTLoopback.h
+[s S7 `E211 1 `uc 1 ]
+[n S7 LoopbackData state dataByte ]
+"33 ../src/PIC18/main.c
+[c E223 0 1 2 .. ]
+[n E223 . LED_START LED_ON LED_OFF  ]
+"11 ../src/PIC18/LEDSM.h
+[s S8 `E223 1 `ul 1 ]
+[n S8 LEDData state currentClock ]
+"34 ../src/PIC18/main.c
+[c E196 0 1 .. ]
+[n E196 . _7Seg_INIT _7Seg_WAITING  ]
+"10 ../src/PIC18/SevenSeg.h
+[s S6 `E196 1 `i 1 `ul 1 ]
+[n S6 SevenSegData state counter currClock ]
+"17 ../src/PIC18/LEDSM.h
+[v _initLEDStateMachine `(v ~T0 @X0 0 ef1`*S8 ]
+"6 ../src/PIC18/Clock.h
+[v _initClock `(v ~T0 @X0 0 ef ]
+"16 ../src/PIC18/UARTLoopback.h
+[v _initUartLoopback `(v ~T0 @X0 0 ef1`*S7 ]
+"16 ../src/PIC18/SevenSeg.h
+[v _initSevenSeg `(v ~T0 @X0 0 ef1`*S6 ]
+"17
+[v _turnOnSevenSeg `(v ~T0 @X0 0 ef ]
+"15 ../src/PIC18/UARTLoopback.h
+[v _uartLoopbackSM `(v ~T0 @X0 0 ef1`*S7 ]
+"16 ../src/PIC18/LEDSM.h
+[v _LEDStateMachine `(v ~T0 @X0 0 ef1`*S8 ]
+"19 ../src/PIC18/SevenSeg.h
+[v _sevenSegSM `(v ~T0 @X0 0 ef1`*S6 ]
 "5284 C:\Program Files\Microchip\xc8\v1.33\include\pic18f4520.h
 [v _SSPCON1 `Vuc ~T0 @X0 0 e@4038 ]
+"3354
+[v _RCSTA `Vuc ~T0 @X0 0 e@4011 ]
+"3574
+[s S189 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S189 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"3584
+[s S190 :2 `uc 1 :1 `uc 1 ]
+[n S190 . . BRGH1 ]
+"3588
+[s S191 :7 `uc 1 :1 `uc 1 ]
+[n S191 . . CSRC1 ]
+"3592
+[s S192 :3 `uc 1 :1 `uc 1 ]
+[n S192 . . SENDB1 ]
+"3596
+[s S193 :4 `uc 1 :1 `uc 1 ]
+[n S193 . . SYNC1 ]
+"3600
+[s S194 :1 `uc 1 :1 `uc 1 ]
+[n S194 . . TRMT1 ]
+"3604
+[s S195 :6 `uc 1 :1 `uc 1 ]
+[n S195 . . TX91 ]
+"3608
+[s S196 :1 `uc 1 ]
+[n S196 . TX9D1 ]
+"3611
+[s S197 :5 `uc 1 :1 `uc 1 ]
+[n S197 . . TXEN1 ]
+"3615
+[s S198 :6 `uc 1 :1 `uc 1 ]
+[n S198 . . TX8_9 ]
+"3619
+[s S199 :1 `uc 1 ]
+[n S199 . TXD8 ]
+"3573
+[u S188 `S189 1 `S190 1 `S191 1 `S192 1 `S193 1 `S194 1 `S195 1 `S196 1 `S197 1 `S198 1 `S199 1 ]
+[n S188 . . . . . . . . . . . . ]
+"3623
+[v _TXSTAbits `VS188 ~T0 @X0 0 e@4012 ]
+"2839
+[v _PIE1 `Vuc ~T0 @X0 0 e@3997 ]
 [; ;stdio.h: 8: typedef int ptrdiff_t;
 [; ;stdio.h: 9: typedef unsigned size_t;
 [; ;stdio.h: 10: typedef unsigned short wchar_t;
@@ -92,13 +177,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 109: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 110: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 112: extern char * ftoa(float f, int * status);
-[; ;Blinky.h: 9: void delay();
-[; ;Blinky.h: 10: void configureLED();
-[; ;Blinky.h: 11: void onLED();
-[; ;Blinky.h: 12: void offLED();
-[; ;SevenSeg.h: 4: void initSevenSeg();
-[; ;SevenSeg.h: 5: void turnOnSevenSeg();
-[; ;SevenSeg.h: 6: void turnOffSevenSeg();
 "4 ../src/PIC18/Clock.h
 [v _clock `ul ~T0 @X0 1 s ]
 [; ;Clock.h: 4: static unsigned long clock;
@@ -106,6 +184,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Clock.h: 7: unsigned long getClock();
 [; ;Clock.h: 8: char isTimer0Overflowed();
 [; ;Clock.h: 9: void clearTimer0OverflowFlag();
+[; ;Blinky.h: 9: void delay();
+[; ;Blinky.h: 10: void configureLED();
+[; ;Blinky.h: 11: void onLED();
+[; ;Blinky.h: 12: void offLED();
+[; ;SevenSeg.h: 4: typedef enum{
+[; ;SevenSeg.h: 5: _7Seg_INIT,
+[; ;SevenSeg.h: 6: _7Seg_WAITING
+[; ;SevenSeg.h: 7: } _7SegState;
+[; ;SevenSeg.h: 9: typedef struct SevenSegData SevenSegData;
+[; ;SevenSeg.h: 10: struct SevenSegData{
+[; ;SevenSeg.h: 11: _7SegState state;
+[; ;SevenSeg.h: 12: int counter;
+[; ;SevenSeg.h: 13: unsigned long currClock;
+[; ;SevenSeg.h: 14: };
+[; ;SevenSeg.h: 16: void initSevenSeg(SevenSegData *data);
+[; ;SevenSeg.h: 17: void turnOnSevenSeg();
+[; ;SevenSeg.h: 18: void turnOffSevenSeg();
+[; ;SevenSeg.h: 19: void sevenSegSM(SevenSegData *data);
 [; ;UARTLoopback.h: 4: typedef enum {
 [; ;UARTLoopback.h: 5: WAIT_DATA,
 [; ;UARTLoopback.h: 6: WAIT_TO_TX
@@ -116,6 +212,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;UARTLoopback.h: 12: char dataByte;
 [; ;UARTLoopback.h: 13: };
 [; ;UARTLoopback.h: 15: void uartLoopbackSM(LoopbackData *data);
+[; ;UARTLoopback.h: 16: void initUartLoopback(LoopbackData *data);
 [; ;LEDSM.h: 4: typedef enum {
 [; ;LEDSM.h: 5: LED_START,
 [; ;LEDSM.h: 6: LED_ON,
@@ -3879,40 +3976,78 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 147: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 149: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 151: extern __nonreentrant void _delay3(unsigned char);
-"15 ../src/PIC18/main.c
+"16 ../src/PIC18/main.c
 [p x OSC=INTIO67 ]
 [p x PWRT=ON ]
 [p x WDT=OFF ]
 [p x LVP=OFF ]
 [p x DEBUG=ON ]
-"27
+"28
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 27: void main(void) {
+[; ;main.c: 28: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 38: OpenSPI(0b00000000, 0b00000011, 0b10000000);
-"38
+[; ;main.c: 29: (OSCCONbits.IRCF = 7);
+"29
+[e = . . _OSCCONbits 0 3 -> -> 7 `i `uc ]
+[; ;main.c: 30: OpenUSART(0b01111111 & 0b10111111 & 0b11111110 & 0b11111101 & 0b11111111 & 0b11111111, 51);;
+"30
+[e ( _OpenUSART (2 , -> & & & & & -> 127 `i -> 191 `i -> 254 `i -> 253 `i -> 255 `i -> 255 `i `uc -> -> 51 `i `ui ]
+[; ;main.c: 31: OpenSPI(0b00000000, 0b00000011, 0b10000000);
+"31
 [e ( _OpenSPI (3 , , -> -> 0 `i `uc -> -> 3 `i `uc -> -> 128 `i `uc ]
-[; ;main.c: 39: while(1){
+"32
+[v _loopbackData `S7 ~T0 @X0 1 a ]
+"33
+[v _ledData `S8 ~T0 @X0 1 a ]
+"34
+[v _sevenSegData `S6 ~T0 @X0 1 a ]
+[; ;main.c: 32: LoopbackData loopbackData;
+[; ;main.c: 33: LEDData ledData;
+[; ;main.c: 34: SevenSegData sevenSegData;
+[; ;main.c: 35: initLEDStateMachine(&ledData);
+"35
+[e ( _initLEDStateMachine (1 &U _ledData ]
+[; ;main.c: 36: initClock();
+"36
+[e ( _initClock ..  ]
+[; ;main.c: 37: initUartLoopback(&loopbackData);
+"37
+[e ( _initUartLoopback (1 &U _loopbackData ]
+[; ;main.c: 38: initSevenSeg(&sevenSegData);
+"38
+[e ( _initSevenSeg (1 &U _sevenSegData ]
+[; ;main.c: 39: turnOnSevenSeg();
 "39
-[e :U 411 ]
-{
-[; ;main.c: 40: WriteSPI(0x20);
-"40
-[e ( _WriteSPI (1 -> -> 32 `i `uc ]
-[; ;main.c: 41: delay();}
+[e ( _turnOnSevenSeg ..  ]
+[; ;main.c: 41: while(1) {
 "41
-[e ( _delay ..  ]
-}
-[e :U 410 ]
-"39
-[e $U 411  ]
 [e :U 412 ]
+{
+[; ;main.c: 43: uartLoopbackSM(&loopbackData);
+"43
+[e ( _uartLoopbackSM (1 &U _loopbackData ]
+[; ;main.c: 44: LEDStateMachine(&ledData);
+"44
+[e ( _LEDStateMachine (1 &U _ledData ]
+[; ;main.c: 45: sevenSegSM(&sevenSegData);
+"45
+[e ( _sevenSegSM (1 &U _sevenSegData ]
+"46
+}
+[e :U 411 ]
+"41
+[e $U 412  ]
+[e :U 413 ]
+[; ;main.c: 46: }
 [; ;main.c: 47: (SSPCON1 &=0xDF);
 "47
 [e =& _SSPCON1 -> -> 223 `i `uc ]
+[; ;main.c: 48: RCSTA&=0b01001111,TXSTAbits.TXEN=0,PIE1&=0b11001111;
+"48
+[e ; ; =& _RCSTA -> -> 79 `i `uc = . . _TXSTAbits 0 5 -> -> 0 `i `uc =& _PIE1 -> -> 207 `i `uc ]
 [; ;main.c: 49: }
 "49
-[e :UE 409 ]
+[e :UE 410 ]
 }

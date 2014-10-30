@@ -137,17 +137,6 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 9 "../src/PIC18/Blinky.h"
-void delay();
-void configureLED();
-void onLED();
-void offLED();
-
-# 4 "../src/PIC18/SevenSeg.h"
-void initSevenSeg();
-void turnOnSevenSeg();
-void turnOffSevenSeg();
-
 # 4 "../src/PIC18/Clock.h"
 static unsigned long clock;
 
@@ -155,6 +144,30 @@ void initClock();
 unsigned long getClock();
 char isTimer0Overflowed();
 void clearTimer0OverflowFlag();
+
+# 9 "../src/PIC18/Blinky.h"
+void delay();
+void configureLED();
+void onLED();
+void offLED();
+
+# 4 "../src/PIC18/SevenSeg.h"
+typedef enum{
+_7Seg_INIT,
+_7Seg_WAITING
+} _7SegState;
+
+typedef struct SevenSegData SevenSegData;
+struct SevenSegData{
+_7SegState state;
+int counter;
+unsigned long currClock;
+};
+
+void initSevenSeg(SevenSegData *data);
+void turnOnSevenSeg();
+void turnOffSevenSeg();
+void sevenSegSM(SevenSegData *data);
 
 # 4 "../src/PIC18/UARTLoopback.h"
 typedef enum {
@@ -169,6 +182,7 @@ char dataByte;
 };
 
 void uartLoopbackSM(LoopbackData *data);
+void initUartLoopback(LoopbackData *data);
 
 # 4 "../src/PIC18/LEDSM.h"
 typedef enum {
@@ -5175,19 +5189,29 @@ extern __nonreentrant void _delaywdt(unsigned long);
 extern __nonreentrant void _delay3(unsigned char);
 
 
-# 15 "../src/PIC18/main.c"
+# 16 "../src/PIC18/main.c"
 #pragma config OSC = INTIO67, PWRT = ON, WDT = OFF, LVP = OFF, DEBUG = ON
 
-# 27
+# 28
 void main(void) {
-
-# 38
+(OSCCONbits.IRCF = 7);
+OpenUSART(0b01111111 & 0b10111111 & 0b11111110 & 0b11111101 & 0b11111111 & 0b11111111, 51);;
 OpenSPI(0b00000000, 0b00000011, 0b10000000);
-while(1){
-WriteSPI(0x20);
-delay();}
+LoopbackData loopbackData;
+LEDData ledData;
+SevenSegData sevenSegData;
+initLEDStateMachine(&ledData);
+initClock();
+initUartLoopback(&loopbackData);
+initSevenSeg(&sevenSegData);
+turnOnSevenSeg();
 
-# 47
+while(1) {
+
+uartLoopbackSM(&loopbackData);
+LEDStateMachine(&ledData);
+sevenSegSM(&sevenSegData);
+}
 (SSPCON1 &=0xDF);
-
+RCSTA&=0b01001111,TXSTAbits.TXEN=0,PIE1&=0b11001111;
 }

@@ -1,38 +1,35 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"2181 C:\Program Files\Microchip\xc8\v1.33\include\pic18f4520.h
-[s S127 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S127 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"2191
-[s S128 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S128 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
-"2180
-[u S126 `S127 1 `S128 1 ]
-[n S126 . . . ]
-"2202
-[v _TRISCbits `VS126 ~T0 @X0 0 e@3988 ]
-"451
-[s S24 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S24 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
-"461
-[s S25 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S25 . T1OSO T1OSI CCP1 SCK SDI SDO TX RX ]
-"471
-[s S26 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S26 . T13CKI CCP2 . SCL SDA . CK DT ]
-"481
-[s S27 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S27 . T1CKI . P1A ]
-"486
-[s S28 :2 `uc 1 :1 `uc 1 ]
-[n S28 . . PA1 ]
-"490
-[s S29 :1 `uc 1 :1 `uc 1 ]
-[n S29 . . PA2 ]
-"450
-[u S23 `S24 1 `S25 1 `S26 1 `S27 1 `S28 1 `S29 1 ]
-[n S23 . . . . . . . ]
-"495
-[v _PORTCbits `VS23 ~T0 @X0 0 e@3970 ]
+"1960 C:\Program Files\Microchip\xc8\v1.33\include\pic18f4520.h
+[s S121 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S121 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+"1970
+[s S122 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S122 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"1959
+[u S120 `S121 1 `S122 1 ]
+[n S120 . . . ]
+"1981
+[v _TRISBbits `VS120 ~T0 @X0 0 e@3987 ]
+"273
+[s S18 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S18 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"283
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . INT0 INT1 INT2 CCP2 KBI0 KBI1 KBI2 KBI3 ]
+"293
+[s S20 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S20 . AN12 AN10 AN8 AN9 AN11 PGM PGC PGD ]
+"303
+[s S21 :1 `uc 1 ]
+[n S21 . FLT0 ]
+"306
+[s S22 :3 `uc 1 :1 `uc 1 ]
+[n S22 . . CCP2_PA2 ]
+"272
+[u S17 `S18 1 `S19 1 `S20 1 `S21 1 `S22 1 ]
+[n S17 . . . . . . ]
+"311
+[v _PORTBbits `VS17 ~T0 @X0 0 e@3969 ]
 [; ;stdio.h: 8: typedef int ptrdiff_t;
 [; ;stdio.h: 9: typedef unsigned size_t;
 [; ;stdio.h: 10: typedef unsigned short wchar_t;
@@ -3868,80 +3865,74 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 147: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 149: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 151: extern __nonreentrant void _delay3(unsigned char);
-"9 ../src/PIC18/Blinky.c
-[p x OSC=INTIO67 ]
-[p x DEBUG=ON ]
-[p x LVP=OFF ]
-[p x WDT=OFF ]
-[p x PWRT=ON ]
-[; ;Blinky.c: 11: void delay();
-"13
+[; ;Blinky.c: 6: void delay();
+"8 ../src/PIC18/Blinky.c
 [v _delay `(v ~T0 @X0 1 ef ]
 {
-[; ;Blinky.c: 13: void delay(){
+[; ;Blinky.c: 8: void delay(){
 [e :U _delay ]
 [f ]
-"14
+"9
 [v _counter `i ~T0 @X0 1 a ]
-[; ;Blinky.c: 14: int counter = 0;
+[; ;Blinky.c: 9: int counter = 0;
 [e = _counter -> 0 `i ]
-[; ;Blinky.c: 15: for(counter = 0; counter<25000; counter++){
-"15
+[; ;Blinky.c: 10: for(counter = 0; counter<5000; counter++){
+"10
 {
 [e = _counter -> 0 `i ]
-[e $ < _counter -> 25000 `i 408  ]
+[e $ < _counter -> 5000 `i 408  ]
 [e $U 409  ]
 [e :U 408 ]
 {
-"17
+"12
 }
-"15
+"10
 [e ++ _counter -> 1 `i ]
-[e $ < _counter -> 25000 `i 408  ]
+[e $ < _counter -> 5000 `i 408  ]
 [e :U 409 ]
-"17
+"12
 }
-[; ;Blinky.c: 17: }
-[; ;Blinky.c: 18: }
-"18
+[; ;Blinky.c: 12: }
+[; ;Blinky.c: 13: }
+"13
 [e :UE 407 ]
 }
-"20
+"15
 [v _configureLED `(v ~T0 @X0 1 ef ]
 {
-[; ;Blinky.c: 20: void configureLED() {
+[; ;Blinky.c: 15: void configureLED() {
 [e :U _configureLED ]
 [f ]
-[; ;Blinky.c: 21: TRISCbits.TRISC0 = 0;
-"21
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-[; ;Blinky.c: 22: }
-"22
+[; ;Blinky.c: 16: TRISBbits.TRISB0 = 0;
+"16
+[e = . . _TRISBbits 0 0 -> -> 0 `i `uc ]
+[; ;Blinky.c: 17: }
+"17
 [e :UE 411 ]
 }
-"24
+"19
 [v _onLED `(v ~T0 @X0 1 ef ]
 {
-[; ;Blinky.c: 24: void onLED() {
+[; ;Blinky.c: 19: void onLED() {
 [e :U _onLED ]
 [f ]
-[; ;Blinky.c: 25: PORTCbits.RC0 = 1;
-"25
-[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
-[; ;Blinky.c: 26: }
-"26
+[; ;Blinky.c: 20: PORTBbits.RB0 = 1;
+"20
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
+[; ;Blinky.c: 21: }
+"21
 [e :UE 412 ]
 }
-"28
+"23
 [v _offLED `(v ~T0 @X0 1 ef ]
 {
-[; ;Blinky.c: 28: void offLED() {
+[; ;Blinky.c: 23: void offLED() {
 [e :U _offLED ]
 [f ]
-[; ;Blinky.c: 29: PORTCbits.RC0 = 0;
-"29
-[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
-[; ;Blinky.c: 30: }
-"30
+[; ;Blinky.c: 24: PORTBbits.RB0 = 0;
+"24
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+[; ;Blinky.c: 25: }
+"25
 [e :UE 413 ]
 }

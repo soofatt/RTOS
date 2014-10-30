@@ -13,5 +13,6 @@ struct LoopbackData{
 };
 
 void uartLoopbackSM(LoopbackData *data);
+void initUartLoopback(LoopbackData *data);
 
 #endif // UARTLoopback_H

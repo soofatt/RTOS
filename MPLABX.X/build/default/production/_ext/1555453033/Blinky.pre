@@ -5125,27 +5125,24 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-
-# 9 "../src/PIC18/Blinky.c"
-#pragma config OSC = INTIO67, DEBUG = ON, LVP = OFF, WDT = OFF, PWRT = ON
-
+# 6 "../src/PIC18/Blinky.c"
 void delay();
 
 void delay(){
 int counter = 0;
-for(counter = 0; counter<25000; counter++){
+for(counter = 0; counter<5000; counter++){
 
 }
 }
 
 void configureLED() {
-TRISCbits.TRISC0 = 0;
+TRISBbits.TRISB0 = 0;
 }
 
 void onLED() {
-PORTCbits.RC0 = 1;
+PORTBbits.RB0 = 1;
 }
 
 void offLED() {
-PORTCbits.RC0 = 0;
+PORTBbits.RB0 = 0;
 }

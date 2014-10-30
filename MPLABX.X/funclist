@@ -1,6 +1,23 @@
-_delay: CODE, 32638 0 40
-_OpenSPI: CODE, 32678 0 90
-_main: CODE, 32612 0 26
-__initialization: CODE, 32566 0 12
-_WriteSPI: CODE, 32588 0 24
-Total: 192
+_OpenUSART: CODE, 31712 0 104
+_configureLED: CODE, 31178 0 4
+_initClock: CODE, 31272 0 26
+_LEDStateMachine: CODE, 32344 0 424
+_uartLoopbackSM: CODE, 31616 0 96
+_OpenSPI: CODE, 31526 0 90
+_sevenSegSM: CODE, 31932 0 412
+_main: CODE, 31816 0 116
+_initSevenSeg: CODE, 31198 0 16
+_clearTimer0OverflowFlag: CODE, 31166 0 4
+__initialization: CODE, 31472 0 44
+_onLED: CODE, 31174 0 4
+_initLEDStateMachine: CODE, 31390 0 38
+_initUartLoopback: CODE, 31298 0 30
+_offLED: CODE, 31170 0 4
+_WriteUSART: CODE, 31230 0 18
+_isTimer0Overflowed: CODE, 31186 0 12
+_OpenTimer0: CODE, 31358 0 32
+_ReadUSART: CODE, 31328 0 30
+_WriteSPI: CODE, 31248 0 24
+_getClock: CODE, 31428 0 44
+_turnOnSevenSeg: CODE, 31182 0 4
+Total: 1576

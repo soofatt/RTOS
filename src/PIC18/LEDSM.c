@@ -1,7 +1,8 @@
 #include "LEDSM.h"
 #include "Blinky.h"
-#include "Clock.h"
 #include "../18c.h"
+
+#define CLK_OV 488 //0.5s
 
 void initLEDStateMachine(LEDData *data){
   data->state = LED_START;
