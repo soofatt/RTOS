@@ -1,5 +1,6 @@
 #include "Clock.h"
 #include "../18c.h"
+#include "timers.h"
 
 void initClock(){
   clock = 0;

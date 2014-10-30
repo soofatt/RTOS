@@ -12,7 +12,7 @@ void test_SevenSegSM_given_state_7Seg_INIT_should_reset_counter_and_record_clock
 	SevenSegData data = {.state = _7Seg_INIT, .counter = 1, .currClock = 0};
 	
 	getClock_ExpectAndReturn(10);
-	WriteSPI_ExpectAndReturn(0x00, 0x00);
+	WriteSPI_ExpectAndReturn(0x77, 0x77);
 	
 	sevenSegSM(&data);
 	
@@ -38,7 +38,7 @@ void test_SevenSegSM_given_state_7Seg_WAITING_with_OV_should_increment_counter_a
 	
 	getClock_ExpectAndReturn(500);
 	getClock_ExpectAndReturn(500);
-	WriteSPI_ExpectAndReturn(0x01, 0x01);
+	WriteSPI_ExpectAndReturn(0x14, 0x14);
 	
 	sevenSegSM(&data);
 	
