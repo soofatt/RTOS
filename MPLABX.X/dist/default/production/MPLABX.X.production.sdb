@@ -3,19 +3,19 @@
 [d edition pro ]
 [d chip 18F4520 ]
 [d frameptr 4065 ]
-"32 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c
-[e E211 . `uc
+"34 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c
+[e E212 . `uc
 WAIT_DATA 0
 WAIT_TO_TX 1
 ]
-"33
-[e E223 . `uc
-LED_START 0
-LED_ON 1
-LED_OFF 2
+"36
+[e E224 . `uc
+LED2_UNKNOWNSTATE 0
+LED2_ON 1
+LED2_OFF 2
 ]
-"34
-[e E196 . `uc
+"37
+[e E197 . `uc
 _7Seg_INIT 0
 _7Seg_WAITING 1
 ]
@@ -35,6 +35,12 @@ WAIT_TO_TX 1
 _7Seg_INIT 0
 _7Seg_WAITING 1
 ]
+"9 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Led2.c
+[e E65 . `uc
+LED2_UNKNOWNSTATE 0
+LED2_ON 1
+LED2_OFF 2
+]
 "8 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Blinky.c
 [v _delay delay `(v  1 e 0 0 ]
 "15
@@ -43,19 +49,27 @@ _7Seg_WAITING 1
 [v _onLED onLED `(v  1 e 0 0 ]
 "23
 [v _offLED offLED `(v  1 e 0 0 ]
-"5 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c
+"6 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c
 [v _initClock initClock `(v  1 e 0 0 ]
-"19
+"21
 [v _getClock getClock `(ul  1 e 4 0 ]
-"30
+"29
+[v _timer0isr timer0isr `(v  1 e 0 0 ]
+"37
 [v _isTimer0Overflowed isTimer0Overflowed `(uc  1 e 1 0 ]
-"34
+"41
 [v _clearTimer0OverflowFlag clearTimer0OverflowFlag `(v  1 e 0 0 ]
+"4 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Interrupt.c
+[v _interruptSR interruptSR `II(v  1 e 0 0 ]
+"9 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Led2.c
+[v _testingLed2SM testingLed2SM `(v  1 e 0 0 ]
+"25
+[v _led2SM led2SM `(v  1 e 0 0 ]
 "7 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c
 [v _initLEDStateMachine initLEDStateMachine `(v  1 e 0 0 ]
 "13
 [v _LEDStateMachine LEDStateMachine `(v  1 e 0 0 ]
-"28 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c
+"29 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c
 [v _main main `(v  1 e 0 0 ]
 "25 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c
 [v _initSevenSeg initSevenSeg `(v  1 e 0 0 ]
@@ -101,6 +115,8 @@ _7Seg_WAITING 1
 [v ___awtofl __awtofl `(d  1 e 3 0 ]
 "32 C:\Program Files\Microchip\xc8\v1.33\sources\common\awtoft.c
 [v ___awtoft __awtoft `(f  1 e 3 0 ]
+"464 C:\Program Files\Microchip\xc8\v1.33\sources\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
 "63 C:\Program Files\Microchip\xc8\v1.33\sources\common\double.c
 [v ___flpack __flpack `(d  1 e 3 0 ]
 "88 C:\Program Files\Microchip\xc8\v1.33\sources\common\fladd.c
@@ -165,6 +181,8 @@ _7Seg_WAITING 1
 [v ___lwtofl __lwtofl `(d  1 e 3 0 ]
 "28 C:\Program Files\Microchip\xc8\v1.33\sources\common\lwtoft.c
 [v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v1.33\sources\common\putch.c
+[v _putch putch `(v  1 e 0 0 ]
 "15 C:\Program Files\Microchip\xc8\v1.33\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files\Microchip\xc8\v1.33\sources\common\Umul24.c
@@ -204,8 +222,7 @@ _7Seg_WAITING 1
 "13 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uwrite.c
 [v _WriteUSART WriteUSART `(v  1 e 0 0 ]
 "4 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.h
-[v _clock clock `ul  1 s 4 clock ]
-[v Clock@clock clock `ul  1 s 4 clock ]
+[v _clock clock `VEul  1 e 4 0 ]
 "6 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c
 [v _hexPatterns hexPatterns `[16]uc  1 e 16 0 ]
 [s S30 . 1 `uc 1 RB0 1 0 :1:0 
@@ -243,7 +260,7 @@ _7Seg_WAITING 1
 ]
 [u S93 . 1 `S30 1 . 1 0 `S70 1 . 1 0 `S79 1 . 1 0 `S88 1 . 1 0 `S90 1 . 1 0 ]
 [v _PORTBbits PORTBbits `VES93  1 e 1 @3969 ]
-[s S639 . 1 `uc 1 RC0 1 0 :1:0 
+[s S642 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -253,7 +270,7 @@ _7Seg_WAITING 1
 `uc 1 RC7 1 0 :1:7 
 ]
 "495
-[s S679 . 1 `uc 1 T1OSO 1 0 :1:0 
+[s S682 . 1 `uc 1 T1OSO 1 0 :1:0 
 `uc 1 T1OSI 1 0 :1:1 
 `uc 1 CCP1 1 0 :1:2 
 `uc 1 SCK 1 0 :1:3 
@@ -262,7 +279,7 @@ _7Seg_WAITING 1
 `uc 1 TX 1 0 :1:6 
 `uc 1 RX 1 0 :1:7 
 ]
-[s S688 . 1 `uc 1 T13CKI 1 0 :1:0 
+[s S691 . 1 `uc 1 T13CKI 1 0 :1:0 
 `uc 1 CCP2 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 SCL 1 0 :1:3 
@@ -271,18 +288,18 @@ _7Seg_WAITING 1
 `uc 1 CK 1 0 :1:6 
 `uc 1 DT 1 0 :1:7 
 ]
-[s S697 . 1 `uc 1 T1CKI 1 0 :1:0 
+[s S700 . 1 `uc 1 T1CKI 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 P1A 1 0 :1:2 
 ]
-[s S701 . 1 `uc 1 . 1 0 :2:0 
+[s S704 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PA1 1 0 :1:2 
 ]
-[s S704 . 1 `uc 1 . 1 0 :1:0 
+[s S707 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 PA2 1 0 :1:1 
 ]
-[u S707 . 1 `S639 1 . 1 0 `S679 1 . 1 0 `S688 1 . 1 0 `S697 1 . 1 0 `S701 1 . 1 0 `S704 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES707  1 e 1 @3970 ]
+[u S710 . 1 `S642 1 . 1 0 `S682 1 . 1 0 `S691 1 . 1 0 `S700 1 . 1 0 `S704 1 . 1 0 `S707 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES710  1 e 1 @3970 ]
 [s S21 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
@@ -301,7 +318,7 @@ _7Seg_WAITING 1
 [v _TRISCbits TRISCbits `VES39  1 e 1 @3988 ]
 "2839
 [v _PIE1 PIE1 `VEuc  1 e 1 @3997 ]
-[s S513 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S516 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -311,19 +328,19 @@ _7Seg_WAITING 1
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "2864
-[s S522 . 1 `uc 1 . 1 0 :5:0 
+[s S525 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RC1IF 1 0 :1:5 
 ]
-[s S525 . 1 `uc 1 . 1 0 :4:0 
+[s S528 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 ]
-[u S528 . 1 `S513 1 . 1 0 `S522 1 . 1 0 `S525 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES528  1 e 1 @3997 ]
+[u S531 . 1 `S516 1 . 1 0 `S525 1 . 1 0 `S528 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES531  1 e 1 @3997 ]
 "2943
-[v _PIR1bits PIR1bits `VES528  1 e 1 @3998 ]
+[v _PIR1bits PIR1bits `VES531  1 e 1 @3998 ]
 "3354
 [v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
-[s S1244 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S1310 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -333,25 +350,25 @@ _7Seg_WAITING 1
 `uc 1 SPEN 1 0 :1:7 
 ]
 "3395
-[s S1253 . 1 `uc 1 . 1 0 :3:0 
+[s S1319 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 ADEN 1 0 :1:3 
 ]
-[s S1256 . 1 `uc 1 . 1 0 :5:0 
+[s S1322 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[s S1259 . 1 `uc 1 . 1 0 :6:0 
+[s S1325 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S1262 . 1 `uc 1 . 1 0 :6:0 
+[s S1328 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S1265 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S1331 . 1 `uc 1 RCD8 1 0 :1:0 
 ]
-[u S1267 . 1 `S1244 1 . 1 0 `S1253 1 . 1 0 `S1256 1 . 1 0 `S1259 1 . 1 0 `S1262 1 . 1 0 `S1265 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES1267  1 e 1 @4011 ]
+[u S1333 . 1 `S1310 1 . 1 0 `S1319 1 . 1 0 `S1322 1 . 1 0 `S1325 1 . 1 0 `S1328 1 . 1 0 `S1331 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES1333  1 e 1 @4011 ]
 "3563
 [v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
-[s S258 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S255 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -361,36 +378,36 @@ _7Seg_WAITING 1
 `uc 1 CSRC 1 0 :1:7 
 ]
 "3623
-[s S267 . 1 `uc 1 . 1 0 :2:0 
+[s S264 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 BRGH1 1 0 :1:2 
 ]
-[s S270 . 1 `uc 1 . 1 0 :7:0 
+[s S267 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[s S273 . 1 `uc 1 . 1 0 :3:0 
+[s S270 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SENDB1 1 0 :1:3 
 ]
-[s S276 . 1 `uc 1 . 1 0 :4:0 
+[s S273 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SYNC1 1 0 :1:4 
 ]
-[s S279 . 1 `uc 1 . 1 0 :1:0 
+[s S276 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 ]
-[s S282 . 1 `uc 1 . 1 0 :6:0 
+[s S279 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX91 1 0 :1:6 
 ]
-[s S285 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S282 . 1 `uc 1 TX9D1 1 0 :1:0 
 ]
-[s S287 . 1 `uc 1 . 1 0 :5:0 
+[s S284 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 TXEN1 1 0 :1:5 
 ]
-[s S290 . 1 `uc 1 . 1 0 :6:0 
+[s S287 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S293 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S290 . 1 `uc 1 TXD8 1 0 :1:0 
 ]
-[u S295 . 1 `S258 1 . 1 0 `S267 1 . 1 0 `S270 1 . 1 0 `S273 1 . 1 0 `S276 1 . 1 0 `S279 1 . 1 0 `S282 1 . 1 0 `S285 1 . 1 0 `S287 1 . 1 0 `S290 1 . 1 0 `S293 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES295  1 e 1 @4012 ]
+[u S292 . 1 `S255 1 . 1 0 `S264 1 . 1 0 `S267 1 . 1 0 `S270 1 . 1 0 `S273 1 . 1 0 `S276 1 . 1 0 `S279 1 . 1 0 `S282 1 . 1 0 `S284 1 . 1 0 `S287 1 . 1 0 `S290 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES292  1 e 1 @4012 ]
 "3860
 [v _TXREG TXREG `VEuc  1 e 1 @4013 ]
 "3871
@@ -401,30 +418,30 @@ _7Seg_WAITING 1
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @4016 ]
 "5284
 [v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
-[s S949 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S1015 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "5304
-[s S955 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S1021 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[u S960 . 1 `S949 1 . 1 0 `S955 1 . 1 0 ]
-[v _SSPCON1bits SSPCON1bits `VES960  1 e 1 @4038 ]
+[u S1026 . 1 `S1015 1 . 1 0 `S1021 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES1026  1 e 1 @4038 ]
 "5353
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
-[s S789 . 1 `uc 1 . 1 0 :2:0 
+[s S855 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_NOT_W 1 0 :1:2 
 ]
 "5448
-[s S792 . 1 `uc 1 . 1 0 :5:0 
+[s S858 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 D_NOT_A 1 0 :1:5 
 ]
-[s S795 . 1 `uc 1 BF 1 0 :1:0 
+[s S861 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -433,57 +450,57 @@ _7Seg_WAITING 1
 `uc 1 CKE 1 0 :1:6 
 `uc 1 SMP 1 0 :1:7 
 ]
-[s S810 . 1 `uc 1 . 1 0 :2:0 
+[s S876 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S815 . 1 `uc 1 . 1 0 :2:0 
+[s S881 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 A 1 0 :1:5 
 ]
-[s S820 . 1 `uc 1 . 1 0 :2:0 
+[s S886 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S825 . 1 `uc 1 . 1 0 :2:0 
+[s S891 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S830 . 1 `uc 1 . 1 0 :2:0 
+[s S896 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_WRITE 1 0 :1:2 
 ]
-[s S833 . 1 `uc 1 . 1 0 :5:0 
+[s S899 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_ADDRESS 1 0 :1:5 
 ]
-[s S836 . 1 `uc 1 . 1 0 :2:0 
+[s S902 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S841 . 1 `uc 1 . 1 0 :5:0 
+[s S907 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 DA 1 0 :1:5 
 ]
-[s S844 . 1 `uc 1 . 1 0 :2:0 
+[s S910 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 ]
-[s S847 . 1 `uc 1 . 1 0 :3:0 
+[s S913 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 START 1 0 :1:3 
 ]
-[s S850 . 1 `uc 1 . 1 0 :4:0 
+[s S916 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 STOP 1 0 :1:4 
 ]
-[s S853 . 1 `uc 1 . 1 0 :2:0 
+[s S919 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_W 1 0 :1:2 
 ]
-[s S856 . 1 `uc 1 . 1 0 :5:0 
+[s S922 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_A 1 0 :1:5 
 ]
-[u S859 . 1 `S789 1 . 1 0 `S792 1 . 1 0 `S795 1 . 1 0 `S789 1 . 1 0 `S792 1 . 1 0 `S810 1 . 1 0 `S815 1 . 1 0 `S820 1 . 1 0 `S825 1 . 1 0 `S830 1 . 1 0 `S833 1 . 1 0 `S836 1 . 1 0 `S841 1 . 1 0 `S844 1 . 1 0 `S847 1 . 1 0 `S850 1 . 1 0 `S853 1 . 1 0 `S856 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES859  1 e 1 @4039 ]
+[u S925 . 1 `S855 1 . 1 0 `S858 1 . 1 0 `S861 1 . 1 0 `S855 1 . 1 0 `S858 1 . 1 0 `S876 1 . 1 0 `S881 1 . 1 0 `S886 1 . 1 0 `S891 1 . 1 0 `S896 1 . 1 0 `S899 1 . 1 0 `S902 1 . 1 0 `S907 1 . 1 0 `S910 1 . 1 0 `S913 1 . 1 0 `S916 1 . 1 0 `S919 1 . 1 0 `S922 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES925  1 e 1 @4039 ]
 "5598
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
 [s S153 . 1 `uc 1 SCS 1 0 :2:0 
@@ -505,7 +522,7 @@ _7Seg_WAITING 1
 [v _OSCCONbits OSCCONbits `VES167  1 e 1 @4051 ]
 "6448
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
-[s S1152 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S1218 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -513,20 +530,20 @@ _7Seg_WAITING 1
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "6471
-[s S1159 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S1225 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 `uc 1 T0PS3 1 0 :1:3 
 `uc 1 . 1 0 :2:4 
 `uc 1 T016BIT 1 0 :1:6 
 ]
-[u S1166 . 1 `S1152 1 . 1 0 `S1159 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES1166  1 e 1 @4053 ]
+[u S1232 . 1 `S1218 1 . 1 0 `S1225 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES1232  1 e 1 @4053 ]
 "6536
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "6542
 [v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
-[s S376 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S370 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -536,7 +553,7 @@ _7Seg_WAITING 1
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "6999
-[s S385 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S379 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -545,7 +562,7 @@ _7Seg_WAITING 1
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S394 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S388 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -554,7 +571,7 @@ _7Seg_WAITING 1
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[s S403 . 1 `uc 1 . 1 0 :1:0 
+[s S397 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -563,40 +580,40 @@ _7Seg_WAITING 1
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S412 . 1 `uc 1 . 1 0 :6:0 
+[s S406 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S416 . 1 `S376 1 . 1 0 `S385 1 . 1 0 `S394 1 . 1 0 `S403 1 . 1 0 `S412 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES416  1 e 1 @4082 ]
-[s S1398 . 1 `uc 1 RX_NINE 1 0 :1:0 
+[u S410 . 1 `S370 1 . 1 0 `S379 1 . 1 0 `S388 1 . 1 0 `S397 1 . 1 0 `S406 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES410  1 e 1 @4082 ]
+[s S1464 . 1 `uc 1 RX_NINE 1 0 :1:0 
 `uc 1 TX_NINE 1 0 :1:1 
 `uc 1 FRAME_ERROR 1 0 :1:2 
 `uc 1 OVERRUN_ERROR 1 0 :1:3 
 `uc 1 fill 1 0 :4:4 
 ]
 "5 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\udefs.c
-[u S1404 USART 1 `uc 1 val 1 0 `S1398 1 . 1 0 ]
-[v _USART_Status USART_Status `S1404  1 e 1 0 ]
-"28 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c
+[u S1470 USART 1 `uc 1 val 1 0 `S1464 1 . 1 0 ]
+[v _USART_Status USART_Status `S1470  1 e 1 0 ]
+"29 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c
 [v _main main `(v  1 e 0 0 ]
 {
-[s S214 SevenSegData 7 `E196 1 state 1 0 `i 1 counter 2 1 `ul 1 currClock 4 3 ]
+[s S216 SevenSegData 7 `E197 1 state 1 0 `i 1 counter 2 1 `ul 1 currClock 4 3 ]
+"37
+[v main@sevenSegData sevenSegData `S216  1 a 7 41 ]
+[s S209 Led2Data 7 `i 1 state 2 0 `E224 1 ledStatus 1 2 `ul 1 currentClock 4 3 ]
+"36
+[v main@led2Data led2Data `S209  1 a 7 32 ]
+[s S202 LoopbackData 2 `E212 1 state 1 0 `uc 1 dataByte 1 1 ]
 "34
-[v main@sevenSegData sevenSegData `S214  1 a 7 25 ]
-[s S208 LEDData 5 `E223 1 state 1 0 `ul 1 currentClock 4 1 ]
-"33
-[v main@ledData ledData `S208  1 a 5 20 ]
-[s S201 LoopbackData 2 `E211 1 state 1 0 `uc 1 dataByte 1 1 ]
-"32
-[v main@loopbackData loopbackData `S201  1 a 2 18 ]
-"49
+[v main@loopbackData loopbackData `S202  1 a 2 39 ]
+"53
 } 0
 "9 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c
 [v _uartLoopbackSM uartLoopbackSM `(v  1 e 0 0 ]
 {
-[s S201 LoopbackData 2 `E211 1 state 1 0 `uc 1 dataByte 1 1 ]
-[v uartLoopbackSM@data data `*.39S201  1 p 2 1 ]
+[s S202 LoopbackData 2 `E212 1 state 1 0 `uc 1 dataByte 1 1 ]
+[v uartLoopbackSM@data data `*.39S202  1 p 2 15 ]
 "29
 } 0
 "13 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uwrite.c
@@ -605,14 +622,14 @@ _7Seg_WAITING 1
 [v WriteUSART@data data `uc  1 a 1 wreg ]
 [v WriteUSART@data data `uc  1 a 1 wreg ]
 "15
-[v WriteUSART@data data `uc  1 a 1 0 ]
+[v WriteUSART@data data `uc  1 a 1 14 ]
 "23
 } 0
 "15 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uread.c
 [v _ReadUSART ReadUSART `(uc  1 e 1 0 ]
 {
 "17
-[v ReadUSART@data data `uc  1 a 1 0 ]
+[v ReadUSART@data data `uc  1 a 1 14 ]
 "37
 } 0
 "30 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c
@@ -623,8 +640,8 @@ _7Seg_WAITING 1
 "38
 [v _sevenSegSM sevenSegSM `(v  1 e 0 0 ]
 {
-[s S214 SevenSegData 7 `E196 1 state 1 0 `i 1 counter 2 1 `ul 1 currClock 4 3 ]
-[v sevenSegSM@data data `*.39S214  1 p 2 4 ]
+[s S216 SevenSegData 7 `E197 1 state 1 0 `i 1 counter 2 1 `ul 1 currClock 4 3 ]
+[v sevenSegSM@data data `*.39S216  1 p 2 18 ]
 "62
 } 0
 "13 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\SPI\spi_writ.c
@@ -632,80 +649,19 @@ _7Seg_WAITING 1
 {
 [v WriteSPI@data_out data_out `uc  1 a 1 wreg ]
 "15
-[v WriteSPI@TempVar TempVar `uc  1 a 1 0 ]
+[v WriteSPI@TempVar TempVar `uc  1 a 1 14 ]
 "13
 [v WriteSPI@data_out data_out `uc  1 a 1 wreg ]
 "16
-[v WriteSPI@data_out data_out `uc  1 a 1 1 ]
+[v WriteSPI@data_out data_out `uc  1 a 1 15 ]
 "26
 } 0
-"4 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c
-[v _initUartLoopback initUartLoopback `(v  1 e 0 0 ]
+"25 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Led2.c
+[v _led2SM led2SM `(v  1 e 0 0 ]
 {
-[s S201 LoopbackData 2 `E211 1 state 1 0 `uc 1 dataByte 1 1 ]
-[v initUartLoopback@data data `*.39S201  1 p 2 0 ]
-"7
-} 0
-"25 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c
-[v _initSevenSeg initSevenSeg `(v  1 e 0 0 ]
-{
-[s S214 SevenSegData 7 `E196 1 state 1 0 `i 1 counter 2 1 `ul 1 currClock 4 3 ]
-[v initSevenSeg@data data `*.39S214  1 p 2 0 ]
-"28
-} 0
-"7 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c
-[v _initLEDStateMachine initLEDStateMachine `(v  1 e 0 0 ]
-{
-[s S208 LEDData 5 `E223 1 state 1 0 `ul 1 currentClock 4 1 ]
-[v initLEDStateMachine@data data `*.39S208  1 p 2 0 ]
-"11
-} 0
-"15 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Blinky.c
-[v _configureLED configureLED `(v  1 e 0 0 ]
-{
-"17
-} 0
-"5 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c
-[v _initClock initClock `(v  1 e 0 0 ]
-{
-"13
-} 0
-"18 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\Timers\t0open.c
-[v _OpenTimer0 OpenTimer0 `(v  1 e 0 0 ]
-{
-[v OpenTimer0@config config `uc  1 a 1 wreg ]
-[v OpenTimer0@config config `uc  1 a 1 wreg ]
-"20
-[v OpenTimer0@config config `uc  1 a 1 0 ]
-"31
-} 0
-"73 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uopen.c
-[v _OpenUSART OpenUSART `(v  1 e 0 0 ]
-{
-[v OpenUSART@config config `uc  1 a 1 wreg ]
-[v OpenUSART@config config `uc  1 a 1 wreg ]
-[v OpenUSART@spbrg spbrg `ui  1 p 2 0 ]
-"75
-[v OpenUSART@config config `uc  1 a 1 5 ]
-"143
-} 0
-"14 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\SPI\spi_open.c
-[v _OpenSPI OpenSPI `(v  1 e 0 0 ]
-{
-[v OpenSPI@sync_mode sync_mode `uc  1 a 1 wreg ]
-[v OpenSPI@sync_mode sync_mode `uc  1 a 1 wreg ]
-[v OpenSPI@bus_mode bus_mode `uc  1 p 1 0 ]
-[v OpenSPI@smp_phase smp_phase `uc  1 p 1 1 ]
-"16
-[v OpenSPI@sync_mode sync_mode `uc  1 a 1 2 ]
-"102
-} 0
-"13 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c
-[v _LEDStateMachine LEDStateMachine `(v  1 e 0 0 ]
-{
-[s S208 LEDData 5 `E223 1 state 1 0 `ul 1 currentClock 4 1 ]
-[v LEDStateMachine@data data `*.39S208  1 p 2 4 ]
-"41
+[s S209 Led2Data 7 `i 1 state 2 0 `E224 1 ledStatus 1 2 `ul 1 currentClock 4 3 ]
+[v led2SM@data data `*.39S209  1 p 2 18 ]
+"48
 } 0
 "19 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Blinky.c
 [v _onLED onLED `(v  1 e 0 0 ]
@@ -717,18 +673,77 @@ _7Seg_WAITING 1
 {
 "25
 } 0
-"19 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c
+"21 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c
 [v _getClock getClock `(ul  1 e 4 0 ]
 {
-"25
+"27
 } 0
-"30
-[v _isTimer0Overflowed isTimer0Overflowed `(uc  1 e 1 0 ]
+"4 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c
+[v _initUartLoopback initUartLoopback `(v  1 e 0 0 ]
+{
+[s S202 LoopbackData 2 `E212 1 state 1 0 `uc 1 dataByte 1 1 ]
+[v initUartLoopback@data data `*.39S202  1 p 2 14 ]
+"7
+} 0
+"25 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c
+[v _initSevenSeg initSevenSeg `(v  1 e 0 0 ]
+{
+[s S216 SevenSegData 7 `E197 1 state 1 0 `i 1 counter 2 1 `ul 1 currClock 4 3 ]
+[v initSevenSeg@data data `*.39S216  1 p 2 14 ]
+"28
+} 0
+"6 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c
+[v _initClock initClock `(v  1 e 0 0 ]
+{
+"15
+} 0
+"18 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\Timers\t0open.c
+[v _OpenTimer0 OpenTimer0 `(v  1 e 0 0 ]
+{
+[v OpenTimer0@config config `uc  1 a 1 wreg ]
+[v OpenTimer0@config config `uc  1 a 1 wreg ]
+"20
+[v OpenTimer0@config config `uc  1 a 1 14 ]
+"31
+} 0
+"15 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Blinky.c
+[v _configureLED configureLED `(v  1 e 0 0 ]
+{
+"17
+} 0
+"73 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uopen.c
+[v _OpenUSART OpenUSART `(v  1 e 0 0 ]
+{
+[v OpenUSART@config config `uc  1 a 1 wreg ]
+[v OpenUSART@config config `uc  1 a 1 wreg ]
+[v OpenUSART@spbrg spbrg `ui  1 p 2 14 ]
+"75
+[v OpenUSART@config config `uc  1 a 1 19 ]
+"143
+} 0
+"14 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\SPI\spi_open.c
+[v _OpenSPI OpenSPI `(v  1 e 0 0 ]
+{
+[v OpenSPI@sync_mode sync_mode `uc  1 a 1 wreg ]
+[v OpenSPI@sync_mode sync_mode `uc  1 a 1 wreg ]
+[v OpenSPI@bus_mode bus_mode `uc  1 p 1 14 ]
+[v OpenSPI@smp_phase smp_phase `uc  1 p 1 15 ]
+"16
+[v OpenSPI@sync_mode sync_mode `uc  1 a 1 16 ]
+"102
+} 0
+"4 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Interrupt.c
+[v _interruptSR interruptSR `II(v  1 e 0 0 ]
+{
+"6
+} 0
+"29 C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c
+[v _timer0isr timer0isr `(v  1 e 0 0 ]
 {
 "32
 } 0
-"34
+"41
 [v _clearTimer0OverflowFlag clearTimer0OverflowFlag `(v  1 e 0 0 ]
 {
-"36
+"43
 } 0

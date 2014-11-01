@@ -15,26 +15,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _OpenUSART `(v ~T0 @X0 0 ef2`uc`ui ]
 "584 C:\Program Files\Microchip\xc8\v1.33\include\plib\spi.h
 [v _OpenSPI `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"32 ../src/PIC18/main.c
-[c E211 0 1 .. ]
-[n E211 . WAIT_DATA WAIT_TO_TX  ]
-"10 ../src/PIC18/UARTLoopback.h
-[s S7 `E211 1 `uc 1 ]
-[n S7 LoopbackData state dataByte ]
-"33 ../src/PIC18/main.c
-[c E223 0 1 2 .. ]
-[n E223 . LED_START LED_ON LED_OFF  ]
-"11 ../src/PIC18/LEDSM.h
-[s S8 `E223 1 `ul 1 ]
-[n S8 LEDData state currentClock ]
+"10 ../src/PIC18/Blinky.h
+[v _configureLED `(v ~T0 @X0 0 ef ]
 "34 ../src/PIC18/main.c
-[c E196 0 1 .. ]
-[n E196 . _7Seg_INIT _7Seg_WAITING  ]
+[c E212 0 1 .. ]
+[n E212 . WAIT_DATA WAIT_TO_TX  ]
+"10 ../src/PIC18/UARTLoopback.h
+[s S7 `E212 1 `uc 1 ]
+[n S7 LoopbackData state dataByte ]
+"36 ../src/PIC18/main.c
+[c E224 0 1 2 .. ]
+[n E224 . LED2_UNKNOWNSTATE LED2_ON LED2_OFF  ]
+"12 ../src/PIC18/Led2.h
+[s S8 `i 1 `E224 1 `ul 1 ]
+[n S8 Led2Data state ledStatus currentClock ]
+"37 ../src/PIC18/main.c
+[c E197 0 1 .. ]
+[n E197 . _7Seg_INIT _7Seg_WAITING  ]
 "10 ../src/PIC18/SevenSeg.h
-[s S6 `E196 1 `i 1 `ul 1 ]
+[s S6 `E197 1 `i 1 `ul 1 ]
 [n S6 SevenSegData state counter currClock ]
-"17 ../src/PIC18/LEDSM.h
-[v _initLEDStateMachine `(v ~T0 @X0 0 ef1`*S8 ]
 "6 ../src/PIC18/Clock.h
 [v _initClock `(v ~T0 @X0 0 ef ]
 "16 ../src/PIC18/UARTLoopback.h
@@ -45,8 +45,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _turnOnSevenSeg `(v ~T0 @X0 0 ef ]
 "15 ../src/PIC18/UARTLoopback.h
 [v _uartLoopbackSM `(v ~T0 @X0 0 ef1`*S7 ]
-"16 ../src/PIC18/LEDSM.h
-[v _LEDStateMachine `(v ~T0 @X0 0 ef1`*S8 ]
+"19 ../src/PIC18/Led2.h
+[v _led2SM `(v ~T0 @X0 0 ef1`*S8 ]
 "19 ../src/PIC18/SevenSeg.h
 [v _sevenSegSM `(v ~T0 @X0 0 ef1`*S6 ]
 "5284 C:\Program Files\Microchip\xc8\v1.33\include\pic18f4520.h
@@ -178,12 +178,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 110: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 112: extern char * ftoa(float f, int * status);
 "4 ../src/PIC18/Clock.h
-[v _clock `ul ~T0 @X0 1 s ]
-[; ;Clock.h: 4: static unsigned long clock;
+[v _clock `Vul ~T0 @X0 1 e ]
+[; ;Clock.h: 4: volatile unsigned long clock;
 [; ;Clock.h: 6: void initClock();
 [; ;Clock.h: 7: unsigned long getClock();
 [; ;Clock.h: 8: char isTimer0Overflowed();
 [; ;Clock.h: 9: void clearTimer0OverflowFlag();
+[; ;Clock.h: 10: void timer0isr();
 [; ;Blinky.h: 9: void delay();
 [; ;Blinky.h: 10: void configureLED();
 [; ;Blinky.h: 11: void onLED();
@@ -213,18 +214,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;UARTLoopback.h: 13: };
 [; ;UARTLoopback.h: 15: void uartLoopbackSM(LoopbackData *data);
 [; ;UARTLoopback.h: 16: void initUartLoopback(LoopbackData *data);
-[; ;LEDSM.h: 4: typedef enum {
-[; ;LEDSM.h: 5: LED_START,
-[; ;LEDSM.h: 6: LED_ON,
-[; ;LEDSM.h: 7: LED_OFF
-[; ;LEDSM.h: 8: } LEDState;
-[; ;LEDSM.h: 10: typedef struct LEDData LEDData;
-[; ;LEDSM.h: 11: struct LEDData{
-[; ;LEDSM.h: 12: LEDState state;
-[; ;LEDSM.h: 13: unsigned long currentClock;
-[; ;LEDSM.h: 14: };
-[; ;LEDSM.h: 16: void LEDStateMachine(LEDData *data);
-[; ;LEDSM.h: 17: void initLEDStateMachine(LEDData *data);
+[; ;Led2.h: 4: typedef enum {
+[; ;Led2.h: 5: LED2_UNKNOWNSTATE,
+[; ;Led2.h: 6: LED2_ON,
+[; ;Led2.h: 7: LED2_OFF
+[; ;Led2.h: 8: }LedStatus;
+[; ;Led2.h: 10: typedef struct Led2Data Led2Data;
+[; ;Led2.h: 12: struct Led2Data{
+[; ;Led2.h: 13: int state;
+[; ;Led2.h: 14: LedStatus ledStatus;
+[; ;Led2.h: 15: unsigned long currentClock;
+[; ;Led2.h: 16: };
+[; ;Led2.h: 18: void testingLed2SM(Led2Data *data);
+[; ;Led2.h: 19: void led2SM(Led2Data *data);
 [; ;htc.h: 21: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 24: extern void __builtin_software_breakpoint(void);
 [; ;pic18f4520.h: 47: extern volatile unsigned char PORTA @ 0xF80;
@@ -3976,78 +3978,78 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 147: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 149: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 151: extern __nonreentrant void _delay3(unsigned char);
-"16 ../src/PIC18/main.c
+"17 ../src/PIC18/main.c
 [p x OSC=INTIO67 ]
 [p x PWRT=ON ]
 [p x WDT=OFF ]
 [p x LVP=OFF ]
 [p x DEBUG=ON ]
-"28
+"29
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 28: void main(void) {
+[; ;main.c: 29: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 29: (OSCCONbits.IRCF = 7);
-"29
-[e = . . _OSCCONbits 0 3 -> -> 7 `i `uc ]
-[; ;main.c: 30: OpenUSART(0b01111111 & 0b10111111 & 0b11111110 & 0b11111101 & 0b11111111 & 0b11111111, 51);;
+[; ;main.c: 30: (OSCCONbits.IRCF = 7);
 "30
-[e ( _OpenUSART (2 , -> & & & & & -> 127 `i -> 191 `i -> 254 `i -> 253 `i -> 255 `i -> 255 `i `uc -> -> 51 `i `ui ]
-[; ;main.c: 31: OpenSPI(0b00000000, 0b00000011, 0b10000000);
+[e = . . _OSCCONbits 0 3 -> -> 7 `i `uc ]
+[; ;main.c: 31: OpenUSART(0b01111111 & 0b10111111 & 0b11111110 & 0b11111101 & 0b11111111 & 0b11111111, 51);;
 "31
-[e ( _OpenSPI (3 , , -> -> 0 `i `uc -> -> 3 `i `uc -> -> 128 `i `uc ]
+[e ( _OpenUSART (2 , -> & & & & & -> 127 `i -> 191 `i -> 254 `i -> 253 `i -> 255 `i -> 255 `i `uc -> -> 51 `i `ui ]
+[; ;main.c: 32: OpenSPI(0b00000000, 0b00000011, 0b10000000);
 "32
-[v _loopbackData `S7 ~T0 @X0 1 a ]
+[e ( _OpenSPI (3 , , -> -> 0 `i `uc -> -> 3 `i `uc -> -> 128 `i `uc ]
+[; ;main.c: 33: configureLED();
 "33
-[v _ledData `S8 ~T0 @X0 1 a ]
+[e ( _configureLED ..  ]
 "34
-[v _sevenSegData `S6 ~T0 @X0 1 a ]
-[; ;main.c: 32: LoopbackData loopbackData;
-[; ;main.c: 33: LEDData ledData;
-[; ;main.c: 34: SevenSegData sevenSegData;
-[; ;main.c: 35: initLEDStateMachine(&ledData);
-"35
-[e ( _initLEDStateMachine (1 &U _ledData ]
-[; ;main.c: 36: initClock();
+[v _loopbackData `S7 ~T0 @X0 1 a ]
 "36
-[e ( _initClock ..  ]
-[; ;main.c: 37: initUartLoopback(&loopbackData);
+[v _led2Data `S8 ~T0 @X0 1 a ]
 "37
-[e ( _initUartLoopback (1 &U _loopbackData ]
-[; ;main.c: 38: initSevenSeg(&sevenSegData);
-"38
-[e ( _initSevenSeg (1 &U _sevenSegData ]
-[; ;main.c: 39: turnOnSevenSeg();
+[v _sevenSegData `S6 ~T0 @X0 1 a ]
+[; ;main.c: 34: LoopbackData loopbackData;
+[; ;main.c: 36: Led2Data led2Data;
+[; ;main.c: 37: SevenSegData sevenSegData;
+[; ;main.c: 39: initClock();
 "39
-[e ( _turnOnSevenSeg ..  ]
-[; ;main.c: 41: while(1) {
+[e ( _initClock ..  ]
+[; ;main.c: 40: initUartLoopback(&loopbackData);
+"40
+[e ( _initUartLoopback (1 &U _loopbackData ]
+[; ;main.c: 41: initSevenSeg(&sevenSegData);
 "41
+[e ( _initSevenSeg (1 &U _sevenSegData ]
+[; ;main.c: 42: turnOnSevenSeg();
+"42
+[e ( _turnOnSevenSeg ..  ]
+[; ;main.c: 44: while(1) {
+"44
 [e :U 412 ]
 {
-[; ;main.c: 43: uartLoopbackSM(&loopbackData);
-"43
-[e ( _uartLoopbackSM (1 &U _loopbackData ]
-[; ;main.c: 44: LEDStateMachine(&ledData);
-"44
-[e ( _LEDStateMachine (1 &U _ledData ]
-[; ;main.c: 45: sevenSegSM(&sevenSegData);
-"45
-[e ( _sevenSegSM (1 &U _sevenSegData ]
+[; ;main.c: 46: uartLoopbackSM(&loopbackData);
 "46
+[e ( _uartLoopbackSM (1 &U _loopbackData ]
+[; ;main.c: 48: led2SM(&led2Data);
+"48
+[e ( _led2SM (1 &U _led2Data ]
+[; ;main.c: 49: sevenSegSM(&sevenSegData);
+"49
+[e ( _sevenSegSM (1 &U _sevenSegData ]
+"50
 }
 [e :U 411 ]
-"41
+"44
 [e $U 412  ]
 [e :U 413 ]
-[; ;main.c: 46: }
-[; ;main.c: 47: (SSPCON1 &=0xDF);
-"47
+[; ;main.c: 50: }
+[; ;main.c: 51: (SSPCON1 &=0xDF);
+"51
 [e =& _SSPCON1 -> -> 223 `i `uc ]
-[; ;main.c: 48: RCSTA&=0b01001111,TXSTAbits.TXEN=0,PIE1&=0b11001111;
-"48
+[; ;main.c: 52: RCSTA&=0b01001111,TXSTAbits.TXEN=0,PIE1&=0b11001111;
+"52
 [e ; ; =& _RCSTA -> -> 79 `i `uc = . . _TXSTAbits 0 5 -> -> 0 `i `uc =& _PIE1 -> -> 207 `i `uc ]
-[; ;main.c: 49: }
-"49
+[; ;main.c: 53: }
+"53
 [e :UE 410 ]
 }

@@ -1,10 +1,12 @@
 #include "Clock.h"
 #include "../18c.h"
 #include "timers.h"
+#include "Interrupt.h"
 
 void initClock(){
   clock = 0;
-  OpenTimer0( TIMER_INT_OFF &
+  enableGlobalInterrupt();
+  OpenTimer0( TIMER_INT_ON &
               T0_8BIT &
               T0_SOURCE_INT &
               T0_PS_1_8 );
@@ -17,11 +19,16 @@ void initClock(){
  * is roughly 1.024msec.
  */
 unsigned long getClock(){
-  if(isTimer0Overflowed()){
+  /*if(isTimer0Overflowed()){
     clock++;
     clearTimer0OverflowFlag();
-  }
+  }*/
   return clock;
+}
+
+void timer0isr(){
+    clock++;
+    clearTimer0OverflowFlag();
 }
 
 //////////////////////////////////////////

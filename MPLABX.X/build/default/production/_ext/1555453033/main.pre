@@ -138,12 +138,13 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 extern char * ftoa(float f, int * status);
 
 # 4 "../src/PIC18/Clock.h"
-static unsigned long clock;
+volatile unsigned long clock;
 
 void initClock();
 unsigned long getClock();
 char isTimer0Overflowed();
 void clearTimer0OverflowFlag();
+void timer0isr();
 
 # 9 "../src/PIC18/Blinky.h"
 void delay();
@@ -184,21 +185,23 @@ char dataByte;
 void uartLoopbackSM(LoopbackData *data);
 void initUartLoopback(LoopbackData *data);
 
-# 4 "../src/PIC18/LEDSM.h"
+# 4 "../src/PIC18/Led2.h"
 typedef enum {
-LED_START,
-LED_ON,
-LED_OFF
-} LEDState;
+LED2_UNKNOWNSTATE,
+LED2_ON,
+LED2_OFF
+}LedStatus;
 
-typedef struct LEDData LEDData;
-struct LEDData{
-LEDState state;
+typedef struct Led2Data Led2Data;
+
+struct Led2Data{
+int state;
+LedStatus ledStatus;
 unsigned long currentClock;
 };
 
-void LEDStateMachine(LEDData *data);
-void initLEDStateMachine(LEDData *data);
+void testingLed2SM(Led2Data *data);
+void led2SM(Led2Data *data);
 
 # 21 "C:\Program Files\Microchip\xc8\v1.33\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -5189,18 +5192,20 @@ extern __nonreentrant void _delaywdt(unsigned long);
 extern __nonreentrant void _delay3(unsigned char);
 
 
-# 16 "../src/PIC18/main.c"
+# 17 "../src/PIC18/main.c"
 #pragma config OSC = INTIO67, PWRT = ON, WDT = OFF, LVP = OFF, DEBUG = ON
 
-# 28
+# 29
 void main(void) {
 (OSCCONbits.IRCF = 7);
 OpenUSART(0b01111111 & 0b10111111 & 0b11111110 & 0b11111101 & 0b11111111 & 0b11111111, 51);;
 OpenSPI(0b00000000, 0b00000011, 0b10000000);
+configureLED();
 LoopbackData loopbackData;
-LEDData ledData;
+
+Led2Data led2Data;
 SevenSegData sevenSegData;
-initLEDStateMachine(&ledData);
+
 initClock();
 initUartLoopback(&loopbackData);
 initSevenSeg(&sevenSegData);
@@ -5209,7 +5214,8 @@ turnOnSevenSeg();
 while(1) {
 
 uartLoopbackSM(&loopbackData);
-LEDStateMachine(&ledData);
+
+led2SM(&led2Data);
 sevenSegSM(&sevenSegData);
 }
 (SSPCON1 &=0xDF);

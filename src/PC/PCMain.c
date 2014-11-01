@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <conio.h>
 #include "rs232.h"
-// To compile : gcc -o name.exe src/PC/rs232.c src/PC/PCMain.c
-// To run : name.exe
+// To compile : gcc -o UartLoopback.exe src/PC/rs232.c src/PC/PCMain.c
+// To run : UartLoopback.exe
 
 #define ESC_KEY 27
 #define COMPORT 2
