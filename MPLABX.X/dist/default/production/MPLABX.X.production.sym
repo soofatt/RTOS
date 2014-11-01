@@ -358,7 +358,7 @@ text20 79BE 79C1 CODE 79BE 0
 %locals
 dist/default/production\MPLABX.X.production.obj
 C:\Program Files\Microchip\xc8\v1.33\include\pic18f4520.h
-C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.
+C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.
 1921 7AF0 0 CODE 0
 1923 7AF0 0 CODE 0
 1926 7AF0 0 CODE 0
@@ -487,11 +487,11 @@ C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\SPI\spi_writ.c
 16 79CA 0 CODE 0
 17 79CC 0 CODE 0
 ../src/PIC18/Clock.c
-4 7A28 0 CODE 0
 5 7A28 0 CODE 0
-9 7A38 0 CODE 0
-11 7A3E 0 CODE 0
-12 7A40 0 CODE 0
+6 7A28 0 CODE 0
+10 7A38 0 CODE 0
+12 7A3E 0 CODE 0
+13 7A40 0 CODE 0
 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\Timers\t0open.c
 18 7A7E 0 CODE 0
 20 7A80 0 CODE 0
@@ -599,17 +599,17 @@ C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\SPI\spi_open.c
 24 79C2 0 CODE 0
 25 79C4 0 CODE 0
 ../src/PIC18/Clock.c
-18 7AC4 0 CODE 0
 19 7AC4 0 CODE 0
-20 7ACE 0 CODE 0
-21 7ADA 0 CODE 0
-23 7ADE 0 CODE 0
-24 7AEE 0 CODE 0
+20 7AC4 0 CODE 0
+21 7ACE 0 CODE 0
+22 7ADA 0 CODE 0
+24 7ADE 0 CODE 0
+25 7AEE 0 CODE 0
 ../src/PIC18/Clock.c
-29 79D2 0 CODE 0
 30 79D2 0 CODE 0
-31 79DC 0 CODE 0
+31 79D2 0 CODE 0
+32 79DC 0 CODE 0
 ../src/PIC18/Clock.c
-33 79BE 0 CODE 0
 34 79BE 0 CODE 0
-35 79C0 0 CODE 0
+35 79BE 0 CODE 0
+36 79C0 0 CODE 0

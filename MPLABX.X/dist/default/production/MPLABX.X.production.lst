@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.33 build 59893 
-                                                                                               Thu Oct 30 12:18:07 2014
+                                                                                               Sat Nov 01 13:10:42 2014
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 59893
      1                           	processor	18F4520
@@ -51,10 +51,10 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
     45  0079F4  E7                 	db	231
     46  0079F5  34                 	db	52
     47  0079F6  F7                 	db	247
-    48  0079F7  F6                 	db	246
+    48  0079F7  F4                 	db	244
     49  0079F8  F5                 	db	245
     50  0079F9  C7                 	db	199
-    51  0079FA  83                 	db	131
+    51  0079FA  63                 	db	99
     52  0079FB  97                 	db	151
     53  0079FC  E3                 	db	227
     54  0079FD  E1                 	db	225
@@ -1290,7 +1290,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   1283                           
   1284 ;; *************** function _initClock *****************
   1285 ;; Defined at:
-  1286 ;;		line 4 in file "../src/PIC18/Clock.c"
+  1286 ;;		line 5 in file "../src/PIC18/Clock.c"
   1287 ;; Parameters:    Size  Location     Type
   1288 ;;		None
   1289 ;; Auto vars:     Size  Location     Type
@@ -1324,7 +1324,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   1317  007A28                     _initClock:
   1318                           	opt stack 29
   1319                           
-  1320                           ;Clock.c: 5: clock = 0;
+  1320                           ;Clock.c: 6: clock = 0;
   1321                           
   1322                           ;incstack = 0
   1323  007A28  0E00               	movlw	0
@@ -1336,14 +1336,14 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   1329  007A34  0E00               	movlw	0
   1330  007A36  6E34               	movwf	Clock@clock+3,c
   1331                           
-  1332                           ;Clock.c: 6: OpenTimer0( 0b01111111 &
-  1333                           ;Clock.c: 7: 0b11111111 &
-  1334                           ;Clock.c: 8: 0b11011111 &
-  1335                           ;Clock.c: 9: 0b11110010 );
+  1332                           ;Clock.c: 7: OpenTimer0( 0b01111111 &
+  1333                           ;Clock.c: 8: 0b11111111 &
+  1334                           ;Clock.c: 9: 0b11011111 &
+  1335                           ;Clock.c: 10: 0b11110010 );
   1336  007A38  0E52               	movlw	82
   1337  007A3A  EC3F  F03D         	call	_OpenTimer0
   1338                           
-  1339                           ;Clock.c: 11: INTCONbits.TMR0IF = 0;
+  1339                           ;Clock.c: 12: INTCONbits.TMR0IF = 0;
   1340  007A3E  94F2               	bcf	intcon,2,c	;volatile
   1341  007A40  0012               	return	
   1342  007A42                     __end_of_initClock:
@@ -2051,7 +2051,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2044                           
   2045 ;; *************** function _getClock *****************
   2046 ;; Defined at:
-  2047 ;;		line 18 in file "../src/PIC18/Clock.c"
+  2047 ;;		line 19 in file "../src/PIC18/Clock.c"
   2048 ;; Parameters:    Size  Location     Type
   2049 ;;		None
   2050 ;; Auto vars:     Size  Location     Type
@@ -2087,7 +2087,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2080  007AC4                     _getClock:
   2081                           	opt stack 28
   2082                           
-  2083                           ;Clock.c: 19: if(isTimer0Overflowed()){
+  2083                           ;Clock.c: 20: if(isTimer0Overflowed()){
   2084                           
   2085                           ;incstack = 0
   2086  007AC4  ECE9  F03C         	call	_isTimer0Overflowed	;wreg free
@@ -2095,7 +2095,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2088  007ACA  B4D8               	btfsc	status,2,c
   2089  007ACC  D008               	goto	l881
   2090                           
-  2091                           ;Clock.c: 20: clock++;
+  2091                           ;Clock.c: 21: clock++;
   2092  007ACE  0E01               	movlw	1
   2093  007AD0  2631               	addwf	Clock@clock,f,c
   2094  007AD2  0E00               	movlw	0
@@ -2103,12 +2103,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2096  007AD6  2233               	addwfc	Clock@clock+2,f,c
   2097  007AD8  2234               	addwfc	Clock@clock+3,f,c
   2098                           
-  2099                           ;Clock.c: 21: clearTimer0OverflowFlag();
+  2099                           ;Clock.c: 22: clearTimer0OverflowFlag();
   2100  007ADA  ECDF  F03C         	call	_clearTimer0OverflowFlag	;wreg free
   2101  007ADE                     l881:
   2102                           
-  2103                           ;Clock.c: 22: }
-  2104                           ;Clock.c: 23: return clock;
+  2103                           ;Clock.c: 23: }
+  2104                           ;Clock.c: 24: return clock;
   2105  007ADE  C031  F001         	movff	Clock@clock,?_getClock
   2106  007AE2  C032  F002         	movff	Clock@clock+1,?_getClock+1
   2107  007AE6  C033  F003         	movff	Clock@clock+2,?_getClock+2
@@ -2134,7 +2134,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2127                           
   2128 ;; *************** function _isTimer0Overflowed *****************
   2129 ;; Defined at:
-  2130 ;;		line 29 in file "../src/PIC18/Clock.c"
+  2130 ;;		line 30 in file "../src/PIC18/Clock.c"
   2131 ;; Parameters:    Size  Location     Type
   2132 ;;		None
   2133 ;; Auto vars:     Size  Location     Type
@@ -2167,7 +2167,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2160  0079D2                     _isTimer0Overflowed:
   2161                           	opt stack 28
   2162                           
-  2163                           ;Clock.c: 30: return INTCONbits.TMR0IF;
+  2163                           ;Clock.c: 31: return INTCONbits.TMR0IF;
   2164                           
   2165                           ;incstack = 0
   2166  0079D2  A4F2               	btfss	intcon,2,c	;volatile
@@ -2198,7 +2198,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2191                           
   2192 ;; *************** function _clearTimer0OverflowFlag *****************
   2193 ;; Defined at:
-  2194 ;;		line 33 in file "../src/PIC18/Clock.c"
+  2194 ;;		line 34 in file "../src/PIC18/Clock.c"
   2195 ;; Parameters:    Size  Location     Type
   2196 ;;		None
   2197 ;; Auto vars:     Size  Location     Type
@@ -2231,7 +2231,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2224  0079BE                     _clearTimer0OverflowFlag:
   2225                           	opt stack 28
   2226                           
-  2227                           ;Clock.c: 34: INTCONbits.TMR0IF = 0;
+  2227                           ;Clock.c: 35: INTCONbits.TMR0IF = 0;
   2228                           
   2229                           ;incstack = 0
   2230  0079BE  94F2               	bcf	intcon,2,c	;volatile
@@ -2500,7 +2500,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.33 build 59893 
-Symbol Table                                                                                   Thu Oct 30 12:18:07 2014
+Symbol Table                                                                                   Sat Nov 01 13:10:42 2014
 
                    ?_configureLED 0001                       _SSPSTATbits 000FC7  
                               l76 79DC                                u10 79DA  

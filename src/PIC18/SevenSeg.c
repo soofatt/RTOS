@@ -13,10 +13,10 @@ char hexPatterns[] = {
 						0xe7,  //6
 						0x34,  //7
 						0xf7,  //8
-						0xf6,  //9
+						0xf4,  //9
 						0xf5,  //A
 						0xc7,  //B
-						0x83,  //C
+						0x63,  //C
 						0x97,  //D
 						0xe3,  //E
 						0xe1   //F

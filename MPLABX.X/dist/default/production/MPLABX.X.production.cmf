@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.obj
+$C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.obj
 end_init CODE 0 0 0 4 1
 idloc IDLOC 0 200000 200000 8 1
 config CONFIG 0 300000 300000 E 1
@@ -78,28 +78,28 @@ STACK 000080-0005FF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\MPLABX.X.production.obj
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":33 79BE text20 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":34 79BE text20 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":35 79C0 text20 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Blinky.c":23 79C2 text17 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Blinky.c":24 79C2 text17 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Blinky.c":25 79C4 text17 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Blinky.c":19 79C6 text16 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Blinky.c":20 79C6 text16 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Blinky.c":21 79C8 text16 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Blinky.c":15 79CA text10 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Blinky.c":16 79CA text10 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Blinky.c":17 79CC text10 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":30 79CE text4 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":31 79CE text4 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":32 79D0 text4 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":29 79D2 text19 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":30 79D2 text19 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":31 79DC text19 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":25 79DE text8 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":26 79DE text8 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":27 79E0 text8 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":28 79EC text8 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":34 79BE text20 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":35 79BE text20 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":36 79C0 text20 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Blinky.c":23 79C2 text17 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Blinky.c":24 79C2 text17 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Blinky.c":25 79C4 text17 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Blinky.c":19 79C6 text16 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Blinky.c":20 79C6 text16 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Blinky.c":21 79C8 text16 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Blinky.c":15 79CA text10 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Blinky.c":16 79CA text10 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Blinky.c":17 79CC text10 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":30 79CE text4 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":31 79CE text4 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":32 79D0 text4 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":30 79D2 text19 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":31 79D2 text19 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":32 79DC text19 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":25 79DE text8 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":26 79DE text8 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":27 79E0 text8 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":28 79EC text8 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uwrite.c":13 79FE text2 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uwrite.c":15 7A00 text2 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uwrite.c":17 7A04 text2 CODE
@@ -115,15 +115,15 @@ $dist/default/production\MPLABX.X.production.obj
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\SPI\spi_writ.c":20 7A1E text6 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\SPI\spi_writ.c":24 7A22 text6 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\SPI\spi_writ.c":26 7A26 text6 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":4 7A28 text11 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":5 7A28 text11 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":9 7A38 text11 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":11 7A3E text11 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":12 7A40 text11 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":4 7A42 text7 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":5 7A42 text7 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":6 7A4E text7 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":7 7A5E text7 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":5 7A28 text11 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":6 7A28 text11 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":10 7A38 text11 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":12 7A3E text11 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":13 7A40 text11 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":4 7A42 text7 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":5 7A42 text7 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":6 7A4E text7 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":7 7A5E text7 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uread.c":15 7A60 text3 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uread.c":19 7A60 text3 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uread.c":21 7A64 text3 CODE
@@ -149,45 +149,45 @@ $dist/default/production\MPLABX.X.production.obj
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\Timers\t0open.c":28 7A98 text12 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\Timers\t0open.c":30 7A9A text12 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\Timers\t0open.c":31 7A9C text12 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":7 7A9E text9 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":8 7A9E text9 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":9 7AAA text9 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":10 7ABE text9 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":11 7AC2 text9 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":18 7AC4 text18 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":19 7AC4 text18 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":20 7ACE text18 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":21 7ADA text18 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":23 7ADE text18 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/Clock.c":24 7AEE text18 CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1921 7AF0 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1923 7AF0 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1926 7AF0 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1950 7AF0 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1951 7AF4 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1952 7AF6 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1953 7AF6 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1954 7AF8 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1955 7AFA cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1960 7AFC cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1961 7AFE cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1962 7B00 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1963 7B02 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1964 7B04 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1965 7B06 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1966 7B08 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1967 7B0C cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1968 7B10 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1969 7B10 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1970 7B12 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1971 7B16 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1972 7B18 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1973 7B1A cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1979 7B1C cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1981 7B1C cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1982 7B1E cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1983 7B20 cinit CODE
-"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.":1984 7B22 cinit CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":7 7A9E text9 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":8 7A9E text9 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":9 7AAA text9 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":10 7ABE text9 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":11 7AC2 text9 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":19 7AC4 text18 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":20 7AC4 text18 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":21 7ACE text18 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":22 7ADA text18 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":24 7ADE text18 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/Clock.c":25 7AEE text18 CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1921 7AF0 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1923 7AF0 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1926 7AF0 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1950 7AF0 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1951 7AF4 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1952 7AF6 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1953 7AF6 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1954 7AF8 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1955 7AFA cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1960 7AFC cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1961 7AFE cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1962 7B00 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1963 7B02 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1964 7B04 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1965 7B06 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1966 7B08 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1967 7B0C cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1968 7B10 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1969 7B10 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1970 7B12 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1971 7B16 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1972 7B18 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1973 7B1A cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1979 7B1C cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1981 7B1C cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1982 7B1E cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1983 7B20 cinit CODE
+"C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.":1984 7B22 cinit CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\SPI\spi_open.c":14 7B26 text14 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\SPI\spi_open.c":16 7B28 text14 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\SPI\spi_open.c":17 7B2C text14 CODE
@@ -219,19 +219,19 @@ $dist/default/production\MPLABX.X.production.obj
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\SPI\spi_open.c":98 7B7A text14 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\SPI\spi_open.c":101 7B7C text14 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\SPI\spi_open.c":102 7B7E text14 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":9 7B80 text1 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":11 7B80 text1 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":12 7B82 text1 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":13 7B82 text1 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":15 7B86 text1 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":16 7B98 text1 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":19 7BA4 text1 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":20 7BA4 text1 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":22 7BA8 text1 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":23 7BBA text1 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":24 7BC6 text1 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":11 7BC8 text1 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/UARTLoopback.c":29 7BDE text1 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":9 7B80 text1 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":11 7B80 text1 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":12 7B82 text1 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":13 7B82 text1 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":15 7B86 text1 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":16 7B98 text1 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":19 7BA4 text1 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":20 7BA4 text1 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":22 7BA8 text1 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":23 7BBA text1 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":24 7BC6 text1 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":11 7BC8 text1 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/UARTLoopback.c":29 7BDE text1 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uopen.c":73 7BE0 text13 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uopen.c":75 7BE2 text13 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uopen.c":76 7BE6 text13 CODE
@@ -268,49 +268,49 @@ $dist/default/production\MPLABX.X.production.obj
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uopen.c":138 7C3E text13 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uopen.c":139 7C44 text13 CODE
 "C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\USART\uopen.c":143 7C46 text13 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/main.c":28 7C48 text0 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/main.c":29 7C48 text0 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/main.c":30 7C4E text0 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/main.c":31 7C5C text0 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/main.c":35 7C6A text0 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/main.c":36 7C76 text0 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/main.c":37 7C7A text0 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/main.c":38 7C86 text0 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/main.c":39 7C92 text0 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/main.c":43 7C96 text0 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/main.c":44 7CA2 text0 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/main.c":45 7CAE text0 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":38 7CBC text5 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":39 7CBC text5 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":41 7CBE text5 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":42 7CD2 text5 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":43 7D06 text5 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":48 7D2E text5 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":49 7D9C text5 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":50 7DD0 text5 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":51 7DF6 text5 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":53 7E08 text5 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":54 7E1E text5 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":56 7E32 text5 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":57 7E3E text5 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":39 7E40 text5 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/SevenSeg.c":62 7E56 text5 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":13 7E58 text15 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":14 7E58 text15 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":16 7E5A text15 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":17 7E66 text15 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":18 7E7A text15 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":21 7E7C text15 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":22 7EEA text15 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":23 7F1E text15 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":24 7F22 text15 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":30 7F2E text15 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":31 7F9C text15 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":32 7FD0 text15 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":33 7FD4 text15 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":34 7FE0 text15 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":14 7FE2 text15 CODE
-"C:\Documents and Settings\D300-01\Desktop\rtos\RTOS/src/PIC18/LEDSM.c":41 7FFE text15 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c":28 7C48 text0 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c":29 7C48 text0 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c":30 7C4E text0 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c":31 7C5C text0 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c":35 7C6A text0 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c":36 7C76 text0 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c":37 7C7A text0 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c":38 7C86 text0 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c":39 7C92 text0 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c":43 7C96 text0 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c":44 7CA2 text0 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/main.c":45 7CAE text0 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":38 7CBC text5 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":39 7CBC text5 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":41 7CBE text5 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":42 7CD2 text5 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":43 7D06 text5 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":48 7D2E text5 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":49 7D9C text5 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":50 7DD0 text5 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":51 7DF6 text5 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":53 7E08 text5 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":54 7E1E text5 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":56 7E32 text5 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":57 7E3E text5 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":39 7E40 text5 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/SevenSeg.c":62 7E56 text5 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":13 7E58 text15 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":14 7E58 text15 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":16 7E5A text15 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":17 7E66 text15 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":18 7E7A text15 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":21 7E7C text15 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":22 7EEA text15 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":23 7F1E text15 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":24 7F22 text15 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":30 7F2E text15 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":31 7F9C text15 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":32 7FD0 text15 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":33 7FD4 text15 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":34 7FE0 text15 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":14 7FE2 text15 CODE
+"C:\Documents and Settings\D300-01\Desktop\RTOS/src/PIC18/LEDSM.c":41 7FFE text15 CODE
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -333,8 +333,8 @@ _PIE1 F9D 0 ABS 0 - dist/default/production\MPLABX.X.production.obj
 __size_of_onLED 0 0 ABS 0 - dist/default/production\MPLABX.X.production.obj
 __end_of_configureLED 79CE 0 CODE 0 text10 dist/default/production\MPLABX.X.production.obj
 _main 7C48 0 CODE 0 text0 dist/default/production\MPLABX.X.production.obj
-___sp 0 0 STACK 2 stack C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.obj
-start 0 0 CODE 0 init C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.obj
+___sp 0 0 STACK 2 stack C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.obj
+start 0 0 CODE 0 init C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.obj
 OpenSPI@bus_mode 1 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLABX.X.production.obj
 _TMR0H FD7 0 ABS 0 - dist/default/production\MPLABX.X.production.obj
 WriteUSART@data 1 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLABX.X.production.obj
@@ -421,11 +421,11 @@ __Hdata 0 0 ABS 0 data dist/default/production\MPLABX.X.production.obj
 __Ldata 0 0 ABS 0 data dist/default/production\MPLABX.X.production.obj
 __size_of_offLED 0 0 ABS 0 - dist/default/production\MPLABX.X.production.obj
 __size_of_initSevenSeg 0 0 ABS 0 - dist/default/production\MPLABX.X.production.obj
-stackhi 5FF 0 ABS 0 - C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.obj
+stackhi 5FF 0 ABS 0 - C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.obj
 WriteSPI@data_out 2 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLABX.X.production.obj
 __Htemp 0 0 COMRAM 1 temp dist/default/production\MPLABX.X.production.obj
 __Ltemp 0 0 COMRAM 1 temp dist/default/production\MPLABX.X.production.obj
-stacklo 80 0 ABS 0 - C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.obj
+stacklo 80 0 ABS 0 - C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.obj
 __Hrbit 0 0 COMRAM 1 rbit dist/default/production\MPLABX.X.production.obj
 __Lrbit 0 0 COMRAM 1 rbit dist/default/production\MPLABX.X.production.obj
 _initSevenSeg 79DE 0 CODE 0 text8 dist/default/production\MPLABX.X.production.obj
@@ -557,8 +557,8 @@ __Lnvbit 0 0 COMRAM 1 nvbit dist/default/production\MPLABX.X.production.obj
 __Hcinit 0 0 ABS 0 cinit dist/default/production\MPLABX.X.production.obj
 __Lcinit 0 0 ABS 0 cinit dist/default/production\MPLABX.X.production.obj
 __pcinit 7AF0 0 CODE 0 cinit dist/default/production\MPLABX.X.production.obj
-__ramtop 600 0 RAM 0 ramtop C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.obj
+__ramtop 600 0 RAM 0 ramtop C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\MPLABX.X.production.obj
 _initLEDStateMachine 7A9E 0 CODE 0 text9 dist/default/production\MPLABX.X.production.obj
 main@ledData 15 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLABX.X.production.obj
@@ -598,7 +598,7 @@ __size_of_getClock 0 0 ABS 0 - dist/default/production\MPLABX.X.production.obj
 __Htext15 0 0 ABS 0 text15 dist/default/production\MPLABX.X.production.obj
 __Ltext15 0 0 ABS 0 text15 dist/default/production\MPLABX.X.production.obj
 __ptext15 7E58 0 CODE 0 text15 dist/default/production\MPLABX.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.obj
+___inthi_sp 0 0 STACK 2 stack C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.obj
 __Htext16 0 0 ABS 0 text16 dist/default/production\MPLABX.X.production.obj
 __Ltext16 0 0 ABS 0 text16 dist/default/production\MPLABX.X.production.obj
 __ptext16 79C6 0 CODE 0 text16 dist/default/production\MPLABX.X.production.obj
@@ -613,7 +613,7 @@ __Htext19 0 0 ABS 0 text19 dist/default/production\MPLABX.X.production.obj
 __Ltext19 0 0 ABS 0 text19 dist/default/production\MPLABX.X.production.obj
 __size_of_WriteSPI 0 0 ABS 0 - dist/default/production\MPLABX.X.production.obj
 __ptext19 79D2 0 CODE 0 text19 dist/default/production\MPLABX.X.production.obj
-___intlo_sp 0 0 STACK 2 stack C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.obj
+___intlo_sp 0 0 STACK 2 stack C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.obj
 _ReadUSART 7A60 0 CODE 0 text3 dist/default/production\MPLABX.X.production.obj
 _OSCCONbits FD3 0 ABS 0 - dist/default/production\MPLABX.X.production.obj
 _INTCONbits FF2 0 ABS 0 - dist/default/production\MPLABX.X.production.obj
@@ -627,17 +627,17 @@ __pidataCOMRAM 79EE 0 CODE 0 idataCOMRAM dist/default/production\MPLABX.X.produc
 __size_of_turnOnSevenSeg 0 0 ABS 0 - dist/default/production\MPLABX.X.production.obj
 __end_of_ReadUSART 7A7E 0 CODE 0 text3 dist/default/production\MPLABX.X.production.obj
 __size_of_clearTimer0OverflowFlag 0 0 ABS 0 - dist/default/production\MPLABX.X.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.obj
 __Hreset_vec 0 0 CODE 0 reset_vec dist/default/production\MPLABX.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\MPLABX.X.production.obj
-__accesstop 80 0 ABS 0 - C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.obj
+__accesstop 80 0 ABS 0 - C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\MPLABX.X.production.obj
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\MPLABX.X.production.obj
 OpenSPI@sync_mode 3 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLABX.X.production.obj
-intlevel0 0 0 CODE 0 text C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.obj
-intlevel1 0 0 CODE 0 text C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.obj
-intlevel2 0 0 CODE 0 text C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.obj
-intlevel3 0 0 CODE 0 text C:\DOCUME~1\D300-01\LOCALS~1\Temp\s214.obj
+intlevel0 0 0 CODE 0 text C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.obj
+intlevel1 0 0 CODE 0 text C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.obj
+intlevel2 0 0 CODE 0 text C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.obj
+intlevel3 0 0 CODE 0 text C:\DOCUME~1\D300-01\LOCALS~1\Temp\s5a8.obj
 __size_of_OpenSPI 0 0 ABS 0 - dist/default/production\MPLABX.X.production.obj
 _WriteSPI 7A10 0 CODE 0 text6 dist/default/production\MPLABX.X.production.obj
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\MPLABX.X.production.obj
