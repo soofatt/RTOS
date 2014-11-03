@@ -38,6 +38,32 @@ void test_removeFromHeadPriorityLinkedList_given_1_element_point_to_NULL_head_sh
   TEST_ASSERT_EQUAL(10, result->priority);
 }
 
+/*
+ *          +----+     +----+
+ *  head -->| #1 | --> | #2 | --> NULL
+ *          +----+     +----+
+ *  tail -----^
+ *
+ */
+void test_removeFromHeadPriorityLinkedList_given_2_element_head_should_point_to_next_element(void){
+	TCB *result;
+	PriorityLinkedList *list;
+  list = createPriorityLinkedList();
+  TCB TCB2 = {.next = NULL, .priority = 10};
+  TCB TCB1 = {.next = &TCB2, .priority = 20};
+  
+  list->head = &TCB1;
+  list->tail = &TCB2;
+  
+  result = removeFromHeadPriorityLinkedList(list);
+  
+  TEST_ASSERT_EQUAL(&TCB2, list->head);
+  TEST_ASSERT_EQUAL(&TCB2, list->tail);
+  TEST_ASSERT_EQUAL(&TCB1, result);
+  TEST_ASSERT_EQUAL(20, result->priority);
+  TEST_ASSERT_NULL(result->next);
+}
+
 void test_compare_should_compare_priority_of_two_elements_return_1_if_greater(void){
 	TCB toInsert = {.priority = 2};
 	TCB inList = {.priority = 1};

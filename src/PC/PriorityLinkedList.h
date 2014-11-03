@@ -1,14 +1,7 @@
 #ifndef PriorityLinkedList_H
 #define PriorityLinkedList_H
 
-typedef struct TCB TCB;
-struct TCB{
-  struct TCB *next;
-  char priority;
-  char PC[3];
-  int dataStack;
-  char status;
-};
+#include "TCB.h"
 
 typedef struct PriorityLinkedList PriorityLinkedList;
 struct PriorityLinkedList{

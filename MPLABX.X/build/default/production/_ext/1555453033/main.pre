@@ -5199,25 +5199,16 @@ extern __nonreentrant void _delay3(unsigned char);
 void main(void) {
 (OSCCONbits.IRCF = 7);
 OpenUSART(0b01111111 & 0b10111111 & 0b11111110 & 0b11111101 & 0b11111111 & 0b11111111, 51);;
-OpenSPI(0b00000000, 0b00000011, 0b10000000);
-configureLED();
+
+
 LoopbackData loopbackData;
 
 Led2Data led2Data;
 SevenSegData sevenSegData;
 
 initClock();
-initUartLoopback(&loopbackData);
-initSevenSeg(&sevenSegData);
-turnOnSevenSeg();
-
-while(1) {
-
-uartLoopbackSM(&loopbackData);
-
-led2SM(&led2Data);
-sevenSegSM(&sevenSegData);
+while(1){
 }
-(SSPCON1 &=0xDF);
-RCSTA&=0b01001111,TXSTAbits.TXEN=0,PIE1&=0b11001111;
+
+# 55
 }

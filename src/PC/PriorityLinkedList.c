@@ -30,7 +30,7 @@ void *removeFromHeadPriorityLinkedList(PriorityLinkedList *list){
   else{
     list->head = list->head->next;
   }
-  
+  temp->next = NULL;
   return temp;
 }
 

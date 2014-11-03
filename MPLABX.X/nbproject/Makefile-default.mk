@@ -85,7 +85,7 @@ ${OBJECTDIR}/_ext/1555453033/Blinky.p1: ../src/PIC18/Blinky.c  nbproject/Makefil
 	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/Blinky.p1.d 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/Blinky.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=icd3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/Blinky.p1  ../src/PIC18/Blinky.c 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/Blinky.p1  ../src/PIC18/Blinky.c 
 	@-${MV} ${OBJECTDIR}/_ext/1555453033/Blinky.d ${OBJECTDIR}/_ext/1555453033/Blinky.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/Blinky.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -93,7 +93,7 @@ ${OBJECTDIR}/_ext/1555453033/main.p1: ../src/PIC18/main.c  nbproject/Makefile-${
 	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/main.p1.d 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/main.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=icd3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/main.p1  ../src/PIC18/main.c 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/main.p1  ../src/PIC18/main.c 
 	@-${MV} ${OBJECTDIR}/_ext/1555453033/main.d ${OBJECTDIR}/_ext/1555453033/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -101,7 +101,7 @@ ${OBJECTDIR}/_ext/1555453033/Clock.p1: ../src/PIC18/Clock.c  nbproject/Makefile-
 	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/Clock.p1.d 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/Clock.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=icd3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/Clock.p1  ../src/PIC18/Clock.c 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/Clock.p1  ../src/PIC18/Clock.c 
 	@-${MV} ${OBJECTDIR}/_ext/1555453033/Clock.d ${OBJECTDIR}/_ext/1555453033/Clock.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/Clock.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -109,7 +109,7 @@ ${OBJECTDIR}/_ext/1555453033/LEDSM.p1: ../src/PIC18/LEDSM.c  nbproject/Makefile-
 	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/LEDSM.p1.d 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/LEDSM.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=icd3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/LEDSM.p1  ../src/PIC18/LEDSM.c 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/LEDSM.p1  ../src/PIC18/LEDSM.c 
 	@-${MV} ${OBJECTDIR}/_ext/1555453033/LEDSM.d ${OBJECTDIR}/_ext/1555453033/LEDSM.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/LEDSM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -117,7 +117,7 @@ ${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1: ../src/PIC18/UARTLoopback.c  nbpro
 	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1.d 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=icd3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1  ../src/PIC18/UARTLoopback.c 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1  ../src/PIC18/UARTLoopback.c 
 	@-${MV} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.d ${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -125,7 +125,7 @@ ${OBJECTDIR}/_ext/1555453033/SevenSeg.p1: ../src/PIC18/SevenSeg.c  nbproject/Mak
 	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/SevenSeg.p1.d 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/SevenSeg.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=icd3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/SevenSeg.p1  ../src/PIC18/SevenSeg.c 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/SevenSeg.p1  ../src/PIC18/SevenSeg.c 
 	@-${MV} ${OBJECTDIR}/_ext/1555453033/SevenSeg.d ${OBJECTDIR}/_ext/1555453033/SevenSeg.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/SevenSeg.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -133,7 +133,7 @@ ${OBJECTDIR}/_ext/1555453033/Led2.p1: ../src/PIC18/Led2.c  nbproject/Makefile-${
 	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/Led2.p1.d 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/Led2.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=icd3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/Led2.p1  ../src/PIC18/Led2.c 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/Led2.p1  ../src/PIC18/Led2.c 
 	@-${MV} ${OBJECTDIR}/_ext/1555453033/Led2.d ${OBJECTDIR}/_ext/1555453033/Led2.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/Led2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -141,7 +141,7 @@ ${OBJECTDIR}/_ext/1555453033/Interrupt.p1: ../src/PIC18/Interrupt.c  nbproject/M
 	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/Interrupt.p1.d 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/Interrupt.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=icd3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/Interrupt.p1  ../src/PIC18/Interrupt.c 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/Interrupt.p1  ../src/PIC18/Interrupt.c 
 	@-${MV} ${OBJECTDIR}/_ext/1555453033/Interrupt.d ${OBJECTDIR}/_ext/1555453033/Interrupt.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/Interrupt.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -223,7 +223,7 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) --chip=$(MP_PROCESSOR_OPTION) -G -mdist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.map  -D__DEBUG=1 --debugger=icd3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"     --rom=default,-7dc0-7fff --ram=default,-5f4-5ff,-f9c-f9c,-fd4-fd4,-fdb-fdf,-fe3-fe7,-feb-fef,-ffd-fff  -odist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_CC} $(MP_EXTRA_LD_PRE) --chip=$(MP_PROCESSOR_OPTION) -G -mdist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.map  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"        -odist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 	@${RM} dist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.hex 
 	
 else

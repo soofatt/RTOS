@@ -6,6 +6,8 @@
 #include "UARTLoopback.h"
 //#include "LEDSM.h"
 #include "Led2.h"
+//#include "../TCB.h"
+#include "PreemptiveOS.h"
 #include "../18c.h"
 
 #if !(defined(__XC) || defined(__18CXX))
@@ -26,22 +28,26 @@
                     USART_CONT_RX &     \
                     USART_BRGH_HIGH, 51);
 
+//extern TCB runningTCB;
+
 void main(void) {
   setFreq8MHz();
   configureUsartTo8Bits9600Baud();
-  OpenSPI(SPI_FOSC_4, MODE_11, SMPEND);
-  configureLED();
+  //OpenSPI(SPI_FOSC_4, MODE_11, SMPEND);
+  //configureLED();
   LoopbackData loopbackData;
   //LEDData ledData;
   Led2Data led2Data;
   SevenSegData sevenSegData;
   //initLEDStateMachine(&ledData);
   initClock();
-  initUartLoopback(&loopbackData);
-  initSevenSeg(&sevenSegData);
-  turnOnSevenSeg();
+  while(1){
+  }
+  //initUartLoopback(&loopbackData);
+  //initSevenSeg(&sevenSegData);
+  //turnOnSevenSeg();
   
-  while(1) {
+  /*while(1) {
       
     uartLoopbackSM(&loopbackData);
     //LEDStateMachine(&ledData);
@@ -49,5 +55,5 @@ void main(void) {
     sevenSegSM(&sevenSegData);
   }
   CloseSPI();
-  CloseUSART();
+  CloseUSART();*/
 }
