@@ -17,7 +17,7 @@ struct PriorityLinkedList{
 };
 
 PriorityLinkedList *createPriorityLinkedList();
-int compare(void *, void *);
+int compare(void *element, void *elementOfInterest);
 void addPriorityLinkedList(PriorityLinkedList *list, void *data, int compare(void *, void *));
 void *removePriorityLinkedList(PriorityLinkedList *list, void *data, int compare(void *, void *));
 void *removeFromHeadPriorityLinkedList(PriorityLinkedList *list);

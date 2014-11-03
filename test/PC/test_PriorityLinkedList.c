@@ -37,3 +37,44 @@ void test_removeFromHeadPriorityLinkedList_given_1_element_point_to_NULL_head_sh
   TEST_ASSERT_NULL(result->next);
   TEST_ASSERT_EQUAL(10, result->priority);
 }
+
+void test_compare_should_compare_priority_of_two_elements_return_1_if_greater(void){
+	TCB toInsert = {.priority = 2};
+	TCB inList = {.priority = 1};
+  int result;
+  
+  result = compare(&toInsert, &inList);
+  
+  TEST_ASSERT_EQUAL(1, result);
+}
+
+void test_compare_should_compare_priority_of_two_elements_return_0_if_lesser(void){
+	TCB toInsert = {.priority = 1};
+	TCB inList = {.priority = 2};
+  int result;
+  
+  result = compare(&toInsert, &inList);
+  
+  TEST_ASSERT_EQUAL(0, result);
+}
+
+void test_compare_should_compare_priority_of_two_elements_return_0_if_equal(void){
+	TCB toInsert = {.priority = 2};
+	TCB inList = {.priority = 2};
+  int result;
+  
+  result = compare(&toInsert, &inList);
+  
+  TEST_ASSERT_EQUAL(0, result);
+}
+
+/*
+ *          +----+
+ *  head -->| #1 | --> NULL
+ *          +----+
+ *  tail -----^
+ *
+ */
+void test_addPriorityLinkedList_should_add_to_empty_list(void){
+	
+}

@@ -9,6 +9,16 @@ PriorityLinkedList *createPriorityLinkedList(){
   return list;
 }
 
+int compare(void *element, void *elementOfInterest){
+  TCB *elementToInsert = (TCB *)element;
+  TCB *elementInList = (TCB *)elementOfInterest;
+  
+  if(elementToInsert->priority > elementInList->priority)
+    return 1;
+  else
+    return 0;
+}
+
 void *removeFromHeadPriorityLinkedList(PriorityLinkedList *list){
   TCB *temp;
   temp = list->head;
@@ -22,4 +32,7 @@ void *removeFromHeadPriorityLinkedList(PriorityLinkedList *list){
   }
   
   return temp;
+}
+
+void addPriorityLinkedList(PriorityLinkedList *list, void *data, int compare(void *, void *)){
 }
