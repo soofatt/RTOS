@@ -1,6 +1,12 @@
 #include "UARTLoopback.h"
 #include "../18c.h"
 
+#if !(defined(__XC) || defined(__18CXX))
+  #include "usart.h"
+#else
+    #include <usart.h>
+#endif // __18CXX
+
 void initUartLoopback(LoopbackData *data){
   data->state = WAIT_DATA;
   data->dataByte = 0;

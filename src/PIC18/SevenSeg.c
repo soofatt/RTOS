@@ -1,4 +1,5 @@
 #include "SevenSeg.h"
+#include "Clock.h"
 #include "../18c.h"
 
 #define CLK_OV 488 //0.5s
@@ -27,11 +28,11 @@ void  initSevenSeg(SevenSegData *data){
 	data->state = _7Seg_INIT;
 }
 
-void  turnOnSevenSeg(){
+void  turnOnSevenSeg(void){
 	PORTCbits.RC2 = 1;
 }
 
-void  turnOffSevenSeg(){
+void  turnOffSevenSeg(void){
 	PORTCbits.RC2 = 0;
 }
 

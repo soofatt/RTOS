@@ -14,8 +14,8 @@ struct SevenSegData{
 };
 
 void  initSevenSeg(SevenSegData *data);
-void  turnOnSevenSeg();
-void  turnOffSevenSeg();
+void  turnOnSevenSeg(void);
+void  turnOffSevenSeg(void);
 void sevenSegSM(SevenSegData *data);
 
 #endif // SevenSeg_H

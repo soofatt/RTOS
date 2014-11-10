@@ -1,14 +1,21 @@
 #include "Clock.h"
 #include "../18c.h"
 //#include "../TCB.h"
-#include "timers.h"
 #include "Interrupt.h"
+
+volatile unsigned long clock = 0;
+
+#if !(defined(__XC) || defined(__18CXX))
+  #include "timers.h"
+#else
+    #include <timers.h>
+#endif // __18CXX
 
 char workingReg, bankSelectReg, statusReg;
 char topOfStackU, topOfStackH, topOfStackL;
-TCB runningTCB;
+//TCB runningTCB;
 
-void initClock(){
+void initClock(void){
   clock = 0;
   enableGlobalInterrupt();
   OpenTimer0( TIMER_INT_ON &
@@ -23,24 +30,24 @@ void initClock(){
  * Return the micro-controller's clock since power-up. 1 clock
  * is roughly 1.024msec.
  */
-unsigned long getClock(){
+unsigned long getClock(void){
   /*if(isTimer0Overflowed()){
     clock++;
     clearTimer0OverflowFlag();
   }*/
   return clock;
 }
-
+#pragma interrupt timer0isr
 void timer0isr(){
 
-#asm
-    movwf _workingReg
-    movff STATUS, _statusReg
-    movff BSR, _bankSelectReg
+_asm
+    movwf workingReg, ACCESS
+    movff STATUS, statusReg
+    movff BSR, bankSelectReg
     //movff TOSU, _topOfStackU
     //movff TOSH, _topOfStackH
     //movff TOSL, _topOfStackL
-#endasm
+_endasm
     
     //save all above into runningTCB
 
@@ -59,10 +66,17 @@ void timer0isr(){
 //////////////////////////////////////////
 // These functions are for internal use
 //////////////////////////////////////////
-char isTimer0Overflowed(){
+char isTimer0Overflowed(void){
     return INTCONbits.TMR0IF;
 }
 
-void clearTimer0OverflowFlag(){
+void clearTimer0OverflowFlag(void){
   INTCONbits.TMR0IF = 0;
+}
+
+#pragma code high_vector = 0x08
+void highPriorityIsr(void){
+    _asm
+    goto timer0isr
+    _endasm
 }

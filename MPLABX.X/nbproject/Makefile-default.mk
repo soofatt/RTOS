@@ -28,13 +28,13 @@ CP=cp
 CND_CONF=default
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 IMAGE_TYPE=debug
-OUTPUT_SUFFIX=elf
-DEBUGGABLE_SUFFIX=elf
+OUTPUT_SUFFIX=cof
+DEBUGGABLE_SUFFIX=cof
 FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 else
 IMAGE_TYPE=production
 OUTPUT_SUFFIX=hex
-DEBUGGABLE_SUFFIX=elf
+DEBUGGABLE_SUFFIX=cof
 FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 endif
 
@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../src/PIC18/Blinky.c ../src/PIC18/main.c ../src/PIC18/Clock.c ../src/PIC18/LEDSM.c ../src/PIC18/UARTLoopback.c ../src/PIC18/SevenSeg.c ../src/PIC18/Led2.c ../src/PIC18/Interrupt.c
+SOURCEFILES_QUOTED_IF_SPACED=../src/PIC18/main.c ../src/PIC18/Clock.c ../src/PIC18/Led2.c ../src/PIC18/Blinky.c ../src/PIC18/SevenSeg.c ../src/PIC18/UARTLoopback.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1555453033/Blinky.p1 ${OBJECTDIR}/_ext/1555453033/main.p1 ${OBJECTDIR}/_ext/1555453033/Clock.p1 ${OBJECTDIR}/_ext/1555453033/LEDSM.p1 ${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1 ${OBJECTDIR}/_ext/1555453033/SevenSeg.p1 ${OBJECTDIR}/_ext/1555453033/Led2.p1 ${OBJECTDIR}/_ext/1555453033/Interrupt.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1555453033/Blinky.p1.d ${OBJECTDIR}/_ext/1555453033/main.p1.d ${OBJECTDIR}/_ext/1555453033/Clock.p1.d ${OBJECTDIR}/_ext/1555453033/LEDSM.p1.d ${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1.d ${OBJECTDIR}/_ext/1555453033/SevenSeg.p1.d ${OBJECTDIR}/_ext/1555453033/Led2.p1.d ${OBJECTDIR}/_ext/1555453033/Interrupt.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1555453033/main.o ${OBJECTDIR}/_ext/1555453033/Clock.o ${OBJECTDIR}/_ext/1555453033/Led2.o ${OBJECTDIR}/_ext/1555453033/Blinky.o ${OBJECTDIR}/_ext/1555453033/SevenSeg.o ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1555453033/main.o.d ${OBJECTDIR}/_ext/1555453033/Clock.o.d ${OBJECTDIR}/_ext/1555453033/Led2.o.d ${OBJECTDIR}/_ext/1555453033/Blinky.o.d ${OBJECTDIR}/_ext/1555453033/SevenSeg.o.d ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1555453033/Blinky.p1 ${OBJECTDIR}/_ext/1555453033/main.p1 ${OBJECTDIR}/_ext/1555453033/Clock.p1 ${OBJECTDIR}/_ext/1555453033/LEDSM.p1 ${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1 ${OBJECTDIR}/_ext/1555453033/SevenSeg.p1 ${OBJECTDIR}/_ext/1555453033/Led2.p1 ${OBJECTDIR}/_ext/1555453033/Interrupt.p1
+OBJECTFILES=${OBJECTDIR}/_ext/1555453033/main.o ${OBJECTDIR}/_ext/1555453033/Clock.o ${OBJECTDIR}/_ext/1555453033/Led2.o ${OBJECTDIR}/_ext/1555453033/Blinky.o ${OBJECTDIR}/_ext/1555453033/SevenSeg.o ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o
 
 # Source Files
-SOURCEFILES=../src/PIC18/Blinky.c ../src/PIC18/main.c ../src/PIC18/Clock.c ../src/PIC18/LEDSM.c ../src/PIC18/UARTLoopback.c ../src/PIC18/SevenSeg.c ../src/PIC18/Led2.c ../src/PIC18/Interrupt.c
+SOURCEFILES=../src/PIC18/main.c ../src/PIC18/Clock.c ../src/PIC18/Led2.c ../src/PIC18/Blinky.c ../src/PIC18/SevenSeg.c ../src/PIC18/UARTLoopback.c
 
 
 CFLAGS=
@@ -78,140 +78,8 @@ endif
 	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
 MP_PROCESSOR_OPTION=18F4520
-# ------------------------------------------------------------------------------------
-# Rules for buildStep: compile
-ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/1555453033/Blinky.p1: ../src/PIC18/Blinky.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/Blinky.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/Blinky.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/Blinky.p1  ../src/PIC18/Blinky.c 
-	@-${MV} ${OBJECTDIR}/_ext/1555453033/Blinky.d ${OBJECTDIR}/_ext/1555453033/Blinky.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/Blinky.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/1555453033/main.p1: ../src/PIC18/main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/main.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/main.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/main.p1  ../src/PIC18/main.c 
-	@-${MV} ${OBJECTDIR}/_ext/1555453033/main.d ${OBJECTDIR}/_ext/1555453033/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/1555453033/Clock.p1: ../src/PIC18/Clock.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/Clock.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/Clock.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/Clock.p1  ../src/PIC18/Clock.c 
-	@-${MV} ${OBJECTDIR}/_ext/1555453033/Clock.d ${OBJECTDIR}/_ext/1555453033/Clock.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/Clock.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/1555453033/LEDSM.p1: ../src/PIC18/LEDSM.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/LEDSM.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/LEDSM.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/LEDSM.p1  ../src/PIC18/LEDSM.c 
-	@-${MV} ${OBJECTDIR}/_ext/1555453033/LEDSM.d ${OBJECTDIR}/_ext/1555453033/LEDSM.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/LEDSM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1: ../src/PIC18/UARTLoopback.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1  ../src/PIC18/UARTLoopback.c 
-	@-${MV} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.d ${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/1555453033/SevenSeg.p1: ../src/PIC18/SevenSeg.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/SevenSeg.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/SevenSeg.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/SevenSeg.p1  ../src/PIC18/SevenSeg.c 
-	@-${MV} ${OBJECTDIR}/_ext/1555453033/SevenSeg.d ${OBJECTDIR}/_ext/1555453033/SevenSeg.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/SevenSeg.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/1555453033/Led2.p1: ../src/PIC18/Led2.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/Led2.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/Led2.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/Led2.p1  ../src/PIC18/Led2.c 
-	@-${MV} ${OBJECTDIR}/_ext/1555453033/Led2.d ${OBJECTDIR}/_ext/1555453033/Led2.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/Led2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/1555453033/Interrupt.p1: ../src/PIC18/Interrupt.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/Interrupt.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/Interrupt.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/Interrupt.p1  ../src/PIC18/Interrupt.c 
-	@-${MV} ${OBJECTDIR}/_ext/1555453033/Interrupt.d ${OBJECTDIR}/_ext/1555453033/Interrupt.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/Interrupt.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-else
-${OBJECTDIR}/_ext/1555453033/Blinky.p1: ../src/PIC18/Blinky.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/Blinky.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/Blinky.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/Blinky.p1  ../src/PIC18/Blinky.c 
-	@-${MV} ${OBJECTDIR}/_ext/1555453033/Blinky.d ${OBJECTDIR}/_ext/1555453033/Blinky.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/Blinky.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/1555453033/main.p1: ../src/PIC18/main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/main.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/main.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/main.p1  ../src/PIC18/main.c 
-	@-${MV} ${OBJECTDIR}/_ext/1555453033/main.d ${OBJECTDIR}/_ext/1555453033/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/1555453033/Clock.p1: ../src/PIC18/Clock.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/Clock.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/Clock.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/Clock.p1  ../src/PIC18/Clock.c 
-	@-${MV} ${OBJECTDIR}/_ext/1555453033/Clock.d ${OBJECTDIR}/_ext/1555453033/Clock.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/Clock.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/1555453033/LEDSM.p1: ../src/PIC18/LEDSM.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/LEDSM.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/LEDSM.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/LEDSM.p1  ../src/PIC18/LEDSM.c 
-	@-${MV} ${OBJECTDIR}/_ext/1555453033/LEDSM.d ${OBJECTDIR}/_ext/1555453033/LEDSM.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/LEDSM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1: ../src/PIC18/UARTLoopback.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1  ../src/PIC18/UARTLoopback.c 
-	@-${MV} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.d ${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/1555453033/SevenSeg.p1: ../src/PIC18/SevenSeg.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/SevenSeg.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/SevenSeg.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/SevenSeg.p1  ../src/PIC18/SevenSeg.c 
-	@-${MV} ${OBJECTDIR}/_ext/1555453033/SevenSeg.d ${OBJECTDIR}/_ext/1555453033/SevenSeg.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/SevenSeg.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/1555453033/Led2.p1: ../src/PIC18/Led2.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/Led2.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/Led2.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/Led2.p1  ../src/PIC18/Led2.c 
-	@-${MV} ${OBJECTDIR}/_ext/1555453033/Led2.d ${OBJECTDIR}/_ext/1555453033/Led2.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/Led2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/1555453033/Interrupt.p1: ../src/PIC18/Interrupt.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/Interrupt.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1555453033/Interrupt.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1555453033/Interrupt.p1  ../src/PIC18/Interrupt.c 
-	@-${MV} ${OBJECTDIR}/_ext/1555453033/Interrupt.d ${OBJECTDIR}/_ext/1555453033/Interrupt.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1555453033/Interrupt.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-endif
-
+MP_PROCESSOR_OPTION_LD=18f4520
+MP_LINKER_DEBUG_OPTION=-r=ROM@0x7DC0:0x7FFF -r=RAM@GPR:0x5F4:0x5FF -u_DEBUGSTACK
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
@@ -219,18 +87,117 @@ else
 endif
 
 # ------------------------------------------------------------------------------------
+# Rules for buildStep: compile
+ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/_ext/1555453033/main.o: ../src/PIC18/main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/main.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/main.o   ../src/PIC18/main.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/main.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/_ext/1555453033/Clock.o: ../src/PIC18/Clock.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/Clock.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/Clock.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/Clock.o   ../src/PIC18/Clock.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/Clock.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/Clock.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/_ext/1555453033/Led2.o: ../src/PIC18/Led2.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/Led2.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/Led2.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/Led2.o   ../src/PIC18/Led2.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/Led2.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/Led2.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/_ext/1555453033/Blinky.o: ../src/PIC18/Blinky.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/Blinky.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/Blinky.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/Blinky.o   ../src/PIC18/Blinky.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/Blinky.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/Blinky.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/_ext/1555453033/SevenSeg.o: ../src/PIC18/SevenSeg.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/SevenSeg.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/SevenSeg.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/SevenSeg.o   ../src/PIC18/SevenSeg.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/SevenSeg.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/SevenSeg.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/_ext/1555453033/UARTLoopback.o: ../src/PIC18/UARTLoopback.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o   ../src/PIC18/UARTLoopback.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/UARTLoopback.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+else
+${OBJECTDIR}/_ext/1555453033/main.o: ../src/PIC18/main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/main.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/main.o   ../src/PIC18/main.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/main.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/_ext/1555453033/Clock.o: ../src/PIC18/Clock.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/Clock.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/Clock.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/Clock.o   ../src/PIC18/Clock.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/Clock.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/Clock.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/_ext/1555453033/Led2.o: ../src/PIC18/Led2.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/Led2.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/Led2.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/Led2.o   ../src/PIC18/Led2.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/Led2.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/Led2.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/_ext/1555453033/Blinky.o: ../src/PIC18/Blinky.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/Blinky.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/Blinky.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/Blinky.o   ../src/PIC18/Blinky.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/Blinky.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/Blinky.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/_ext/1555453033/SevenSeg.o: ../src/PIC18/SevenSeg.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/SevenSeg.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/SevenSeg.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/SevenSeg.o   ../src/PIC18/SevenSeg.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/SevenSeg.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/SevenSeg.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/_ext/1555453033/UARTLoopback.o: ../src/PIC18/UARTLoopback.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o   ../src/PIC18/UARTLoopback.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/UARTLoopback.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+endif
+
+# ------------------------------------------------------------------------------------
 # Rules for buildStep: link
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) --chip=$(MP_PROCESSOR_OPTION) -G -mdist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.map  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"        -odist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
-	@${RM} dist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.hex 
-	
+	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION_LD)  -w -x -u_DEBUG -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"  -z__MPLAB_BUILD=1  -u_CRUNTIME -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_ICD3=1 $(MP_LINKER_DEBUG_OPTION) -l ${MP_CC_DIR}\\..\\lib  -o dist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}   
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) --chip=$(MP_PROCESSOR_OPTION) -G -mdist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.map  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"     -odist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
-	
+	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION_LD)  -w  -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"  -z__MPLAB_BUILD=1  -u_CRUNTIME -l ${MP_CC_DIR}\\..\\lib  -o dist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}   
 endif
 
 

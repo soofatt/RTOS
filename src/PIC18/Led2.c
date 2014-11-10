@@ -2,22 +2,23 @@
 #include "Led2.h"
 #include "Tasking.h"
 #include "Blinky.h"
+#include "Clock.h"
 #include "../18c.h"
 
 #define CLK_OV 488 //0.5s
 
 void testingLed2SM(Led2Data *data){
 	startTasking(data->state);
-  printf("LED2_INIT\n");
-  printf("before yield1\n");
+  //printf("LED2_INIT\n");
+  //printf("before yield1\n");
   yield(data->state);
-  printf("after yield1\n");
+  //printf("after yield1\n");
   if(data->ledStatus == 10){
-    printf("before yield2\n");
+    //printf("before yield2\n");
     yield(data->state);
-    printf("after yield 2\n");
+    //printf("after yield 2\n");
   }else{
-    printf("tak jadi yield2\n");
+    //printf("tak jadi yield2\n");
   }
   endTasking();
 }

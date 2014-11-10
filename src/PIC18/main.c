@@ -7,13 +7,15 @@
 //#include "LEDSM.h"
 #include "Led2.h"
 //#include "../TCB.h"
-#include "PreemptiveOS.h"
+//#include "PreemptiveOS.h"
 #include "../18c.h"
 
 #if !(defined(__XC) || defined(__18CXX))
   #include "usart.h"
+  #include "spi.h"
 #else
     #include <usart.h>
+    #include <spi.h>
 #endif // __18CXX
 
 #pragma config OSC = INTIO67, PWRT = ON, WDT = OFF, LVP = OFF, DEBUG = ON
@@ -31,25 +33,33 @@
 //extern TCB runningTCB;
 
 void main(void) {
+  Led2Data led2Data;
+  LoopbackData loopbackData;
+  SevenSegData sevenSegData;
   setFreq8MHz();
   configureUsartTo8Bits9600Baud();
-  //OpenSPI(SPI_FOSC_4, MODE_11, SMPEND);
-  //configureLED();
-  LoopbackData loopbackData;
+  OpenSPI(SPI_FOSC_4, MODE_11, SMPEND);
+  configureLED();
   //LEDData ledData;
-  Led2Data led2Data;
-  SevenSegData sevenSegData;
   //initLEDStateMachine(&ledData);
   initClock();
+  initUartLoopback(&loopbackData);
+  initSevenSeg(&sevenSegData);
+  turnOnSevenSeg();
   while(1){
+      led2SM(&led2Data);
+      sevenSegSM(&sevenSegData);
+      uartLoopbackSM(&loopbackData);
   }
-  //initUartLoopback(&loopbackData);
-  //initSevenSeg(&sevenSegData);
-  //turnOnSevenSeg();
+  CloseSPI();
+  CloseUSART();
+  //
+  //
+  //
   
   /*while(1) {
       
-    uartLoopbackSM(&loopbackData);
+    
     //LEDStateMachine(&ledData);
     led2SM(&led2Data);
     sevenSegSM(&sevenSegData);
