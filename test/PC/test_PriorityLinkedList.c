@@ -102,5 +102,13 @@ void test_compare_should_compare_priority_of_two_elements_return_0_if_equal(void
  *
  */
 void test_addPriorityLinkedList_should_add_to_empty_list(void){
-	
+  TCB *result;
+	PriorityLinkedList *list;
+  list = createPriorityLinkedList();
+  TCB TCB = {.next = NULL, .priority = 20};
+  
+  list->head = NULL;
+  list->tail = NULL;
+  
+  addPriorityLinkedList(list, &TCB, compare);
 }
