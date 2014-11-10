@@ -35,4 +35,14 @@ void *removeFromHeadPriorityLinkedList(PriorityLinkedList *list){
 }
 
 void addPriorityLinkedList(PriorityLinkedList *list, void *data, int compare(void *, void *)){
+	TCB *elementToInsert = (TCB *)data;
+  
+  if(list->head == NULL && list->tail == NULL){
+		list->head = elementToInsert;
+		list->tail = elementToInsert;
+	}
+	else{
+	
+	}
+
 }

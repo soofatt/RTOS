@@ -32,6 +32,12 @@
 
 //extern TCB runningTCB;
 
+char add(char a, char b){
+    char result;
+    result = a+b;
+    return result;
+}
+
 void main(void) {
   Led2Data led2Data;
   LoopbackData loopbackData;
@@ -46,6 +52,7 @@ void main(void) {
   initUartLoopback(&loopbackData);
   initSevenSeg(&sevenSegData);
   turnOnSevenSeg();
+
   while(1){
       led2SM(&led2Data);
       sevenSegSM(&sevenSegData);

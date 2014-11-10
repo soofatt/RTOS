@@ -111,4 +111,29 @@ void test_addPriorityLinkedList_should_add_to_empty_list(void){
   list->tail = NULL;
   
   addPriorityLinkedList(list, &TCB, compare);
+  
+  TEST_ASSERT_EQUAL(&TCB, list->head);
+  TEST_ASSERT_EQUAL(&TCB, list->tail);
+}
+
+/*
+ *          +----+
+ *  head -->| #1 | --> NULL
+ *          +----+
+ *  tail -----^
+ *
+ */
+void test_addPriorityLinkedList_given_list_with_1_element_should_add_to_front(void){
+  TCB *result;
+	PriorityLinkedList *list;
+  list = createPriorityLinkedList();
+  TCB TCB = {.next = NULL, .priority = 20};
+  
+  list->head = NULL;
+  list->tail = NULL;
+  
+  addPriorityLinkedList(list, &TCB, compare);
+  
+  TEST_ASSERT_EQUAL(&TCB, list->head);
+  TEST_ASSERT_EQUAL(&TCB, list->tail);
 }

@@ -79,7 +79,7 @@ endif
 
 MP_PROCESSOR_OPTION=18F4520
 MP_PROCESSOR_OPTION_LD=18f4520
-MP_LINKER_DEBUG_OPTION=-r=ROM@0x7DC0:0x7FFF -r=RAM@GPR:0x5F4:0x5FF -u_DEBUGSTACK
+MP_LINKER_DEBUG_OPTION=  -u_DEBUGSTACK
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
@@ -93,7 +93,7 @@ ${OBJECTDIR}/_ext/1555453033/main.o: ../src/PIC18/main.c  nbproject/Makefile-${C
 	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/main.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/main.o   ../src/PIC18/main.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG  -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/main.o   ../src/PIC18/main.c 
 	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/main.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
@@ -101,7 +101,7 @@ ${OBJECTDIR}/_ext/1555453033/Clock.o: ../src/PIC18/Clock.c  nbproject/Makefile-$
 	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/Clock.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/Clock.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/Clock.o   ../src/PIC18/Clock.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG  -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/Clock.o   ../src/PIC18/Clock.c 
 	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/Clock.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/Clock.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
@@ -109,7 +109,7 @@ ${OBJECTDIR}/_ext/1555453033/Led2.o: ../src/PIC18/Led2.c  nbproject/Makefile-${C
 	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/Led2.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/Led2.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/Led2.o   ../src/PIC18/Led2.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG  -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/Led2.o   ../src/PIC18/Led2.c 
 	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/Led2.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/Led2.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
@@ -117,7 +117,7 @@ ${OBJECTDIR}/_ext/1555453033/Blinky.o: ../src/PIC18/Blinky.c  nbproject/Makefile
 	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/Blinky.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/Blinky.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/Blinky.o   ../src/PIC18/Blinky.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG  -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/Blinky.o   ../src/PIC18/Blinky.c 
 	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/Blinky.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/Blinky.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
@@ -125,7 +125,7 @@ ${OBJECTDIR}/_ext/1555453033/SevenSeg.o: ../src/PIC18/SevenSeg.c  nbproject/Make
 	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/SevenSeg.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/SevenSeg.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/SevenSeg.o   ../src/PIC18/SevenSeg.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG  -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/SevenSeg.o   ../src/PIC18/SevenSeg.c 
 	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/SevenSeg.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/SevenSeg.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
@@ -133,7 +133,7 @@ ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o: ../src/PIC18/UARTLoopback.c  nbproj
 	@${MKDIR} ${OBJECTDIR}/_ext/1555453033 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o   ../src/PIC18/UARTLoopback.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG  -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o   ../src/PIC18/UARTLoopback.c 
 	@${DEP_GEN} -d ${OBJECTDIR}/_ext/1555453033/UARTLoopback.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1555453033/UARTLoopback.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
@@ -193,7 +193,7 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION_LD)  -w -x -u_DEBUG -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"  -z__MPLAB_BUILD=1  -u_CRUNTIME -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_ICD3=1 $(MP_LINKER_DEBUG_OPTION) -l ${MP_CC_DIR}\\..\\lib  -o dist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}   
+	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION_LD)  -w -x -u_DEBUG -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"  -z__MPLAB_BUILD=1  -u_CRUNTIME -z__MPLAB_DEBUG=1 $(MP_LINKER_DEBUG_OPTION) -l ${MP_CC_DIR}\\..\\lib  -o dist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}   
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/MPLABX.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 

@@ -1,6 +1,6 @@
 #include "Clock.h"
 #include "../18c.h"
-//#include "../TCB.h"
+#include "../TCB.h"
 #include "Interrupt.h"
 
 volatile unsigned long clock = 0;
@@ -12,8 +12,8 @@ volatile unsigned long clock = 0;
 #endif // __18CXX
 
 char workingReg, bankSelectReg, statusReg;
-char topOfStackU, topOfStackH, topOfStackL;
-//TCB runningTCB;
+char topOfStackH, topOfStackL;
+TCB *runningTCB;
 
 void initClock(void){
   clock = 0;
@@ -44,9 +44,9 @@ _asm
     movwf workingReg, ACCESS
     movff STATUS, statusReg
     movff BSR, bankSelectReg
-    //movff TOSU, _topOfStackU
-    //movff TOSH, _topOfStackH
-    //movff TOSL, _topOfStackL
+        
+    movff TOSH, topOfStackH
+    movff TOSL, topOfStackL
 _endasm
     
     //save all above into runningTCB
@@ -56,7 +56,8 @@ _endasm
     //insert the runningTCB into linked list
 
     //restore all data in high priority task to TOS,BSR,WREG,STATUS
-
+    // check FSR2, FSR1, (check only)FSR0(all low & high),TBLPTRH/L,TABLAT,PRODH/L,
+    // WREG, BSR, STATUS
     //return from interrupt
 
     clock++;
