@@ -35,4 +35,35 @@ void *removeFromHeadPriorityLinkedList(PriorityLinkedList *list){
 }
 
 void addPriorityLinkedList(PriorityLinkedList *list, void *data, int compare(void *, void *)){
+  TCB *elementToAdd = (TCB *)data;
+  TCB *elementToCompare;
+  TCB *elementBefore;
+  if(list->head == NULL && list->tail == NULL){
+    list->head = elementToAdd;
+    list->tail = elementToAdd;
+  }
+  else{
+    elementToCompare = list->head;
+    while(compare(elementToAdd, elementToCompare) != 1){
+      if(elementToCompare->next == NULL){
+        elementToCompare->next = elementToAdd;
+        list->tail = elementToAdd;
+        break;
+      }
+      else{
+        elementBefore = elementToCompare;
+        elementToCompare = elementToCompare->next;
+      }
+    }
+    if(compare(elementToAdd, elementToCompare)){
+      if(elementToCompare == list->head){
+        list->head = elementToAdd;
+        elementToAdd->next = elementToCompare;
+      }
+      else{
+        elementBefore->next = elementToAdd;
+        elementToAdd->next = elementToCompare;
+      }
+    }
+  }
 }
