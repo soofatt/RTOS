@@ -5,7 +5,7 @@ extern TCB *runningTCB;
 extern PriorityLinkedList *readyQueue;
 
 void initPreemptiveMultitasking(void);
-void createTask(TCB tcbs[], int index, uint16 task);
+void createTask(TCB tcbs[], int index, void (*task)(void));
 void taskOne();
 void taskTwo();
 

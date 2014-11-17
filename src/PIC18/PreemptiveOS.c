@@ -12,9 +12,9 @@ unsigned char stacks[2][80];
 //unsigned char stackOne[80];
 //unsigned char stacktwo[80];
 
-void createTask(TCB tcbs[], int index, uint16 task){
+void createTask(TCB tcbs[], int index, void (*task)(void)){
     addPriorityLinkedList(readyQueue, &tcbs[index], compare);
-    tcbs[index].task = task;
+    tcbs[index].task = (uint16)task;
     tcbs[index].next = NULL;
     tcbs[index].stackPointer = (uint16)&stacks[index-1];
     tcbs[index].priority = 0;
