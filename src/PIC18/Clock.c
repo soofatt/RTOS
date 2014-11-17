@@ -15,6 +15,7 @@ volatile unsigned long clock = 0;
 
 char stackPtrH, stackPtrL;
 char topOfStackH, topOfStackL;
+uint16 stackPointerTemp;
 TCB *TCBtemp;
 
 void initClock(void){
@@ -57,12 +58,14 @@ _endasm
     // check FSR2, FSR1, (check only)FSR0(all low & high),TBLPTRH/L,TABLAT,PRODH/L,
     // WREG, BSR, STATUS
     //return from interrupt
-
-    runningTCB->stackPointer = (uint16)(topOfStackH << 8) + topOfStackL;
+        
+    //runningTCB->stackPointer = (uint16)((topOfStackH << 8) + topOfStackL);
+    runningTCB->stackPointer = (((uint16)topOfStackH) << 8) | topOfStackL;
+    stackPointerTemp = runningTCB->stackPointer;
     TCBtemp = removeFromHeadPriorityLinkedList(readyQueue);
     addPriorityLinkedList(readyQueue, runningTCB, compare);
     runningTCB = TCBtemp;
-    topOfStackL = runningTCB->stackPointer;
+    topOfStackL = (runningTCB->stackPointer) & 0x00ff;
     topOfStackH = runningTCB->stackPointer >> 8;
 
 _asm

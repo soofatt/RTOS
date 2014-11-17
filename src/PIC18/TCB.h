@@ -13,7 +13,8 @@ struct TCB{
   TCB *next;
   char priority;
   uint8 taskID;
-  void (*task)(void);
+  //void (*task)(void);
+  uint16 task;
   //char PC[3];
   uint16 stackPointer; //FSR1
   //uint16 framePointer; //FSR2
