@@ -6,8 +6,9 @@
 #include "UARTLoopback.h"
 //#include "LEDSM.h"
 #include "Led2.h"
-//#include "../TCB.h"
-//#include "PreemptiveOS.h"
+#include "TCB.h"
+#include "PriorityLinkedList.h"
+#include "PreemptiveOS.h"
 #include "../18c.h"
 
 #if !(defined(__XC) || defined(__18CXX))
@@ -30,14 +31,6 @@
                     USART_CONT_RX &     \
                     USART_BRGH_HIGH, 51);
 
-//extern TCB runningTCB;
-
-char add(char a, char b){
-    char result;
-    result = a+b;
-    return result;
-}
-
 void main(void) {
   Led2Data led2Data;
   LoopbackData loopbackData;
@@ -48,6 +41,7 @@ void main(void) {
   configureLED();
   //LEDData ledData;
   //initLEDStateMachine(&ledData);
+  initPreemptiveMultitasking();
   initClock();
   initUartLoopback(&loopbackData);
   initSevenSeg(&sevenSegData);

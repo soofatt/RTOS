@@ -1,6 +1,8 @@
 #include "Clock.h"
 #include "../18c.h"
-#include "../TCB.h"
+#include "TCB.h"
+#include "PriorityLinkedList.h"
+#include "PreemptiveOS.h"
 #include "Interrupt.h"
 
 volatile unsigned long clock = 0;
@@ -11,9 +13,9 @@ volatile unsigned long clock = 0;
     #include <timers.h>
 #endif // __18CXX
 
-char workingReg, bankSelectReg, statusReg;
+char stackPtrH, stackPtrL;
 char topOfStackH, topOfStackL;
-TCB *runningTCB;
+TCB *TCBtemp;
 
 void initClock(void){
   clock = 0;
@@ -37,14 +39,10 @@ unsigned long getClock(void){
   }*/
   return clock;
 }
-#pragma interrupt timer0isr
+#pragma interruptlow timer0isr
 void timer0isr(){
 
 _asm
-    movwf workingReg, ACCESS
-    movff STATUS, statusReg
-    movff BSR, bankSelectReg
-        
     movff TOSH, topOfStackH
     movff TOSL, topOfStackL
 _endasm
@@ -59,6 +57,20 @@ _endasm
     // check FSR2, FSR1, (check only)FSR0(all low & high),TBLPTRH/L,TABLAT,PRODH/L,
     // WREG, BSR, STATUS
     //return from interrupt
+
+    runningTCB->stackPointer = (uint16)(topOfStackH << 8) + topOfStackL;
+    TCBtemp = removeFromHeadPriorityLinkedList(readyQueue);
+    addPriorityLinkedList(readyQueue, runningTCB, compare);
+    runningTCB = TCBtemp;
+    topOfStackL = runningTCB->stackPointer;
+    topOfStackH = runningTCB->stackPointer >> 8;
+
+_asm
+    movf topOfStackL, 0, ACCESS
+    movwf TOSL, ACCESS
+    movf topOfStackH, 0, ACCESS
+    movwf TOSH, ACCESS
+_endasm
 
     clock++;
     clearTimer0OverflowFlag();

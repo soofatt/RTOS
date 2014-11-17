@@ -13,7 +13,9 @@
       <itemPath>../src/PIC18/Led2.h</itemPath>
       <itemPath>../src/PIC18/Tasking.h</itemPath>
       <itemPath>../src/PIC18/Interrupt.h</itemPath>
-      <itemPath>../src/PC/TCB.h</itemPath>
+      <itemPath>../src/PIC18/TCB.h</itemPath>
+      <itemPath>../src/PIC18/PriorityLinkedList.h</itemPath>
+      <itemPath>../src/PIC18/PreemptiveOS.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -28,6 +30,8 @@
       <itemPath>../src/PIC18/Blinky.c</itemPath>
       <itemPath>../src/PIC18/SevenSeg.c</itemPath>
       <itemPath>../src/PIC18/UARTLoopback.c</itemPath>
+      <itemPath>../src/PIC18/PreemptiveOS.c</itemPath>
+      <itemPath>../src/PIC18/PriorityLinkedList.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -116,17 +120,16 @@
         <property key="stack-analysis-mcc18" value="false"/>
         <property key="stack-analysis-mplink" value="false"/>
       </C18LanguageToolchain>
-      <ICD3PlatformTool>
+      <PICkit3PlatformTool>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="Freeze Peripherals" value="true"/>
         <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
-        <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
-        <property key="memories.bootflash" value="false"/>
+        <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
         <property key="memories.dataflash" value="true"/>
         <property key="memories.eeprom" value="true"/>
@@ -137,8 +140,10 @@
         <property key="memories.programmemory.start" value="0x0"/>
         <property key="memories.userotp" value="false"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmertogo.imagename" value=""/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.pgmspeed" value="2"/>
         <property key="programoptions.preserveeeprom" value="false"/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveprogramrange.end" value="0x7fff"/>
@@ -149,7 +154,7 @@
         <property key="programoptions.usehighvoltageonmclr" value="false"/>
         <property key="programoptions.uselvpprogramming" value="false"/>
         <property key="voltagevalue" value="5.0"/>
-      </ICD3PlatformTool>
+      </PICkit3PlatformTool>
       <Simulator>
         <property key="breakoptions.coreerrors" value="Ignore"/>
         <property key="breakoptions.corewarnings" value="Ignore"/>
