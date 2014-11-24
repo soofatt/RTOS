@@ -2,7 +2,7 @@
 #define PreemptiveOS_H
 
 extern TCB *runningTCB;
-extern PriorityLinkedList *readyQueue;
+extern PriorityLinkedList readyQueue;
 
 void initPreemptiveMultitasking(void);
 void createTask(TCB tcbs[], int index, void (*task)(void));

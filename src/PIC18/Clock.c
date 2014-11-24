@@ -4,6 +4,7 @@
 #include "PriorityLinkedList.h"
 #include "PreemptiveOS.h"
 #include "Interrupt.h"
+#include "Types.h"
 
 volatile unsigned long clock = 0;
 
@@ -13,9 +14,9 @@ volatile unsigned long clock = 0;
     #include <timers.h>
 #endif // __18CXX
 
-char stackPtrH, stackPtrL;
-char topOfStackH, topOfStackL;
-uint16 stackPointerTemp;
+uint8 fileSelectRegH, fileSelectRegL;
+uint8 topOfStackH, topOfStackL;
+uint16 fsrTemp = 0, stackPointerTemp = 0;
 TCB *TCBtemp;
 
 void initClock(void){
@@ -41,11 +42,21 @@ unsigned long getClock(void){
   return clock;
 }
 #pragma interruptlow timer0isr
+
+#pragma code high_vector = 0x08
+void highPriorityIsr(void){
+    _asm
+    goto timer0isr
+    _endasm
+}
+
 void timer0isr(){
 
 _asm
-    movff TOSH, topOfStackH
-    movff TOSL, topOfStackL
+movff TOSH, topOfStackH
+movff TOSL, topOfStackL
+movff FSR1H, fileSelectRegH
+movff FSR1L, fileSelectRegL
 _endasm
     
     //save all above into runningTCB
@@ -60,19 +71,28 @@ _endasm
     //return from interrupt
         
     //runningTCB->stackPointer = (uint16)((topOfStackH << 8) + topOfStackL);
-    runningTCB->stackPointer = (((uint16)topOfStackH) << 8) | topOfStackL;
-    stackPointerTemp = runningTCB->stackPointer;
-    TCBtemp = removeFromHeadPriorityLinkedList(readyQueue);
-    addPriorityLinkedList(readyQueue, runningTCB, compare);
+    runningTCB->priority = 0;
+    runningTCB->task = ((uint16)(topOfStackH) << 8) | topOfStackL;
+    runningTCB->stackPointer = ((uint16)(fileSelectRegH) << 8) | fileSelectRegL;
+    stackPointerTemp = runningTCB->task;
+    fsrTemp = runningTCB->stackPointer;
+    TCBtemp = removeFromHeadPriorityLinkedList(&readyQueue);
+    addPriorityLinkedList(&readyQueue, runningTCB, compare);
     runningTCB = TCBtemp;
-    topOfStackL = (runningTCB->stackPointer) & 0x00ff;
-    topOfStackH = runningTCB->stackPointer >> 8;
+    topOfStackL = (runningTCB->task) & 0x00ff;
+    topOfStackH = runningTCB->task >> 8;
+    fileSelectRegL = (runningTCB->stackPointer) & 0x00ff;
+    fileSelectRegH = runningTCB->stackPointer >> 8;
 
 _asm
-    movf topOfStackL, 0, ACCESS
-    movwf TOSL, ACCESS
-    movf topOfStackH, 0, ACCESS
-    movwf TOSH, ACCESS
+movff topOfStackH, WREG
+movwf TOSH, ACCESS
+movff topOfStackL, WREG
+movwf TOSL, ACCESS
+movff fileSelectRegH, WREG
+movwf FSR1H, ACCESS
+movff fileSelectRegL, WREG
+movwf FSR1L, ACCESS
 _endasm
 
     clock++;
@@ -90,9 +110,3 @@ void clearTimer0OverflowFlag(void){
   INTCONbits.TMR0IF = 0;
 }
 
-#pragma code high_vector = 0x08
-void highPriorityIsr(void){
-    _asm
-    goto timer0isr
-    _endasm
-}

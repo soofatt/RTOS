@@ -32,18 +32,25 @@
                     USART_BRGH_HIGH, 51);
 
 void main(void) {
-  Led2Data led2Data;
+  initPreemptiveMultitasking();
+  initClock();
+  while(1);
+}
+
+void Xmain(void) {
+  /*Led2Data led2Data;
   LoopbackData loopbackData;
   SevenSegData sevenSegData;
   setFreq8MHz();
   configureUsartTo8Bits9600Baud();
   OpenSPI(SPI_FOSC_4, MODE_11, SMPEND);
-  configureLED();
+  configureLED();*/
   //LEDData ledData;
   //initLEDStateMachine(&ledData);
-  initPreemptiveMultitasking();
-  initClock();
-  initUartLoopback(&loopbackData);
+  //initPreemptiveMultitasking();
+  //initClock();
+  //while(1);
+  /*initUartLoopback(&loopbackData);
   initSevenSeg(&sevenSegData);
   turnOnSevenSeg();
 
@@ -53,7 +60,7 @@ void main(void) {
       uartLoopbackSM(&loopbackData);
   }
   CloseSPI();
-  CloseUSART();
+  CloseUSART();*/
   //
   //
   //

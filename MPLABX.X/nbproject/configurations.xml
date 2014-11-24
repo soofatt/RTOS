@@ -16,6 +16,7 @@
       <itemPath>../src/PIC18/TCB.h</itemPath>
       <itemPath>../src/PIC18/PriorityLinkedList.h</itemPath>
       <itemPath>../src/PIC18/PreemptiveOS.h</itemPath>
+      <itemPath>../src/PIC18/Types.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
