@@ -1,9 +1,18 @@
 #include "unity.h"
 #include "PriorityLinkedList.h"
+#include <malloc.h>
 
 void setUp(void){}
 
 void tearDown(void){}
+
+PriorityLinkedList *createPriorityLinkedList(){
+  PriorityLinkedList *list = malloc(sizeof(PriorityLinkedList));
+  list->head = NULL;
+  list->tail = NULL;
+  
+  return list;
+}
 
 void test_createPriorityLinkedList_should_create_a_priorityLinkedList(void){
 	PriorityLinkedList *list;
@@ -12,6 +21,7 @@ void test_createPriorityLinkedList_should_create_a_priorityLinkedList(void){
   
   TEST_ASSERT_NOT_NULL(list);
   TEST_ASSERT_NULL(list->head);  
+  TEST_ASSERT_NULL(list->tail);  
 }
 
 /*
@@ -210,4 +220,59 @@ void test_addPriorityLinkedList_should_add_to_list_with_3_element_in_between(voi
   TEST_ASSERT_EQUAL(&TCB3data, list->tail);
   TEST_ASSERT_EQUAL(&TCBnew, TCB2data.next);
   TEST_ASSERT_EQUAL(&TCB3data, TCBnew.next);
+}
+
+void test_removeHead_then_addPriorityLinkedList(void){
+	PriorityLinkedList *list;
+  list = createPriorityLinkedList();
+  TCB *result;
+  TCB TCB3data = {.next = NULL, .priority = 0};
+  TCB TCB2data = {.next = NULL, .priority = 0};
+  TCB TCBdata = {.next = NULL, .priority = 0};
+  
+  addPriorityLinkedList(list, &TCBdata, compare);
+  addPriorityLinkedList(list, &TCB2data, compare);
+  
+  TEST_ASSERT_EQUAL(&TCBdata, list->head);
+  TEST_ASSERT_EQUAL(&TCB2data, list->tail);
+  TEST_ASSERT_EQUAL(&TCB2data, TCBdata.next);
+  
+  result = removeFromHeadPriorityLinkedList(list);
+  
+  TEST_ASSERT_EQUAL(&TCBdata, result);
+  TEST_ASSERT_EQUAL(&TCB2data, list->head);
+  TEST_ASSERT_EQUAL(&TCB2data, list->tail);
+  TEST_ASSERT_NULL(TCBdata.next);
+  
+  addPriorityLinkedList(list, &TCB3data, compare);
+  
+  TEST_ASSERT_EQUAL(&TCB2data, list->head);
+  TEST_ASSERT_EQUAL(&TCB3data, list->tail);
+  TEST_ASSERT_EQUAL(&TCB3data, TCB2data.next);
+  
+  result = removeFromHeadPriorityLinkedList(list);
+  
+  TEST_ASSERT_EQUAL(&TCB2data, result);
+  TEST_ASSERT_EQUAL(&TCB3data, list->head);
+  TEST_ASSERT_EQUAL(&TCB3data, list->tail);
+  TEST_ASSERT_NULL(TCB2data.next);
+  
+  addPriorityLinkedList(list, &TCBdata, compare);
+  
+  TEST_ASSERT_EQUAL(&TCB3data, list->head);
+  TEST_ASSERT_EQUAL(&TCBdata, list->tail);
+  TEST_ASSERT_EQUAL(&TCBdata, TCB3data.next);
+  
+  result = removeFromHeadPriorityLinkedList(list);
+  
+  TEST_ASSERT_EQUAL(&TCB3data, result);
+  TEST_ASSERT_EQUAL(&TCBdata, list->head);
+  TEST_ASSERT_EQUAL(&TCBdata, list->tail);
+  TEST_ASSERT_NULL(TCB3data.next);
+  
+  addPriorityLinkedList(list, &TCB2data, compare);
+  
+  TEST_ASSERT_EQUAL(&TCBdata, list->head);
+  TEST_ASSERT_EQUAL(&TCB2data, list->tail);
+  TEST_ASSERT_EQUAL(&TCB2data, TCBdata.next);
 }

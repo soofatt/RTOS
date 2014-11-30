@@ -1,13 +1,5 @@
 #include <stdio.h>
-//#include <malloc.h>
 #include "PriorityLinkedList.h"
-
-PriorityLinkedList *createPriorityLinkedList(){
-  //PriorityLinkedList *list = malloc(sizeof(PriorityLinkedList));
-  //list->head = NULL;
-  
-  //return list;
-}
 
 int compare(void *element, void *elementOfInterest){
   TCB *elementToInsert = (TCB *)element;
@@ -48,7 +40,7 @@ void addPriorityLinkedList(PriorityLinkedList *list, void *data, int compare(voi
       if(elementToCompare->next == NULL){
         elementToCompare->next = elementToAdd;
         list->tail = elementToAdd;
-        break;
+        return;
       }
       else{
         elementBefore = elementToCompare;
