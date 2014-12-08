@@ -38,8 +38,8 @@ void taskOne(){
 }
 
 void taskTwo(){
-    int i = 0;
-    while(i != 255){
-        i++;
+    int j = 0;
+    while(j != 255){
+        j++;
     }
 }

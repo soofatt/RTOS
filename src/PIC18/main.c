@@ -32,9 +32,12 @@
                     USART_BRGH_HIGH, 51);
 
 void main(void) {
+  char mainCount = 0;
   initPreemptiveMultitasking();
   initClock();
-  while(1);
+  while(mainCount != 255){
+    mainCount++;
+  }
 }
 
 void Xmain(void) {

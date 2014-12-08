@@ -5,6 +5,7 @@
 #include "PreemptiveOS.h"
 #include "Interrupt.h"
 #include "Types.h"
+#include <stdio.h>
 
 volatile unsigned long clock = 0;
 
@@ -72,6 +73,7 @@ _endasm
         
     //runningTCB->stackPointer = (uint16)((topOfStackH << 8) + topOfStackL);
     runningTCB->priority = 0;
+    runningTCB->next = NULL;
     runningTCB->task = ((uint16)(topOfStackH) << 8) | topOfStackL;
     runningTCB->stackPointer = ((uint16)(fileSelectRegH) << 8) | fileSelectRegL;
     stackPointerTemp = runningTCB->task;
