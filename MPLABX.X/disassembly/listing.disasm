@@ -1,0 +1,2857 @@
+Disassembly Listing for MPLABX
+Generated From:
+C:/Documents and Settings/D300-01/Desktop/RTOS/MPLABX.X/dist/default/debug/MPLABX.X.debug.cof
+Dec 8, 2014 10:49:29 AM
+
+---  E:/3.46/pic18-lt/cxx-framework/src/traditional/stdclib/__init.c  -----------------------------------
+0006  0012     RETURN 0
+---  E:/3.46/pic18-lt/cxx-framework/src/traditional/startup/c018i.c  ------------------------------------
+0000  EF10     GOTO 0x1220
+0002  F009     NOP
+0004  0012     RETURN 0
+1220  EE14     LFSR 1, 0x400
+1222  F000     NOP
+1224  EE24     LFSR 2, 0x400
+1226  F000     NOP
+1228  6AF8     CLRF TBLPTRU, ACCESS
+122A  9C0A     BCF 0xA, 6, ACCESS
+122C  ECE4     CALL 0xFC8, 0
+122E  F007     NOP
+1230  EC03     CALL 0x6, 0
+1232  F000     NOP
+1234  ECB7     CALL 0x116E, 0
+1236  F008     NOP
+1238  D7FB     BRA 0x1230
+123A  0012     RETURN 0
+0FC8  0E6A     MOVLW 0x6A
+0FCA  6EF6     MOVWF TBLPTR, ACCESS
+0FCC  0E02     MOVLW 0x2
+0FCE  6EF7     MOVWF TBLPTRH, ACCESS
+0FD0  0E00     MOVLW 0x0
+0FD2  6EF8     MOVWF TBLPTRU, ACCESS
+0FD4  0100     MOVLB 0x0
+0FD6  0009     TBLRD*+
+0FD8  50F5     MOVF TABLAT, W, ACCESS
+0FDA  6F95     MOVWF curr_entry, BANKED
+0FDC  0009     TBLRD*+
+0FDE  50F5     MOVF TABLAT, W, ACCESS
+0FE0  6F96     MOVWF 0x96, BANKED
+0FE2  E103     BNZ 0xFEA
+0FE4  6795     TSTFSZ curr_entry, BANKED
+0FE6  D001     BRA 0xFEA
+0FE8  D03D     BRA 0x1064
+0FEA  0009     TBLRD*+
+0FEC  50F5     MOVF TABLAT, W, ACCESS
+0FEE  6F90     MOVWF prom, BANKED
+0FF0  0009     TBLRD*+
+0FF2  50F5     MOVF TABLAT, W, ACCESS
+0FF4  6F91     MOVWF 0x91, BANKED
+0FF6  0009     TBLRD*+
+0FF8  50F5     MOVF TABLAT, W, ACCESS
+0FFA  6F92     MOVWF 0x92, BANKED
+0FFC  0009     TBLRD*+
+0FFE  0009     TBLRD*+
+1000  50F5     MOVF TABLAT, W, ACCESS
+1002  6EE9     MOVWF FSR0, ACCESS
+1004  0009     TBLRD*+
+1006  50F5     MOVF TABLAT, W, ACCESS
+1008  6EEA     MOVWF FSR0H, ACCESS
+100A  0009     TBLRD*+
+100C  0009     TBLRD*+
+100E  0009     TBLRD*+
+1010  50F5     MOVF TABLAT, W, ACCESS
+1012  6F93     MOVWF curr_byte, BANKED
+1014  0009     TBLRD*+
+1016  50F5     MOVF TABLAT, W, ACCESS
+1018  6F94     MOVWF 0x94, BANKED
+101A  0009     TBLRD*+
+101C  0009     TBLRD*+
+101E  CFF6     MOVFF TBLPTR, data_ptr
+1020  F097     NOP
+1022  CFF7     MOVFF TBLPTRH, 0x98
+1024  F098     NOP
+1026  CFF8     MOVFF TBLPTRU, 0x99
+1028  F099     NOP
+102A  C090     MOVFF prom, TBLPTR
+102C  FFF6     NOP
+102E  C091     MOVFF 0x91, TBLPTRH
+1030  FFF7     NOP
+1032  C092     MOVFF 0x92, TBLPTRU
+1034  FFF8     NOP
+1036  0100     MOVLB 0x0
+1038  5393     MOVF curr_byte, F, BANKED
+103A  E102     BNZ 0x1040
+103C  5394     MOVF 0x94, F, BANKED
+103E  E007     BZ 0x104E
+1040  0009     TBLRD*+
+1042  50F5     MOVF TABLAT, W, ACCESS
+1044  6EEE     MOVWF POSTINC0, ACCESS
+1046  0793     DECF curr_byte, F, BANKED
+1048  E2F8     BC 0x103A
+104A  0794     DECF 0x94, F, BANKED
+104C  D7F9     BRA 0x1040
+104E  C097     MOVFF data_ptr, TBLPTR
+1050  FFF6     NOP
+1052  C098     MOVFF 0x98, TBLPTRH
+1054  FFF7     NOP
+1056  C099     MOVFF 0x99, TBLPTRU
+1058  FFF8     NOP
+105A  0100     MOVLB 0x0
+105C  0795     DECF curr_entry, F, BANKED
+105E  0E00     MOVLW 0x0
+1060  5B96     SUBWFB 0x96, F, BANKED
+1062  D7BF     BRA 0xFE2
+1064  0012     RETURN 0
+---  E:/3.46/pic18-lt/cxx-framework/src/traditional/proc/p18f4520.asm  ----------------------------------
+1200  0E00     MOVLW 0x0
+1202  6EF3     MOVWF PROD, ACCESS
+1204  EE00     LFSR 0, 0x0
+1206  F000     NOP
+1208  0E06     MOVLW 0x6
+120A  D801     RCALL zero_block
+120C  0012     RETURN 0
+120E  60EA     CPFSLT FSR0H, ACCESS
+1210  D002     BRA compare_l
+1212  6AEE     CLRF POSTINC0, ACCESS
+1214  D7FC     BRA zero_block
+1216  50F3     MOVF PROD, W, ACCESS
+1218  60E9     CPFSLT FSR0, ACCESS
+121A  0012     RETURN 0
+121C  6AEE     CLRF POSTINC0, ACCESS
+121E  D7FC     BRA loop_l
+---  E:/3.46/pic18-lt/cxx-framework/src/pmc_common/USART/uwrite.c  --------------------------------------
+11A6  CFD9     MOVFF FSR2, POSTINC1
+11A8  FFE6     NOP
+11AA  CFDA     MOVFF FSR2H, POSTINC1
+11AC  FFE6     NOP
+11AE  CFE1     MOVFF FSR1, FSR2
+11B0  FFD9     NOP
+11B2  CFE2     MOVFF FSR1H, FSR2H
+11B4  FFDA     NOP
+11B6  ACAC     BTFSS TXSTA, 6, ACCESS
+11B8  D004     BRA 0x11C2
+11BA  90AC     BCF TXSTA, 0, ACCESS
+11BC  0100     MOVLB 0x0
+11BE  B3A2     BTFSC USART_Status, 1, BANKED
+11C0  80AC     BSF TXSTA, 0, ACCESS
+11C2  0EFD     MOVLW 0xFD
+11C4  50DB     MOVF PLUSW2, W, ACCESS
+11C6  6EAD     MOVWF TXREG, ACCESS
+11C8  52E5     MOVF POSTDEC1, F, ACCESS
+11CA  CFE5     MOVFF POSTDEC1, FSR2H
+11CC  FFDA     NOP
+11CE  CFE7     MOVFF INDF1, FSR2
+11D0  FFD9     NOP
+11D2  0012     RETURN 0
+---  E:/3.46/pic18-lt/cxx-framework/src/pmc_common/USART/uread.c  ---------------------------------------
+10BC  CFD9     MOVFF FSR2, POSTINC1
+10BE  FFE6     NOP
+10C0  CFDA     MOVFF FSR2H, POSTINC1
+10C2  FFE6     NOP
+10C4  CFE1     MOVFF FSR1, FSR2
+10C6  FFD9     NOP
+10C8  CFE2     MOVFF FSR1H, FSR2H
+10CA  FFDA     NOP
+10CC  52E6     MOVF POSTINC1, F, ACCESS
+10CE  0EF2     MOVLW 0xF2
+10D0  0100     MOVLB 0x0
+10D2  17A2     ANDWF USART_Status, F, BANKED
+10D4  ACAB     BTFSS RCSTA, 6, ACCESS
+10D6  D003     BRA 0x10DE
+10D8  91A2     BCF USART_Status, 0, BANKED
+10DA  B0AB     BTFSC RCSTA, 0, ACCESS
+10DC  81A2     BSF USART_Status, 0, BANKED
+10DE  B4AB     BTFSC RCSTA, 2, ACCESS
+10E0  85A2     BSF USART_Status, 2, BANKED
+10E2  B2AB     BTFSC RCSTA, 1, ACCESS
+10E4  87A2     BSF USART_Status, 3, BANKED
+10E6  50AE     MOVF RCREG, W, ACCESS
+10E8  6EDF     MOVWF INDF2, ACCESS
+10EA  50DF     MOVF INDF2, W, ACCESS
+10EC  52E5     MOVF POSTDEC1, F, ACCESS
+10EE  52E5     MOVF POSTDEC1, F, ACCESS
+10F0  CFE5     MOVFF POSTDEC1, FSR2H
+10F2  FFDA     NOP
+10F4  CFE7     MOVFF INDF1, FSR2
+10F6  FFD9     NOP
+10F8  0012     RETURN 0
+---  E:/3.46/pic18-lt/cxx-framework/src/pmc_common/Timers/t0open.c  -------------------------------------
+1136  CFD9     MOVFF FSR2, POSTINC1
+1138  FFE6     NOP
+113A  CFDA     MOVFF FSR2H, POSTINC1
+113C  FFE6     NOP
+113E  CFE1     MOVFF FSR1, FSR2
+1140  FFD9     NOP
+1142  CFE2     MOVFF FSR1H, FSR2H
+1144  FFDA     NOP
+1146  0EFD     MOVLW 0xFD
+1148  50DB     MOVF PLUSW2, W, ACCESS
+114A  0B7F     ANDLW 0x7F
+114C  6ED5     MOVWF T0CON, ACCESS
+114E  6AD7     CLRF TMR0H, ACCESS
+1150  6AD6     CLRF TMR0, ACCESS
+1152  94F2     BCF INTCON, 2, ACCESS
+1154  0EFD     MOVLW 0xFD
+1156  AEDB     BTFSS PLUSW2, 7, ACCESS
+1158  D002     BRA 0x115E
+115A  8AF2     BSF INTCON, 5, ACCESS
+115C  D001     BRA 0x1160
+115E  9AF2     BCF INTCON, 5, ACCESS
+1160  8ED5     BSF T0CON, 7, ACCESS
+1162  52E5     MOVF POSTDEC1, F, ACCESS
+1164  CFE5     MOVFF POSTDEC1, FSR2H
+1166  FFDA     NOP
+1168  CFE7     MOVFF INDF1, FSR2
+116A  FFD9     NOP
+116C  0012     RETURN 0
+---  E:/3.46/pic18-lt/cxx-framework/src/pmc_common/SPI/spi_writ.c  --------------------------------------
+10FA  CFD9     MOVFF FSR2, POSTINC1
+10FC  FFE6     NOP
+10FE  CFDA     MOVFF FSR2H, POSTINC1
+1100  FFE6     NOP
+1102  CFE1     MOVFF FSR1, FSR2
+1104  FFD9     NOP
+1106  CFE2     MOVFF FSR1H, FSR2H
+1108  FFDA     NOP
+110A  52E6     MOVF POSTINC1, F, ACCESS
+110C  50C9     MOVF SSPBUF, W, ACCESS
+110E  6EDF     MOVWF INDF2, ACCESS
+1110  969E     BCF PIR1, 3, ACCESS
+1112  9EC6     BCF SSPCON1, 7, ACCESS
+1114  0EFD     MOVLW 0xFD
+1116  50DB     MOVF PLUSW2, W, ACCESS
+1118  6EC9     MOVWF SSPBUF, ACCESS
+111A  AEC6     BTFSS SSPCON1, 7, ACCESS
+111C  D002     BRA 0x1122
+111E  0EFF     MOVLW 0xFF
+1120  D003     BRA 0x1128
+1122  A69E     BTFSS PIR1, 3, ACCESS
+1124  D7FE     BRA 0x1122
+1126  0E00     MOVLW 0x0
+1128  52E5     MOVF POSTDEC1, F, ACCESS
+112A  52E5     MOVF POSTDEC1, F, ACCESS
+112C  CFE5     MOVFF POSTDEC1, FSR2H
+112E  FFDA     NOP
+1130  CFE7     MOVFF INDF1, FSR2
+1132  FFD9     NOP
+1134  0012     RETURN 0
+---  C:/Documents and Settings/D300-01/Desktop/RTOS/src/PIC18/main.c  -----------------------------------
+1:             #include <stdio.h>
+2:             #include <stdlib.h>
+3:             #include "Clock.h"
+4:             #include "Blinky.h"
+5:             #include "SevenSeg.h"
+6:             #include "UARTLoopback.h"
+7:             //#include "LEDSM.h"
+8:             #include "Led2.h"
+9:             #include "TCB.h"
+10:            #include "PriorityLinkedList.h"
+11:            #include "PreemptiveOS.h"
+12:            #include "../18c.h"
+13:            
+14:            #if !(defined(__XC) || defined(__18CXX))
+15:              #include "usart.h"
+16:              #include "spi.h"
+17:            #else
+18:                #include <usart.h>
+19:                #include <spi.h>
+20:            #endif // __18CXX
+21:            
+22:            #pragma config OSC = INTIO67, PWRT = ON, WDT = OFF, LVP = OFF, DEBUG = ON
+23:            
+24:            #define setFreq8MHz() (OSCCONbits.IRCF = 7)
+25:            
+26:            #define configureUsartTo8Bits9600Baud() \
+27:                      OpenUSART(USART_TX_INT_OFF &  \
+28:                                USART_RX_INT_OFF &  \
+29:                                USART_ASYNCH_MODE & \
+30:                                USART_EIGHT_BIT &   \
+31:                                USART_CONT_RX &     \
+32:                                USART_BRGH_HIGH, 51);
+33:            
+34:            void main(void) {
+116E  CFD9     MOVFF FSR2, POSTINC1
+1170  FFE6     NOP
+1172  CFE1     MOVFF FSR1, FSR2
+1174  FFD9     NOP
+1176  52E6     MOVF POSTINC1, F, ACCESS
+35:              char mainCount = 0;
+1178  6ADF     CLRF INDF2, ACCESS
+36:              initPreemptiveMultitasking();
+117A  EC1C     CALL 0xA38, 0
+117C  F005     NOP
+37:              initClock();
+117E  ECEA     CALL 0x11D4, 0
+1180  F008     NOP
+38:              while(mainCount != 255){
+1182  CFDF     MOVFF INDF2, __tmp_0
+1184  F00B     NOP
+1186  6A0C     CLRF 0xC, ACCESS
+1188  BE0B     BTFSC __tmp_0, 7, ACCESS
+118A  680C     SETF 0xC, ACCESS
+118C  0EFF     MOVLW 0xFF
+118E  180B     XORWF __tmp_0, W, ACCESS
+1190  E101     BNZ 0x1194
+1192  500C     MOVF 0xC, W, ACCESS
+1194  E002     BZ 0x119A
+1198  D7F4     BRA 0x1182
+39:                mainCount++;
+1196  2ADF     INCF INDF2, F, ACCESS
+40:              }
+41:            }
+119A  52E5     MOVF POSTDEC1, F, ACCESS
+119C  52E5     MOVF POSTDEC1, F, ACCESS
+119E  CFE7     MOVFF INDF1, FSR2
+11A0  FFD9     NOP
+11A2  0012     RETURN 0
+42:            
+43:            void Xmain(void) {
+44:              /*Led2Data led2Data;
+45:              LoopbackData loopbackData;
+46:              SevenSegData sevenSegData;
+47:              setFreq8MHz();
+48:              configureUsartTo8Bits9600Baud();
+49:              OpenSPI(SPI_FOSC_4, MODE_11, SMPEND);
+50:              configureLED();*/
+51:              //LEDData ledData;
+52:              //initLEDStateMachine(&ledData);
+53:              //initPreemptiveMultitasking();
+54:              //initClock();
+55:              //while(1);
+56:              /*initUartLoopback(&loopbackData);
+57:              initSevenSeg(&sevenSegData);
+58:              turnOnSevenSeg();
+59:            
+60:              while(1){
+61:                  led2SM(&led2Data);
+62:                  sevenSegSM(&sevenSegData);
+63:                  uartLoopbackSM(&loopbackData);
+64:              }
+65:              CloseSPI();
+66:              CloseUSART();*/
+67:              //
+68:              //
+69:              //
+70:              
+71:              /*while(1) {
+72:                  
+73:                
+74:                //LEDStateMachine(&ledData);
+75:                led2SM(&led2Data);
+76:                sevenSegSM(&sevenSegData);
+77:              }
+78:              CloseSPI();
+79:              CloseUSART();*/
+80:            }
+11A4  0012     RETURN 0
+---  C:/Documents and Settings/D300-01/Desktop/RTOS/src/PIC18/UARTLoopback.c  ---------------------------
+1:             #include "UARTLoopback.h"
+2:             #include "../18c.h"
+3:             
+4:             #if !(defined(__XC) || defined(__18CXX))
+5:               #include "usart.h"
+6:             #else
+7:                 #include <usart.h>
+8:             #endif // __18CXX
+9:             
+10:            void initUartLoopback(LoopbackData *data){
+0F10  CFD9     MOVFF FSR2, POSTINC1
+0F12  FFE6     NOP
+0F14  CFE1     MOVFF FSR1, FSR2
+0F16  FFD9     NOP
+11:              data->state = WAIT_DATA;
+0F18  0EFD     MOVLW 0xFD
+0F1A  CFDB     MOVFF PLUSW2, FSR0
+0F1C  FFE9     NOP
+0F1E  0EFE     MOVLW 0xFE
+0F20  CFDB     MOVFF PLUSW2, FSR0H
+0F22  FFEA     NOP
+0F24  6AEF     CLRF INDF0, ACCESS
+12:              data->dataByte = 0;
+0F26  0EFD     MOVLW 0xFD
+0F28  CFDB     MOVFF PLUSW2, FSR0
+0F2A  FFE9     NOP
+0F2C  0EFE     MOVLW 0xFE
+0F2E  CFDB     MOVFF PLUSW2, FSR0H
+0F30  FFEA     NOP
+0F32  52EE     MOVF POSTINC0, F, ACCESS
+0F34  6AEF     CLRF INDF0, ACCESS
+13:            }
+0F36  52E5     MOVF POSTDEC1, F, ACCESS
+0F38  CFE7     MOVFF INDF1, FSR2
+0F3A  FFD9     NOP
+0F3C  0012     RETURN 0
+14:            
+15:            void uartLoopbackSM(LoopbackData *data){
+0F3E  CFD9     MOVFF FSR2, POSTINC1
+0F40  FFE6     NOP
+0F42  CFE1     MOVFF FSR1, FSR2
+0F44  FFD9     NOP
+16:            
+17:              switch(data->state){
+0F46  0EFD     MOVLW 0xFD
+0F48  CFDB     MOVFF PLUSW2, FSR0
+0F4A  FFE9     NOP
+0F4C  0EFE     MOVLW 0xFE
+0F4E  CFDB     MOVFF PLUSW2, FSR0H
+0F50  FFEA     NOP
+0F52  50EF     MOVF INDF0, W, ACCESS
+0F54  0A01     XORLW 0x1
+0F56  E01A     BZ 0xF8C
+0F58  0A01     XORLW 0x1
+0F5A  E132     BNZ 0xFC0
+18:                case WAIT_DATA:
+19:                  if(DataRdyUSART() == 0)
+0F5C  AA9E     BTFSS PIR1, 5, ACCESS
+0F5E  D030     BRA 0xFC0
+20:                    break;
+21:                  data->dataByte = getcUSART();
+0F60  EC5E     CALL 0x10BC, 0
+0F62  F008     NOP
+0F64  6EE6     MOVWF POSTINC1, ACCESS
+0F66  0EFD     MOVLW 0xFD
+0F68  CFDB     MOVFF PLUSW2, FSR0
+0F6A  FFE9     NOP
+0F6C  0EFE     MOVLW 0xFE
+0F6E  CFDB     MOVFF PLUSW2, FSR0H
+0F70  FFEA     NOP
+0F72  52EE     MOVF POSTINC0, F, ACCESS
+0F74  52E5     MOVF POSTDEC1, F, ACCESS
+0F76  50E7     MOVF INDF1, W, ACCESS
+0F78  6EEF     MOVWF INDF0, ACCESS
+22:                  data->state = WAIT_TO_TX;
+0F7A  0EFD     MOVLW 0xFD
+0F7C  CFDB     MOVFF PLUSW2, FSR0
+0F7E  FFE9     NOP
+0F80  0EFE     MOVLW 0xFE
+0F82  CFDB     MOVFF PLUSW2, FSR0H
+0F84  FFEA     NOP
+0F86  0E01     MOVLW 0x1
+0F88  6EEF     MOVWF INDF0, ACCESS
+23:                  break;
+0F8A  D01A     BRA 0xFC0
+24:            
+25:                case WAIT_TO_TX:
+26:                  if(BusyUSART() == 1)
+0F8C  50AC     MOVF TXSTA, W, ACCESS
+0F8E  0B02     ANDLW 0x2
+0F90  0A02     XORLW 0x2
+0F92  E001     BZ 0xF96
+0F94  0E01     MOVLW 0x1
+0F96  0801     SUBLW 0x1
+0F98  E013     BZ 0xFC0
+27:                    break;
+28:                  putcUSART(data->dataByte);
+0F9A  0EFD     MOVLW 0xFD
+0F9C  CFDB     MOVFF PLUSW2, FSR0
+0F9E  FFE9     NOP
+0FA0  0EFE     MOVLW 0xFE
+0FA2  CFDB     MOVFF PLUSW2, FSR0H
+0FA4  FFEA     NOP
+0FA6  52EE     MOVF POSTINC0, F, ACCESS
+0FA8  50EF     MOVF INDF0, W, ACCESS
+0FAA  6EE6     MOVWF POSTINC1, ACCESS
+0FAC  ECD3     CALL 0x11A6, 0
+0FAE  F008     NOP
+0FB0  52E5     MOVF POSTDEC1, F, ACCESS
+29:                  data->state = WAIT_DATA;
+0FB2  0EFD     MOVLW 0xFD
+0FB4  CFDB     MOVFF PLUSW2, FSR0
+0FB6  FFE9     NOP
+0FB8  0EFE     MOVLW 0xFE
+0FBA  CFDB     MOVFF PLUSW2, FSR0H
+0FBC  FFEA     NOP
+0FBE  6AEF     CLRF INDF0, ACCESS
+30:                  break;
+31:                  
+32:                default:
+33:                  break;
+34:              }
+35:            }
+0FC0  52E5     MOVF POSTDEC1, F, ACCESS
+0FC2  CFE7     MOVFF INDF1, FSR2
+0FC4  FFD9     NOP
+0FC6  0012     RETURN 0
+---  C:/Documents and Settings/D300-01/Desktop/RTOS/src/PIC18/SevenSeg.c  -------------------------------
+1:             #include "SevenSeg.h"
+2:             #include "Clock.h"
+3:             #include "../18c.h"
+4:             #include "spi.h"
+5:             
+6:             #define CLK_OV 488 //0.5s
+7:             
+8:             char hexPatterns[] = {
+9:             						0x77,  //0
+10:            						0x14,  //1
+11:            						0xb3,  //2
+12:            						0xb6,  //3
+13:            						0xd4,  //4
+14:            						0xe6,  //5
+15:            						0xe7,  //6
+16:            						0x34,  //7
+17:            						0xf7,  //8
+18:            						0xf4,  //9
+19:            						0xf5,  //A
+20:            						0xc7,  //B
+21:            						0x63,  //C
+22:            						0x97,  //D
+23:            						0xe3,  //E
+24:            						0xe1   //F
+25:            };
+26:            
+27:            void  initSevenSeg(SevenSegData *data){
+0D1E  CFD9     MOVFF FSR2, POSTINC1
+0D20  FFE6     NOP
+0D22  CFE1     MOVFF FSR1, FSR2
+0D24  FFD9     NOP
+28:            	TRISCbits.TRISC2 = 0;
+0D26  9494     BCF TRISC, 2, ACCESS
+29:            	data->state = _7Seg_INIT;
+0D28  0EFD     MOVLW 0xFD
+0D2A  CFDB     MOVFF PLUSW2, FSR0
+0D2C  FFE9     NOP
+0D2E  0EFE     MOVLW 0xFE
+0D30  CFDB     MOVFF PLUSW2, FSR0H
+0D32  FFEA     NOP
+0D34  6AEF     CLRF INDF0, ACCESS
+30:            }
+0D36  52E5     MOVF POSTDEC1, F, ACCESS
+0D38  CFE7     MOVFF INDF1, FSR2
+0D3A  FFD9     NOP
+0D3C  0012     RETURN 0
+31:            
+32:            void  turnOnSevenSeg(void){
+33:            	PORTCbits.RC2 = 1;
+0D3E  8482     BSF PORTC, 2, ACCESS
+34:            }
+0D40  0012     RETURN 0
+35:            
+36:            void  turnOffSevenSeg(void){
+37:            	PORTCbits.RC2 = 0;
+0D42  9482     BCF PORTC, 2, ACCESS
+38:            }
+0D44  0012     RETURN 0
+39:            
+40:            void sevenSegSM(SevenSegData *data){
+0D46  CFD9     MOVFF FSR2, POSTINC1
+0D48  FFE6     NOP
+0D4A  CFE1     MOVFF FSR1, FSR2
+0D4C  FFD9     NOP
+41:            	switch(data->state){
+0D4E  0EFD     MOVLW 0xFD
+0D50  CFDB     MOVFF PLUSW2, FSR0
+0D52  FFE9     NOP
+0D54  0EFE     MOVLW 0xFE
+0D56  CFDB     MOVFF PLUSW2, FSR0H
+0D58  FFEA     NOP
+0D5A  50EF     MOVF INDF0, W, ACCESS
+0D5C  0A01     XORLW 0x1
+0D5E  E03E     BZ 0xDDC
+0D60  0A01     XORLW 0x1
+0D62  E001     BZ 0xD66
+0D64  D0D1     BRA 0xF08
+42:            		case _7Seg_INIT:
+43:            			data->counter = 0;
+0D66  0EFD     MOVLW 0xFD
+0D68  CFDB     MOVFF PLUSW2, FSR0
+0D6A  FFE9     NOP
+0D6C  0EFE     MOVLW 0xFE
+0D6E  CFDB     MOVFF PLUSW2, FSR0H
+0D70  FFEA     NOP
+0D72  0E01     MOVLW 0x1
+0D74  6AEB     CLRF PLUSW0, ACCESS
+0D76  0E02     MOVLW 0x2
+0D78  6AEB     CLRF PLUSW0, ACCESS
+44:            			data->currClock = getClock();
+0D7A  ECF7     CALL 0x11EE, 0
+0D7C  F008     NOP
+0D7E  C004     MOVFF elementBefore, __tmp_0
+0D80  F00B     NOP
+0D82  C005     MOVFF 0x5, 0xC
+0D84  F00C     NOP
+0D86  C006     MOVFF 0x6, 0xD
+0D88  F00D     NOP
+0D8A  C007     MOVFF 0x7, 0xE
+0D8C  F00E     NOP
+0D8E  0EFD     MOVLW 0xFD
+0D90  CFDB     MOVFF PLUSW2, FSR0
+0D92  FFE9     NOP
+0D94  0EFE     MOVLW 0xFE
+0D96  CFDB     MOVFF PLUSW2, FSR0H
+0D98  FFEA     NOP
+0D9A  0E03     MOVLW 0x3
+0D9C  26E9     ADDWF FSR0, F, ACCESS
+0D9E  0E00     MOVLW 0x0
+0DA0  22EA     ADDWFC FSR0H, F, ACCESS
+0DA2  C004     MOVFF elementBefore, POSTINC0
+0DA4  FFEE     NOP
+0DA6  C00C     MOVFF 0xC, POSTINC0
+0DA8  FFEE     NOP
+0DAA  C00D     MOVFF 0xD, POSTINC0
+0DAC  FFEE     NOP
+0DAE  C00E     MOVFF 0xE, POSTINC0
+0DB0  FFEE     NOP
+45:            			WriteSPI(hexPatterns[data->counter]);
+0DB2  0EFD     MOVLW 0xFD
+0DB4  CFDB     MOVFF PLUSW2, FSR0
+0DB6  FFE9     NOP
+0DB8  0EFE     MOVLW 0xFE
+0DBA  CFDB     MOVFF PLUSW2, FSR0H
+0DBC  FFEA     NOP
+0DBE  52EE     MOVF POSTINC0, F, ACCESS
+0DC0  50EE     MOVF POSTINC0, W, ACCESS
+0DC2  CFEF     MOVFF INDF0, FSR0H
+0DC4  FFEA     NOP
+0DC6  6EE9     MOVWF FSR0, ACCESS
+0DC8  0E80     MOVLW 0x80
+0DCA  26E9     ADDWF FSR0, F, ACCESS
+0DCC  0E00     MOVLW 0x0
+0DCE  22EA     ADDWFC FSR0H, F, ACCESS
+0DD0  50EF     MOVF INDF0, W, ACCESS
+0DD2  6EE6     MOVWF POSTINC1, ACCESS
+0DD4  EC7D     CALL 0x10FA, 0
+0DD6  F008     NOP
+0DD8  52E5     MOVF POSTDEC1, F, ACCESS
+46:            			data->state = _7Seg_WAITING;
+47:            			break;
+0DDA  D08E     BRA 0xEF8
+48:            		
+49:            		case _7Seg_WAITING:
+50:            			if(getClock() - data->currClock >= 488){
+0DDC  0EFD     MOVLW 0xFD
+0DDE  CFDB     MOVFF PLUSW2, FSR0
+0DE0  FFE9     NOP
+0DE2  0EFE     MOVLW 0xFE
+0DE4  CFDB     MOVFF PLUSW2, FSR0H
+0DE6  FFEA     NOP
+0DE8  0E03     MOVLW 0x3
+0DEA  26E9     ADDWF FSR0, F, ACCESS
+0DEC  0E00     MOVLW 0x0
+0DEE  22EA     ADDWFC FSR0H, F, ACCESS
+0DF0  CFEE     MOVFF POSTINC0, 0xF
+0DF2  F00F     NOP
+0DF4  CFEE     MOVFF POSTINC0, 0x10
+0DF6  F010     NOP
+0DF8  CFEE     MOVFF POSTINC0, 0x11
+0DFA  F011     NOP
+0DFC  CFEF     MOVFF INDF0, 0x12
+0DFE  F012     NOP
+0E00  C00F     MOVFF 0xF, POSTINC1
+0E02  FFE6     NOP
+0E04  C010     MOVFF 0x10, POSTINC1
+0E06  FFE6     NOP
+0E08  C011     MOVFF 0x11, POSTINC1
+0E0A  FFE6     NOP
+0E0C  C012     MOVFF 0x12, POSTINC1
+0E0E  FFE6     NOP
+0E10  ECF7     CALL 0x11EE, 0
+0E12  F008     NOP
+0E14  52E5     MOVF POSTDEC1, F, ACCESS
+0E16  CFE7     MOVFF INDF1, 0x12
+0E18  F012     NOP
+0E1A  52E5     MOVF POSTDEC1, F, ACCESS
+0E1C  CFE7     MOVFF INDF1, 0x11
+0E1E  F011     NOP
+0E20  52E5     MOVF POSTDEC1, F, ACCESS
+0E22  CFE7     MOVFF INDF1, 0x10
+0E24  F010     NOP
+0E26  52E5     MOVF POSTDEC1, F, ACCESS
+0E28  CFE7     MOVFF INDF1, 0xF
+0E2A  F00F     NOP
+0E2C  0100     MOVLB 0x0
+0E2E  500F     MOVF 0xF, W, ACCESS
+0E30  5C04     SUBWF elementBefore, W, ACCESS
+0E32  6E0B     MOVWF __tmp_0, ACCESS
+0E34  5010     MOVF 0x10, W, ACCESS
+0E36  5805     SUBWFB 0x5, W, ACCESS
+0E38  6E0C     MOVWF 0xC, ACCESS
+0E3A  5011     MOVF 0x11, W, ACCESS
+0E3C  5806     SUBWFB 0x6, W, ACCESS
+0E3E  6E0D     MOVWF 0xD, ACCESS
+0E40  5012     MOVF 0x12, W, ACCESS
+0E42  5807     SUBWFB 0x7, W, ACCESS
+0E44  6E0E     MOVWF 0xE, ACCESS
+0E46  0EE8     MOVLW 0xE8
+0E48  5C0B     SUBWF __tmp_0, W, ACCESS
+0E4A  0E01     MOVLW 0x1
+0E4C  580C     SUBWFB 0xC, W, ACCESS
+0E4E  0E00     MOVLW 0x0
+0E50  580D     SUBWFB 0xD, W, ACCESS
+0E52  0E00     MOVLW 0x0
+0E54  580E     SUBWFB 0xE, W, ACCESS
+0E56  E33A     BNC 0xECC
+51:            				data->currClock = getClock();
+0E58  ECF7     CALL 0x11EE, 0
+0E5A  F008     NOP
+0E5C  C004     MOVFF elementBefore, __tmp_0
+0E5E  F00B     NOP
+0E60  C005     MOVFF 0x5, 0xC
+0E62  F00C     NOP
+0E64  C006     MOVFF 0x6, 0xD
+0E66  F00D     NOP
+0E68  C007     MOVFF 0x7, 0xE
+0E6A  F00E     NOP
+0E6C  0EFD     MOVLW 0xFD
+0E6E  CFDB     MOVFF PLUSW2, FSR0
+0E70  FFE9     NOP
+0E72  0EFE     MOVLW 0xFE
+0E74  CFDB     MOVFF PLUSW2, FSR0H
+0E76  FFEA     NOP
+0E78  0E03     MOVLW 0x3
+0E7A  26E9     ADDWF FSR0, F, ACCESS
+0E7C  0E00     MOVLW 0x0
+0E7E  22EA     ADDWFC FSR0H, F, ACCESS
+0E80  C004     MOVFF elementBefore, POSTINC0
+0E82  FFEE     NOP
+0E84  C00C     MOVFF 0xC, POSTINC0
+0E86  FFEE     NOP
+0E88  C00D     MOVFF 0xD, POSTINC0
+0E8A  FFEE     NOP
+0E8C  C00E     MOVFF 0xE, POSTINC0
+0E8E  FFEE     NOP
+52:            				WriteSPI(hexPatterns[data->counter]);
+0E90  0EFD     MOVLW 0xFD
+0E92  CFDB     MOVFF PLUSW2, FSR0
+0E94  FFE9     NOP
+0E96  0EFE     MOVLW 0xFE
+0E98  CFDB     MOVFF PLUSW2, FSR0H
+0E9A  FFEA     NOP
+0E9C  52EE     MOVF POSTINC0, F, ACCESS
+0E9E  50EE     MOVF POSTINC0, W, ACCESS
+0EA0  CFEF     MOVFF INDF0, FSR0H
+0EA2  FFEA     NOP
+0EA4  6EE9     MOVWF FSR0, ACCESS
+0EA6  0E80     MOVLW 0x80
+0EA8  26E9     ADDWF FSR0, F, ACCESS
+0EAA  0E00     MOVLW 0x0
+0EAC  22EA     ADDWFC FSR0H, F, ACCESS
+0EAE  50EF     MOVF INDF0, W, ACCESS
+0EB0  6EE6     MOVWF POSTINC1, ACCESS
+0EB2  EC7D     CALL 0x10FA, 0
+0EB4  F008     NOP
+0EB6  52E5     MOVF POSTDEC1, F, ACCESS
+53:            				data->counter++;
+0EB8  0EFD     MOVLW 0xFD
+0EBA  CFDB     MOVFF PLUSW2, FSR0
+0EBC  FFE9     NOP
+0EBE  0EFE     MOVLW 0xFE
+0EC0  CFDB     MOVFF PLUSW2, FSR0H
+0EC2  FFEA     NOP
+0EC4  52EE     MOVF POSTINC0, F, ACCESS
+0EC6  2AEE     INCF POSTINC0, F, ACCESS
+0EC8  0E00     MOVLW 0x0
+0ECA  22EF     ADDWFC INDF0, F, ACCESS
+54:            			}
+55:                                    if(data->counter == 16)
+0ECC  0EFD     MOVLW 0xFD
+0ECE  CFDB     MOVFF PLUSW2, FSR0
+0ED0  FFE9     NOP
+0ED2  0EFE     MOVLW 0xFE
+0ED4  CFDB     MOVFF PLUSW2, FSR0H
+0ED6  FFEA     NOP
+0ED8  52EE     MOVF POSTINC0, F, ACCESS
+0EDA  0E10     MOVLW 0x10
+0EDC  18EE     XORWF POSTINC0, W, ACCESS
+0EDE  E10C     BNZ 0xEF8
+0EE0  50ED     MOVF POSTDEC0, W, ACCESS
+0EE2  E10A     BNZ 0xEF8
+56:                                        data->counter = 0;
+0EE4  0EFD     MOVLW 0xFD
+0EE6  CFDB     MOVFF PLUSW2, FSR0
+0EE8  FFE9     NOP
+0EEA  0EFE     MOVLW 0xFE
+0EEC  CFDB     MOVFF PLUSW2, FSR0H
+0EEE  FFEA     NOP
+0EF0  0E01     MOVLW 0x1
+0EF2  6AEB     CLRF PLUSW0, ACCESS
+0EF4  0E02     MOVLW 0x2
+0EF6  6AEB     CLRF PLUSW0, ACCESS
+57:                                    
+58:            			data->state = _7Seg_WAITING;
+0EF8  0EFD     MOVLW 0xFD
+0EFA  CFDB     MOVFF PLUSW2, FSR0
+0EFC  FFE9     NOP
+0EFE  0EFE     MOVLW 0xFE
+0F00  CFDB     MOVFF PLUSW2, FSR0H
+0F02  FFEA     NOP
+0F04  0E01     MOVLW 0x1
+0F06  6EEF     MOVWF INDF0, ACCESS
+59:            			break;
+60:            		
+61:            		default:
+62:            			break;
+63:            	}
+64:            }
+0F08  52E5     MOVF POSTDEC1, F, ACCESS
+0F0A  CFE7     MOVFF INDF1, FSR2
+0F0C  FFD9     NOP
+0F0E  0012     RETURN 0
+---  C:/Documents and Settings/D300-01/Desktop/RTOS/src/PIC18/PriorityLinkedList.c  ---------------------
+1:             #include <stdio.h>
+2:             #include "PriorityLinkedList.h"
+3:             
+4:             int compare(void *element, void *elementOfInterest){
+0284  CFD9     MOVFF FSR2, POSTINC1
+0286  FFE6     NOP
+0288  CFE1     MOVFF FSR1, FSR2
+028A  FFD9     NOP
+028C  0E04     MOVLW 0x4
+028E  26E1     ADDWF FSR1, F, ACCESS
+5:               TCB *elementToInsert = (TCB *)element;
+0290  0EFD     MOVLW 0xFD
+0292  CFDB     MOVFF PLUSW2, POSTINC2
+0294  FFDE     NOP
+0296  CFDB     MOVFF PLUSW2, POSTDEC2
+0298  FFDD     NOP
+6:               TCB *elementInList = (TCB *)elementOfInterest;
+029A  0EFB     MOVLW 0xFB
+029C  CFDB     MOVFF PLUSW2, 0x6
+029E  F006     NOP
+02A0  0EFC     MOVLW 0xFC
+02A2  CFDB     MOVFF PLUSW2, 0x7
+02A4  F007     NOP
+02A6  0E02     MOVLW 0x2
+02A8  C006     MOVFF 0x6, PLUSW2
+02AA  FFDB     NOP
+02AC  0E03     MOVLW 0x3
+02AE  C007     MOVFF 0x7, PLUSW2
+02B0  FFDB     NOP
+7:               
+8:               if(elementToInsert->priority > elementInList->priority)
+02B2  CFDE     MOVFF POSTINC2, FSR0
+02B4  FFE9     NOP
+02B6  CFDD     MOVFF POSTDEC2, FSR0H
+02B8  FFEA     NOP
+02BA  0E02     MOVLW 0x2
+02BC  26E9     ADDWF FSR0, F, ACCESS
+02BE  0E00     MOVLW 0x0
+02C0  22EA     ADDWFC FSR0H, F, ACCESS
+02C2  CFEF     MOVFF INDF0, __tmp_0
+02C4  F00B     NOP
+02C6  0E02     MOVLW 0x2
+02C8  CFDB     MOVFF PLUSW2, FSR0
+02CA  FFE9     NOP
+02CC  0E03     MOVLW 0x3
+02CE  CFDB     MOVFF PLUSW2, FSR0H
+02D0  FFEA     NOP
+02D2  0E02     MOVLW 0x2
+02D4  26E9     ADDWF FSR0, F, ACCESS
+02D6  0E00     MOVLW 0x0
+02D8  22EA     ADDWFC FSR0H, F, ACCESS
+02DA  50EF     MOVF INDF0, W, ACCESS
+02DC  6EE7     MOVWF INDF1, ACCESS
+02DE  180B     XORWF __tmp_0, W, ACCESS
+02E0  AEE8     BTFSS WREG, 7, ACCESS
+02E2  D002     BRA 0x2E8
+02E4  340B     RLCF __tmp_0, W, ACCESS
+02E6  D003     BRA 0x2EE
+02E8  50E7     MOVF INDF1, W, ACCESS
+02EA  80D8     BSF STATUS, 0, ACCESS
+02EC  540B     SUBFWB __tmp_0, W, ACCESS
+02EE  E203     BC 0x2F6
+9:                 return 1;
+02F0  0E01     MOVLW 0x1
+02F2  6EF3     MOVWF PROD, ACCESS
+02F4  D001     BRA 0x2F8
+10:              else
+11:                return 0;
+02F6  6AF3     CLRF PROD, ACCESS
+02F8  6AF4     CLRF PRODH, ACCESS
+12:            }
+02FA  0E04     MOVLW 0x4
+02FC  5CE1     SUBWF FSR1, W, ACCESS
+02FE  E202     BC 0x304
+0300  6AE1     CLRF FSR1, ACCESS
+0302  52E5     MOVF POSTDEC1, F, ACCESS
+0304  6EE1     MOVWF FSR1, ACCESS
+0306  52E5     MOVF POSTDEC1, F, ACCESS
+0308  CFE7     MOVFF INDF1, FSR2
+030A  FFD9     NOP
+030C  0012     RETURN 0
+13:            
+14:            void *removeFromHeadPriorityLinkedList(PriorityLinkedList *list){
+030E  CFD9     MOVFF FSR2, POSTINC1
+0310  FFE6     NOP
+0312  CFE1     MOVFF FSR1, FSR2
+0314  FFD9     NOP
+0316  0E02     MOVLW 0x2
+0318  26E1     ADDWF FSR1, F, ACCESS
+15:              TCB *temp;
+16:              temp = list->head;
+031A  0EFD     MOVLW 0xFD
+031C  CFDB     MOVFF PLUSW2, FSR0
+031E  FFE9     NOP
+0320  0EFE     MOVLW 0xFE
+0322  CFDB     MOVFF PLUSW2, FSR0H
+0324  FFEA     NOP
+0326  CFEE     MOVFF POSTINC0, POSTINC2
+0328  FFDE     NOP
+032A  CFED     MOVFF POSTDEC0, POSTDEC2
+032C  FFDD     NOP
+17:              
+18:              if(list->head->next == NULL){
+032E  0EFD     MOVLW 0xFD
+0330  CFDB     MOVFF PLUSW2, FSR0
+0332  FFE9     NOP
+0334  0EFE     MOVLW 0xFE
+0336  CFDB     MOVFF PLUSW2, FSR0H
+0338  FFEA     NOP
+033A  50EE     MOVF POSTINC0, W, ACCESS
+033C  CFEF     MOVFF INDF0, FSR0H
+033E  FFEA     NOP
+0340  6EE9     MOVWF FSR0, ACCESS
+0342  50EE     MOVF POSTINC0, W, ACCESS
+0344  10ED     IORWF POSTDEC0, W, ACCESS
+0346  E125     BNZ 0x392
+19:                list->head = list->head->next;
+0348  0EFD     MOVLW 0xFD
+034A  CFDB     MOVFF PLUSW2, FSR0
+034C  FFE9     NOP
+034E  0EFE     MOVLW 0xFE
+0350  CFDB     MOVFF PLUSW2, FSR0H
+0352  FFEA     NOP
+0354  50EE     MOVF POSTINC0, W, ACCESS
+0356  CFEF     MOVFF INDF0, FSR0H
+0358  FFEA     NOP
+035A  6EE9     MOVWF FSR0, ACCESS
+035C  CFEE     MOVFF POSTINC0, __tmp_0
+035E  F00B     NOP
+0360  CFEF     MOVFF INDF0, 0xC
+0362  F00C     NOP
+0364  0EFD     MOVLW 0xFD
+0366  CFDB     MOVFF PLUSW2, FSR0
+0368  FFE9     NOP
+036A  0EFE     MOVLW 0xFE
+036C  CFDB     MOVFF PLUSW2, FSR0H
+036E  FFEA     NOP
+0370  C00B     MOVFF __tmp_0, POSTINC0
+0372  FFEE     NOP
+0374  C00C     MOVFF 0xC, POSTDEC0
+0376  FFED     NOP
+20:                list->tail = NULL;
+0378  0EFD     MOVLW 0xFD
+037A  CFDB     MOVFF PLUSW2, FSR0
+037C  FFE9     NOP
+037E  0EFE     MOVLW 0xFE
+0380  CFDB     MOVFF PLUSW2, FSR0H
+0382  FFEA     NOP
+0384  0E02     MOVLW 0x2
+0386  26E9     ADDWF FSR0, F, ACCESS
+0388  0E00     MOVLW 0x0
+038A  22EA     ADDWFC FSR0H, F, ACCESS
+038C  6AEE     CLRF POSTINC0, ACCESS
+038E  6AED     CLRF POSTDEC0, ACCESS
+21:              }
+22:              else{
+0390  D018     BRA 0x3C2
+23:                list->head = list->head->next;
+0392  0EFD     MOVLW 0xFD
+0394  CFDB     MOVFF PLUSW2, FSR0
+0396  FFE9     NOP
+0398  0EFE     MOVLW 0xFE
+039A  CFDB     MOVFF PLUSW2, FSR0H
+039C  FFEA     NOP
+039E  50EE     MOVF POSTINC0, W, ACCESS
+03A0  CFEF     MOVFF INDF0, FSR0H
+03A2  FFEA     NOP
+03A4  6EE9     MOVWF FSR0, ACCESS
+03A6  CFEE     MOVFF POSTINC0, __tmp_0
+03A8  F00B     NOP
+03AA  CFEF     MOVFF INDF0, 0xC
+03AC  F00C     NOP
+03AE  0EFD     MOVLW 0xFD
+03B0  CFDB     MOVFF PLUSW2, FSR0
+03B2  FFE9     NOP
+03B4  0EFE     MOVLW 0xFE
+03B6  CFDB     MOVFF PLUSW2, FSR0H
+03B8  FFEA     NOP
+03BA  C00B     MOVFF __tmp_0, POSTINC0
+03BC  FFEE     NOP
+03BE  C00C     MOVFF 0xC, POSTDEC0
+03C0  FFED     NOP
+24:              }
+25:              temp->next = NULL;
+03C2  CFDE     MOVFF POSTINC2, FSR0
+03C4  FFE9     NOP
+03C6  CFDD     MOVFF POSTDEC2, FSR0H
+03C8  FFEA     NOP
+03CA  0E00     MOVLW 0x0
+03CC  6AEF     CLRF INDF0, ACCESS
+03CE  0E01     MOVLW 0x1
+03D0  6AEB     CLRF PLUSW0, ACCESS
+26:              return temp;
+03D2  CFDE     MOVFF POSTINC2, __tmp_0
+03D4  F00B     NOP
+03D6  CFDD     MOVFF POSTDEC2, 0xC
+03D8  F00C     NOP
+03DA  C00B     MOVFF __tmp_0, PROD
+03DC  FFF3     NOP
+03DE  C00C     MOVFF 0xC, PRODH
+03E0  FFF4     NOP
+27:            }
+03E2  0E02     MOVLW 0x2
+03E4  5CE1     SUBWF FSR1, W, ACCESS
+03E6  E202     BC 0x3EC
+03E8  6AE1     CLRF FSR1, ACCESS
+03EA  52E5     MOVF POSTDEC1, F, ACCESS
+03EC  6EE1     MOVWF FSR1, ACCESS
+03EE  52E5     MOVF POSTDEC1, F, ACCESS
+03F0  CFE7     MOVFF INDF1, FSR2
+03F2  FFD9     NOP
+03F4  0012     RETURN 0
+28:            
+29:            void addPriorityLinkedList(PriorityLinkedList *list, void *data, int compare(void *, void *)){
+03F6  CFD9     MOVFF FSR2, POSTINC1
+03F8  FFE6     NOP
+03FA  CFE1     MOVFF FSR1, FSR2
+03FC  FFD9     NOP
+03FE  0E06     MOVLW 0x6
+0400  26E1     ADDWF FSR1, F, ACCESS
+30:              TCB *elementToAdd = (TCB *)data;
+0402  0EFB     MOVLW 0xFB
+0404  CFDB     MOVFF PLUSW2, POSTINC2
+0406  FFDE     NOP
+0408  CFDB     MOVFF PLUSW2, POSTDEC2
+040A  FFDD     NOP
+31:              TCB *elementToCompare;
+32:              TCB *elementBefore;
+33:              if(list->head == NULL && list->tail == NULL){
+040C  0EFD     MOVLW 0xFD
+040E  CFDB     MOVFF PLUSW2, FSR0
+0410  FFE9     NOP
+0412  0EFE     MOVLW 0xFE
+0414  CFDB     MOVFF PLUSW2, FSR0H
+0416  FFEA     NOP
+0418  50EE     MOVF POSTINC0, W, ACCESS
+041A  10ED     IORWF POSTDEC0, W, ACCESS
+041C  E112     BNZ 0x442
+041E  0EFD     MOVLW 0xFD
+0420  CFDB     MOVFF PLUSW2, FSR0
+0422  FFE9     NOP
+0424  0EFE     MOVLW 0xFE
+0426  CFDB     MOVFF PLUSW2, FSR0H
+0428  FFEA     NOP
+042A  0E02     MOVLW 0x2
+042C  26E9     ADDWF FSR0, F, ACCESS
+042E  0E00     MOVLW 0x0
+0430  22EA     ADDWFC FSR0H, F, ACCESS
+0432  50EE     MOVF POSTINC0, W, ACCESS
+0434  10ED     IORWF POSTDEC0, W, ACCESS
+0436  E105     BNZ 0x442
+34:                list->head = elementToAdd;
+0438  0EFD     MOVLW 0xFD
+043A  CFDB     MOVFF PLUSW2, FSR0
+043C  FFE9     NOP
+043E  0EFE     MOVLW 0xFE
+35:                list->tail = elementToAdd;
+36:              }
+37:              else{
+0440  D03C     BRA 0x4BA
+38:                elementToCompare = list->head;
+0442  0EFD     MOVLW 0xFD
+0444  CFDB     MOVFF PLUSW2, FSR0
+0446  FFE9     NOP
+0448  0EFE     MOVLW 0xFE
+044A  CFDB     MOVFF PLUSW2, FSR0H
+044C  FFEA     NOP
+044E  0E02     MOVLW 0x2
+0450  CFEE     MOVFF POSTINC0, PLUSW2
+0452  FFDB     NOP
+0454  0E03     MOVLW 0x3
+0456  CFED     MOVFF POSTDEC0, PLUSW2
+0458  FFDB     NOP
+39:                while(compare(elementToAdd, elementToCompare) != 1){
+045A  0EF9     MOVLW 0xF9
+045C  CFDB     MOVFF PLUSW2, 0xD
+045E  F00D     NOP
+0460  0EFA     MOVLW 0xFA
+0462  CFDB     MOVFF PLUSW2, 0xE
+0464  F00E     NOP
+0466  0E02     MOVLW 0x2
+0468  CFDB     MOVFF PLUSW2, POSTINC1
+046A  FFE6     NOP
+046C  0E03     MOVLW 0x3
+046E  CFDB     MOVFF PLUSW2, POSTINC1
+0470  FFE6     NOP
+0472  CFDE     MOVFF POSTINC2, POSTINC1
+0474  FFE6     NOP
+0476  CFDD     MOVFF POSTDEC2, POSTINC1
+0478  FFE6     NOP
+047A  D004     BRA 0x484
+047C  C00E     MOVFF 0xE, PCLATH
+047E  FFFA     NOP
+0480  500D     MOVF 0xD, W, ACCESS
+0482  6EF9     MOVWF PCL, ACCESS
+0484  DFFB     RCALL 0x47C
+0486  52E5     MOVF POSTDEC1, F, ACCESS
+0488  52E5     MOVF POSTDEC1, F, ACCESS
+048A  52E5     MOVF POSTDEC1, F, ACCESS
+048C  52E5     MOVF POSTDEC1, F, ACCESS
+048E  CFF3     MOVFF PROD, __tmp_0
+0490  F00B     NOP
+0492  CFF4     MOVFF PRODH, 0xC
+0494  F00C     NOP
+0496  0E01     MOVLW 0x1
+0498  18F3     XORWF PROD, W, ACCESS
+049A  E101     BNZ 0x49E
+049C  500C     MOVF 0xC, W, ACCESS
+049E  E033     BZ 0x506
+0504  D7A2     BRA 0x44A
+40:                  if(elementToCompare->next == NULL){
+04A0  0E02     MOVLW 0x2
+04A2  CFDB     MOVFF PLUSW2, FSR0
+04A4  FFE9     NOP
+04A6  0E03     MOVLW 0x3
+04A8  CFDB     MOVFF PLUSW2, FSR0H
+04AA  FFEA     NOP
+04AC  50EE     MOVF POSTINC0, W, ACCESS
+04AE  10ED     IORWF POSTDEC0, W, ACCESS
+04B0  E119     BNZ 0x4E4
+41:                    elementToCompare->next = elementToAdd;
+04B2  0E02     MOVLW 0x2
+04B4  CFDB     MOVFF PLUSW2, FSR0
+04B6  FFE9     NOP
+04B8  0E03     MOVLW 0x3
+04BA  CFDB     MOVFF PLUSW2, FSR0H
+04BC  FFEA     NOP
+04BE  CFDE     MOVFF POSTINC2, POSTINC0
+04C0  FFEE     NOP
+04C2  CFDD     MOVFF POSTDEC2, POSTDEC0
+04C4  FFED     NOP
+42:                    list->tail = elementToAdd;
+04C6  0EFD     MOVLW 0xFD
+04C8  CFDB     MOVFF PLUSW2, FSR0
+04CA  FFE9     NOP
+04CC  0EFE     MOVLW 0xFE
+04CE  CFDB     MOVFF PLUSW2, FSR0H
+04D0  FFEA     NOP
+04D2  0E02     MOVLW 0x2
+04D4  26E9     ADDWF FSR0, F, ACCESS
+04D6  0E00     MOVLW 0x0
+04D8  22EA     ADDWFC FSR0H, F, ACCESS
+04DA  CFDE     MOVFF POSTINC2, POSTINC0
+04DC  FFEE     NOP
+04DE  CFDD     MOVFF POSTDEC2, POSTDEC0
+04E0  FFED     NOP
+43:                    return;
+04E2  D05D     BRA 0x59E
+44:                  }
+45:                  else{
+46:                    elementBefore = elementToCompare;
+04E4  0E02     MOVLW 0x2
+04E6  CFDB     MOVFF PLUSW2, 0x6
+04E8  F006     NOP
+04EA  0E03     MOVLW 0x3
+04EC  CFDB     MOVFF PLUSW2, 0x7
+04EE  F007     NOP
+04F0  0E04     MOVLW 0x4
+04F2  C006     MOVFF 0x6, PLUSW2
+04F4  FFDB     NOP
+04F6  0E05     MOVLW 0x5
+04F8  C007     MOVFF 0x7, PLUSW2
+04FA  FFDB     NOP
+47:                    elementToCompare = elementToCompare->next;
+04FC  0E02     MOVLW 0x2
+04FE  CFDB     MOVFF PLUSW2, FSR0
+0500  FFE9     NOP
+0502  0E03     MOVLW 0x3
+48:                  }
+49:                }
+50:                if(compare(elementToAdd, elementToCompare)){
+0506  0EF9     MOVLW 0xF9
+0508  CFDB     MOVFF PLUSW2, 0xD
+050A  F00D     NOP
+050C  0EFA     MOVLW 0xFA
+050E  CFDB     MOVFF PLUSW2, 0xE
+0510  F00E     NOP
+0512  0E02     MOVLW 0x2
+0514  CFDB     MOVFF PLUSW2, POSTINC1
+0516  FFE6     NOP
+0518  0E03     MOVLW 0x3
+051A  CFDB     MOVFF PLUSW2, POSTINC1
+051C  FFE6     NOP
+051E  CFDE     MOVFF POSTINC2, POSTINC1
+0520  FFE6     NOP
+0522  CFDD     MOVFF POSTDEC2, POSTINC1
+0524  FFE6     NOP
+0526  D004     BRA 0x530
+0528  C00E     MOVFF 0xE, PCLATH
+052A  FFFA     NOP
+052C  500D     MOVF 0xD, W, ACCESS
+052E  6EF9     MOVWF PCL, ACCESS
+0530  DFFB     RCALL 0x528
+0532  52E5     MOVF POSTDEC1, F, ACCESS
+0534  52E5     MOVF POSTDEC1, F, ACCESS
+0536  52E5     MOVF POSTDEC1, F, ACCESS
+0538  52E5     MOVF POSTDEC1, F, ACCESS
+053A  50F3     MOVF PROD, W, ACCESS
+053C  10F4     IORWF PRODH, W, ACCESS
+053E  E02F     BZ 0x59E
+51:                  if(elementToCompare == list->head){
+0540  0E02     MOVLW 0x2
+0542  CFDB     MOVFF PLUSW2, __tmp_0
+0544  F00B     NOP
+0546  0E03     MOVLW 0x3
+0548  CFDB     MOVFF PLUSW2, 0xC
+054A  F00C     NOP
+054C  0EFD     MOVLW 0xFD
+054E  CFDB     MOVFF PLUSW2, FSR0
+0550  FFE9     NOP
+0552  0EFE     MOVLW 0xFE
+0554  CFDB     MOVFF PLUSW2, FSR0H
+0556  FFEA     NOP
+0558  CFEE     MOVFF POSTINC0, 0xD
+055A  F00D     NOP
+055C  CFEF     MOVFF INDF0, 0xE
+055E  F00E     NOP
+0560  500D     MOVF 0xD, W, ACCESS
+0562  180B     XORWF __tmp_0, W, ACCESS
+0564  E108     BNZ 0x576
+0566  500E     MOVF 0xE, W, ACCESS
+0568  180C     XORWF 0xC, W, ACCESS
+056A  E105     BNZ 0x576
+52:                    list->head = elementToAdd;
+056C  0EFD     MOVLW 0xFD
+056E  CFDB     MOVFF PLUSW2, FSR0
+0570  FFE9     NOP
+0572  0EFE     MOVLW 0xFE
+53:                    elementToAdd->next = elementToCompare;
+54:                  }
+55:                  else{
+0574  D004     BRA 0x57E
+56:                    elementBefore->next = elementToAdd;
+0576  0E04     MOVLW 0x4
+0578  CFDB     MOVFF PLUSW2, FSR0
+057A  FFE9     NOP
+057C  0E05     MOVLW 0x5
+057E  CFDB     MOVFF PLUSW2, FSR0H
+0580  FFEA     NOP
+0582  CFDE     MOVFF POSTINC2, POSTINC0
+0584  FFEE     NOP
+0586  CFDD     MOVFF POSTDEC2, POSTDEC0
+0588  FFED     NOP
+57:                    elementToAdd->next = elementToCompare;
+058A  CFDE     MOVFF POSTINC2, FSR0
+058C  FFE9     NOP
+058E  CFDD     MOVFF POSTDEC2, FSR0H
+0590  FFEA     NOP
+0592  0E02     MOVLW 0x2
+0594  CFDB     MOVFF PLUSW2, POSTINC0
+0596  FFEE     NOP
+0598  0E03     MOVLW 0x3
+059A  CFDB     MOVFF PLUSW2, POSTDEC0
+059C  FFED     NOP
+58:                  }
+59:                }
+60:              }
+61:            }
+059E  0E06     MOVLW 0x6
+05A0  5CE1     SUBWF FSR1, W, ACCESS
+05A2  E202     BC 0x5A8
+05A4  6AE1     CLRF FSR1, ACCESS
+05A6  52E5     MOVF POSTDEC1, F, ACCESS
+05A8  6EE1     MOVWF FSR1, ACCESS
+05AA  52E5     MOVF POSTDEC1, F, ACCESS
+05AC  CFE7     MOVFF INDF1, FSR2
+05AE  FFD9     NOP
+05B0  0012     RETURN 0
+---  C:/Documents and Settings/D300-01/Desktop/RTOS/src/PIC18/PreemptiveOS.c  ---------------------------
+1:             #include <stdio.h>
+2:             #include <stdlib.h>
+3:             #include "TCB.h"
+4:             #include "PriorityLinkedList.h"
+5:             #include "PreemptiveOS.h"
+6:             #include "../18c.h"
+7:             
+8:             TCB *runningTCB;
+9:             TCB allTCB[3];
+10:            PriorityLinkedList readyQueue;
+11:            unsigned char stacks[2][110];
+12:            //unsigned char stackOne[80];
+13:            //unsigned char stacktwo[80];
+14:            
+15:            void createTask(TCB tcbs[], int index, void (*task)(void)){
+0874  CFD9     MOVFF FSR2, POSTINC1
+0876  FFE6     NOP
+0878  CFE1     MOVFF FSR1, FSR2
+087A  FFD9     NOP
+16:                tcbs[index].task = (uint16)task;
+087C  0EFB     MOVLW 0xFB
+087E  CFDB     MOVFF PLUSW2, __tmp_0
+0880  F00B     NOP
+0882  0EFC     MOVLW 0xFC
+0884  CFDB     MOVFF PLUSW2, 0xC
+0886  F00C     NOP
+0888  0E03     MOVLW 0x3
+088A  90D8     BCF STATUS, 0, ACCESS
+088C  360B     RLCF __tmp_0, F, ACCESS
+088E  360C     RLCF 0xC, F, ACCESS
+0890  06E8     DECF WREG, F, ACCESS
+0892  E1FB     BNZ 0x88A
+0894  0EFD     MOVLW 0xFD
+0896  50DB     MOVF PLUSW2, W, ACCESS
+0898  240B     ADDWF __tmp_0, W, ACCESS
+089A  6EE9     MOVWF FSR0, ACCESS
+089C  0EFE     MOVLW 0xFE
+089E  50DB     MOVF PLUSW2, W, ACCESS
+08A0  200C     ADDWFC 0xC, W, ACCESS
+08A2  6EEA     MOVWF FSR0H, ACCESS
+08A4  0E04     MOVLW 0x4
+08A6  26E9     ADDWF FSR0, F, ACCESS
+08A8  0E00     MOVLW 0x0
+08AA  22EA     ADDWFC FSR0H, F, ACCESS
+08AC  0EF9     MOVLW 0xF9
+08AE  CFDB     MOVFF PLUSW2, POSTINC0
+08B0  FFEE     NOP
+08B2  0EFA     MOVLW 0xFA
+08B4  CFDB     MOVFF PLUSW2, POSTDEC0
+08B6  FFED     NOP
+17:                tcbs[index].next = NULL;
+08B8  0EFB     MOVLW 0xFB
+08BA  CFDB     MOVFF PLUSW2, __tmp_0
+08BC  F00B     NOP
+08BE  0EFC     MOVLW 0xFC
+08C0  CFDB     MOVFF PLUSW2, 0xC
+08C2  F00C     NOP
+08C4  0E03     MOVLW 0x3
+08C6  90D8     BCF STATUS, 0, ACCESS
+08C8  360B     RLCF __tmp_0, F, ACCESS
+08CA  360C     RLCF 0xC, F, ACCESS
+08CC  06E8     DECF WREG, F, ACCESS
+08CE  E1FB     BNZ 0x8C6
+08D0  0EFD     MOVLW 0xFD
+08D2  50DB     MOVF PLUSW2, W, ACCESS
+08D4  240B     ADDWF __tmp_0, W, ACCESS
+08D6  6EE9     MOVWF FSR0, ACCESS
+08D8  0EFE     MOVLW 0xFE
+08DA  50DB     MOVF PLUSW2, W, ACCESS
+08DC  200C     ADDWFC 0xC, W, ACCESS
+08DE  6EEA     MOVWF FSR0H, ACCESS
+08E0  6AEE     CLRF POSTINC0, ACCESS
+08E2  6AED     CLRF POSTDEC0, ACCESS
+18:                tcbs[index].stackPointer = (uint16)&stacks[index-1];
+08E4  0EFB     MOVLW 0xFB
+08E6  CFDB     MOVFF PLUSW2, 0xD
+08E8  F00D     NOP
+08EA  0EFC     MOVLW 0xFC
+08EC  CFDB     MOVFF PLUSW2, 0xE
+08EE  F00E     NOP
+08F0  060D     DECF 0xD, F, ACCESS
+08F2  0E00     MOVLW 0x0
+08F4  5A0E     SUBWFB 0xE, F, ACCESS
+08F6  0E6E     MOVLW 0x6E
+08F8  020E     MULWF 0xE, ACCESS
+08FA  CFF3     MOVFF PROD, 0xE
+08FC  F00E     NOP
+08FE  020D     MULWF 0xD, ACCESS
+0900  CFF3     MOVFF PROD, 0xD
+0902  F00D     NOP
+0904  50F4     MOVF PRODH, W, ACCESS
+0906  260E     ADDWF 0xE, F, ACCESS
+0908  0E1E     MOVLW 0x1E
+090A  260D     ADDWF 0xD, F, ACCESS
+090C  0E01     MOVLW 0x1
+090E  220E     ADDWFC 0xE, F, ACCESS
+0910  0EFB     MOVLW 0xFB
+0912  CFDB     MOVFF PLUSW2, __tmp_0
+0914  F00B     NOP
+0916  0EFC     MOVLW 0xFC
+0918  CFDB     MOVFF PLUSW2, 0xC
+091A  F00C     NOP
+091C  0E03     MOVLW 0x3
+091E  90D8     BCF STATUS, 0, ACCESS
+0920  360B     RLCF __tmp_0, F, ACCESS
+0922  360C     RLCF 0xC, F, ACCESS
+0924  06E8     DECF WREG, F, ACCESS
+0926  E1FB     BNZ 0x91E
+0928  0EFD     MOVLW 0xFD
+092A  50DB     MOVF PLUSW2, W, ACCESS
+092C  240B     ADDWF __tmp_0, W, ACCESS
+092E  6EE9     MOVWF FSR0, ACCESS
+0930  0EFE     MOVLW 0xFE
+0932  50DB     MOVF PLUSW2, W, ACCESS
+0934  200C     ADDWFC 0xC, W, ACCESS
+0936  6EEA     MOVWF FSR0H, ACCESS
+0938  0E06     MOVLW 0x6
+093A  26E9     ADDWF FSR0, F, ACCESS
+093C  0E00     MOVLW 0x0
+093E  22EA     ADDWFC FSR0H, F, ACCESS
+0940  C00D     MOVFF 0xD, POSTINC0
+0942  FFEE     NOP
+0944  C00E     MOVFF 0xE, POSTDEC0
+0946  FFED     NOP
+19:                tcbs[index].priority = 0;
+0948  0EFB     MOVLW 0xFB
+094A  CFDB     MOVFF PLUSW2, __tmp_0
+094C  F00B     NOP
+094E  0EFC     MOVLW 0xFC
+0950  CFDB     MOVFF PLUSW2, 0xC
+0952  F00C     NOP
+0954  0E03     MOVLW 0x3
+0956  90D8     BCF STATUS, 0, ACCESS
+0958  360B     RLCF __tmp_0, F, ACCESS
+095A  360C     RLCF 0xC, F, ACCESS
+095C  06E8     DECF WREG, F, ACCESS
+095E  E1FB     BNZ 0x956
+0960  0EFD     MOVLW 0xFD
+0962  50DB     MOVF PLUSW2, W, ACCESS
+0964  240B     ADDWF __tmp_0, W, ACCESS
+0966  6EE9     MOVWF FSR0, ACCESS
+0968  0EFE     MOVLW 0xFE
+096A  50DB     MOVF PLUSW2, W, ACCESS
+096C  200C     ADDWFC 0xC, W, ACCESS
+096E  6EEA     MOVWF FSR0H, ACCESS
+0970  0E02     MOVLW 0x2
+0972  26E9     ADDWF FSR0, F, ACCESS
+0974  0E00     MOVLW 0x0
+0976  22EA     ADDWFC FSR0H, F, ACCESS
+0978  6AEF     CLRF INDF0, ACCESS
+20:                tcbs[index].taskID = index;
+097A  0EFB     MOVLW 0xFB
+097C  CFDB     MOVFF PLUSW2, __tmp_0
+097E  F00B     NOP
+0980  0EFC     MOVLW 0xFC
+0982  CFDB     MOVFF PLUSW2, 0xC
+0984  F00C     NOP
+0986  0E03     MOVLW 0x3
+0988  90D8     BCF STATUS, 0, ACCESS
+098A  360B     RLCF __tmp_0, F, ACCESS
+098C  360C     RLCF 0xC, F, ACCESS
+098E  06E8     DECF WREG, F, ACCESS
+0990  E1FB     BNZ 0x988
+0992  0EFD     MOVLW 0xFD
+0994  50DB     MOVF PLUSW2, W, ACCESS
+0996  240B     ADDWF __tmp_0, W, ACCESS
+0998  6EE9     MOVWF FSR0, ACCESS
+099A  0EFE     MOVLW 0xFE
+099C  50DB     MOVF PLUSW2, W, ACCESS
+099E  200C     ADDWFC 0xC, W, ACCESS
+09A0  6EEA     MOVWF FSR0H, ACCESS
+09A2  0E03     MOVLW 0x3
+09A4  26E9     ADDWF FSR0, F, ACCESS
+09A6  0E00     MOVLW 0x0
+09A8  22EA     ADDWFC FSR0H, F, ACCESS
+09AA  0EFB     MOVLW 0xFB
+09AC  CFDB     MOVFF PLUSW2, INDF0
+09AE  FFEF     NOP
+21:                stacks[index-1][4] = FSR2H;
+09B0  CFDB     MOVFF PLUSW2, FSR0
+09B2  FFE9     NOP
+09B4  0EFC     MOVLW 0xFC
+09B6  CFDB     MOVFF PLUSW2, FSR0H
+09B8  FFEA     NOP
+09BA  06E9     DECF FSR0, F, ACCESS
+09BC  0E00     MOVLW 0x0
+09BE  5AEA     SUBWFB FSR0H, F, ACCESS
+09C0  0E6E     MOVLW 0x6E
+09C2  02EA     MULWF FSR0H, ACCESS
+09C4  CFF3     MOVFF PROD, FSR0H
+09C6  FFEA     NOP
+09C8  02E9     MULWF FSR0, ACCESS
+09CA  CFF3     MOVFF PROD, FSR0
+09CC  FFE9     NOP
+09CE  50F4     MOVF PRODH, W, ACCESS
+09D0  26EA     ADDWF FSR0H, F, ACCESS
+09D2  0E1E     MOVLW 0x1E
+09D4  26E9     ADDWF FSR0, F, ACCESS
+09D6  0E01     MOVLW 0x1
+09D8  22EA     ADDWFC FSR0H, F, ACCESS
+09DA  0E04     MOVLW 0x4
+09DC  26E9     ADDWF FSR0, F, ACCESS
+09DE  0E00     MOVLW 0x0
+09E0  22EA     ADDWFC FSR0H, F, ACCESS
+09E2  CFDA     MOVFF FSR2H, INDF0
+09E4  FFEF     NOP
+22:                addPriorityLinkedList(&readyQueue, &tcbs[index], compare);
+09E6  0E84     MOVLW 0x84
+09E8  6EE6     MOVWF POSTINC1, ACCESS
+09EA  0E02     MOVLW 0x2
+09EC  6EE6     MOVWF POSTINC1, ACCESS
+09EE  0EFB     MOVLW 0xFB
+09F0  CFDB     MOVFF PLUSW2, 0xD
+09F2  F00D     NOP
+09F4  0EFC     MOVLW 0xFC
+09F6  CFDB     MOVFF PLUSW2, 0xE
+09F8  F00E     NOP
+09FA  0E03     MOVLW 0x3
+09FC  90D8     BCF STATUS, 0, ACCESS
+09FE  360D     RLCF 0xD, F, ACCESS
+0A00  360E     RLCF 0xE, F, ACCESS
+0A02  06E8     DECF WREG, F, ACCESS
+0A04  E1FB     BNZ 0x9FC
+0A06  0EFD     MOVLW 0xFD
+0A08  50DB     MOVF PLUSW2, W, ACCESS
+0A0A  240D     ADDWF 0xD, W, ACCESS
+0A0C  6E0B     MOVWF __tmp_0, ACCESS
+0A0E  0EFE     MOVLW 0xFE
+0A10  50DB     MOVF PLUSW2, W, ACCESS
+0A12  200E     ADDWFC 0xE, W, ACCESS
+0A14  6E0C     MOVWF 0xC, ACCESS
+0A16  C00B     MOVFF __tmp_0, POSTINC1
+0A18  FFE6     NOP
+0A1A  6EE6     MOVWF POSTINC1, ACCESS
+0A1C  0E1A     MOVLW 0x1A
+0A1E  6EE6     MOVWF POSTINC1, ACCESS
+0A20  0E01     MOVLW 0x1
+0A22  6EE6     MOVWF POSTINC1, ACCESS
+0A24  ECFB     CALL 0x3F6, 0
+0A26  F001     NOP
+0A28  6E0F     MOVWF 0xF, ACCESS
+0A2A  0E06     MOVLW 0x6
+0A2C  5EE1     SUBWF FSR1, F, ACCESS
+0A2E  500F     MOVF 0xF, W, ACCESS
+23:            }
+0A30  52E5     MOVF POSTDEC1, F, ACCESS
+0A32  CFE7     MOVFF INDF1, FSR2
+0A34  FFD9     NOP
+0A36  0012     RETURN 0
+24:            
+25:            void initPreemptiveMultitasking(void) {
+26:                readyQueue.head = NULL;
+0A38  0101     MOVLB 0x1
+0A3A  6B1A     CLRF 0x1A, BANKED
+0A3C  6B1B     CLRF 0x1B, BANKED
+27:                readyQueue.tail = NULL;
+0A3E  6B1C     CLRF 0x1C, BANKED
+0A40  6B1D     CLRF 0x1D, BANKED
+28:                runningTCB = &allTCB[0];
+0A42  0E02     MOVLW 0x2
+0A44  6F00     MOVWF counter, BANKED
+0A46  0E01     MOVLW 0x1
+0A48  6F01     MOVWF 0x1, BANKED
+29:                runningTCB->next = NULL;
+0A4A  C100     MOVFF runningTCB, FSR0
+0A4C  FFE9     NOP
+0A4E  6EEA     MOVWF FSR0H, ACCESS
+0A50  6AEE     CLRF POSTINC0, ACCESS
+0A52  6AED     CLRF POSTDEC0, ACCESS
+30:                createTask(allTCB, 1, &taskOne);
+0A54  0E96     MOVLW 0x96
+0A56  6EE6     MOVWF POSTINC1, ACCESS
+0A58  0E0A     MOVLW 0xA
+0A5A  6EE6     MOVWF POSTINC1, ACCESS
+0A5C  0E01     MOVLW 0x1
+0A5E  6EE6     MOVWF POSTINC1, ACCESS
+0A60  6AE6     CLRF POSTINC1, ACCESS
+0A62  0E02     MOVLW 0x2
+0A64  6EE6     MOVWF POSTINC1, ACCESS
+0A66  0E01     MOVLW 0x1
+0A68  6EE6     MOVWF POSTINC1, ACCESS
+0A6A  DF04     RCALL createTask
+0A6C  6E0B     MOVWF __tmp_0, ACCESS
+0A6E  0E06     MOVLW 0x6
+0A70  5EE1     SUBWF FSR1, F, ACCESS
+0A72  500B     MOVF __tmp_0, W, ACCESS
+31:                createTask(allTCB, 2, &taskTwo);
+0A74  0ED6     MOVLW 0xD6
+0A76  6EE6     MOVWF POSTINC1, ACCESS
+0A78  0E0A     MOVLW 0xA
+0A7A  6EE6     MOVWF POSTINC1, ACCESS
+0A7C  0E02     MOVLW 0x2
+0A7E  6EE6     MOVWF POSTINC1, ACCESS
+0A80  6AE6     CLRF POSTINC1, ACCESS
+0A82  0E02     MOVLW 0x2
+0A84  6EE6     MOVWF POSTINC1, ACCESS
+0A86  0E01     MOVLW 0x1
+0A88  6EE6     MOVWF POSTINC1, ACCESS
+0A8A  DEF4     RCALL createTask
+0A8C  6E0B     MOVWF __tmp_0, ACCESS
+0A8E  0E06     MOVLW 0x6
+0A90  5EE1     SUBWF FSR1, F, ACCESS
+0A92  500B     MOVF __tmp_0, W, ACCESS
+32:            }
+0A94  0012     RETURN 0
+33:            
+34:            void taskOne(){
+0A96  CFD9     MOVFF FSR2, POSTINC1
+0A98  FFE6     NOP
+0A9A  CFE1     MOVFF FSR1, FSR2
+0A9C  FFD9     NOP
+0A9E  0E02     MOVLW 0x2
+0AA0  26E1     ADDWF FSR1, F, ACCESS
+35:                int i = 0;
+0AA2  6ADE     CLRF POSTINC2, ACCESS
+0AA4  6ADD     CLRF POSTDEC2, ACCESS
+36:                while(i != 255){
+0AA6  CFD9     MOVFF FSR2, FSR0
+0AA8  FFE9     NOP
+0AAA  CFDA     MOVFF FSR2H, FSR0H
+0AAC  FFEA     NOP
+0AAE  0EFF     MOVLW 0xFF
+0AB0  18EE     XORWF POSTINC0, W, ACCESS
+0AB2  E101     BNZ 0xAB6
+0AB4  50ED     MOVF POSTDEC0, W, ACCESS
+0AB6  E005     BZ 0xAC2
+0AC0  D7F2     BRA 0xAA6
+37:                    i++;
+0AB8  2ADF     INCF INDF2, F, ACCESS
+0ABA  0E01     MOVLW 0x1
+0ABC  E3F4     BNC 0xAA6
+0ABE  2ADB     INCF PLUSW2, F, ACCESS
+38:                }
+39:            }
+0AC2  0E02     MOVLW 0x2
+0AC4  5CE1     SUBWF FSR1, W, ACCESS
+0AC6  E202     BC 0xACC
+0AC8  6AE1     CLRF FSR1, ACCESS
+0ACA  52E5     MOVF POSTDEC1, F, ACCESS
+0ACC  6EE1     MOVWF FSR1, ACCESS
+0ACE  52E5     MOVF POSTDEC1, F, ACCESS
+0AD0  CFE7     MOVFF INDF1, FSR2
+0AD2  FFD9     NOP
+0AD4  0012     RETURN 0
+40:            
+41:            void taskTwo(){
+0AD6  CFD9     MOVFF FSR2, POSTINC1
+0AD8  FFE6     NOP
+0ADA  CFE1     MOVFF FSR1, FSR2
+0ADC  FFD9     NOP
+0ADE  0E02     MOVLW 0x2
+0AE0  26E1     ADDWF FSR1, F, ACCESS
+42:                int j = 0;
+0AE2  6ADE     CLRF POSTINC2, ACCESS
+0AE4  6ADD     CLRF POSTDEC2, ACCESS
+43:                while(j != 255){
+0AE6  CFD9     MOVFF FSR2, FSR0
+0AE8  FFE9     NOP
+0AEA  CFDA     MOVFF FSR2H, FSR0H
+0AEC  FFEA     NOP
+0AEE  0EFF     MOVLW 0xFF
+0AF0  18EE     XORWF POSTINC0, W, ACCESS
+0AF2  E101     BNZ 0xAF6
+0AF4  50ED     MOVF POSTDEC0, W, ACCESS
+0AF6  E005     BZ 0xB02
+0B00  D7F2     BRA 0xAE6
+44:                    j++;
+0AF8  2ADF     INCF INDF2, F, ACCESS
+0AFA  0E01     MOVLW 0x1
+0AFC  E3F4     BNC 0xAE6
+0AFE  2ADB     INCF PLUSW2, F, ACCESS
+45:                }
+46:            }
+0B02  0E02     MOVLW 0x2
+0B04  5CE1     SUBWF FSR1, W, ACCESS
+0B06  E202     BC 0xB0C
+0B08  6AE1     CLRF FSR1, ACCESS
+0B0A  52E5     MOVF POSTDEC1, F, ACCESS
+0B0C  6EE1     MOVWF FSR1, ACCESS
+0B0E  52E5     MOVF POSTDEC1, F, ACCESS
+0B10  CFE7     MOVFF INDF1, FSR2
+0B12  FFD9     NOP
+0B14  0012     RETURN 0
+---  C:/Documents and Settings/D300-01/Desktop/RTOS/src/PIC18/Led2.c  -----------------------------------
+1:             #include <stdio.h>
+2:             #include "Led2.h"
+3:             #include "Tasking.h"
+4:             #include "Blinky.h"
+5:             #include "Clock.h"
+6:             #include "../18c.h"
+7:             
+8:             #define CLK_OV 488 //0.5s
+9:             
+10:            void testingLed2SM(Led2Data *data){
+05B2  CFD9     MOVFF FSR2, POSTINC1
+05B4  FFE6     NOP
+05B6  CFE1     MOVFF FSR1, FSR2
+05B8  FFD9     NOP
+11:            	startTasking(data->state);
+05BA  0EFD     MOVLW 0xFD
+05BC  CFDB     MOVFF PLUSW2, FSR0
+05BE  FFE9     NOP
+05C0  0EFE     MOVLW 0xFE
+05C2  CFDB     MOVFF PLUSW2, FSR0H
+05C4  FFEA     NOP
+05C6  CFEE     MOVFF POSTINC0, __tmp_0
+05C8  F00B     NOP
+05CA  CFEF     MOVFF INDF0, 0xC
+05CC  F00C     NOP
+05CE  0E12     MOVLW 0x12
+05D0  180B     XORWF __tmp_0, W, ACCESS
+05D2  E101     BNZ 0x5D6
+05D4  500C     MOVF 0xC, W, ACCESS
+05D6  E027     BZ 0x626
+05D8  0E0E     MOVLW 0xE
+05DA  180B     XORWF __tmp_0, W, ACCESS
+05DC  E101     BNZ 0x5E0
+05DE  500C     MOVF 0xC, W, ACCESS
+05E0  E00C     BZ 0x5FA
+05E2  500B     MOVF __tmp_0, W, ACCESS
+05E4  E120     BNZ 0x626
+05E6  500C     MOVF 0xC, W, ACCESS
+05E8  E11E     BNZ 0x626
+12:              //printf("LED2_INIT\n");
+13:              //printf("before yield1\n");
+14:              yield(data->state);
+05EA  0EFD     MOVLW 0xFD
+05EC  CFDB     MOVFF PLUSW2, FSR0
+05EE  FFE9     NOP
+05F0  0EFE     MOVLW 0xFE
+05F2  CFDB     MOVFF PLUSW2, FSR0H
+05F4  FFEA     NOP
+05F6  0E0E     MOVLW 0xE
+05F8  D014     BRA 0x622
+15:              //printf("after yield1\n");
+16:              if(data->ledStatus == 10){
+05FA  0EFD     MOVLW 0xFD
+05FC  CFDB     MOVFF PLUSW2, FSR0
+05FE  FFE9     NOP
+0600  0EFE     MOVLW 0xFE
+0602  CFDB     MOVFF PLUSW2, FSR0H
+0604  FFEA     NOP
+0606  0E02     MOVLW 0x2
+0608  26E9     ADDWF FSR0, F, ACCESS
+060A  0E00     MOVLW 0x0
+060C  22EA     ADDWFC FSR0H, F, ACCESS
+060E  50EF     MOVF INDF0, W, ACCESS
+0610  080A     SUBLW 0xA
+0612  E109     BNZ 0x626
+17:                //printf("before yield2\n");
+18:                yield(data->state);
+0614  0EFD     MOVLW 0xFD
+0616  CFDB     MOVFF PLUSW2, FSR0
+0618  FFE9     NOP
+061A  0EFE     MOVLW 0xFE
+061C  CFDB     MOVFF PLUSW2, FSR0H
+061E  FFEA     NOP
+0620  0E12     MOVLW 0x12
+0622  6EEE     MOVWF POSTINC0, ACCESS
+0624  6AED     CLRF POSTDEC0, ACCESS
+19:                //printf("after yield 2\n");
+20:              }else{
+21:                //printf("tak jadi yield2\n");
+22:              }
+23:              endTasking();
+24:            }
+0626  52E5     MOVF POSTDEC1, F, ACCESS
+0628  CFE7     MOVFF INDF1, FSR2
+062A  FFD9     NOP
+062C  0012     RETURN 0
+25:            
+26:            void led2SM(Led2Data *data){
+062E  CFD9     MOVFF FSR2, POSTINC1
+0630  FFE6     NOP
+0632  CFE1     MOVFF FSR1, FSR2
+0634  FFD9     NOP
+27:              // static int i = 0;
+28:              
+29:              startTasking(data->state);
+0636  0EFD     MOVLW 0xFD
+0638  CFDB     MOVFF PLUSW2, FSR0
+063A  FFE9     NOP
+063C  0EFE     MOVLW 0xFE
+063E  CFDB     MOVFF PLUSW2, FSR0H
+0640  FFEA     NOP
+0642  CFEE     MOVFF POSTINC0, __tmp_0
+0644  F00B     NOP
+0646  CFEF     MOVFF INDF0, 0xC
+0648  F00C     NOP
+064A  0E2A     MOVLW 0x2A
+064C  180B     XORWF __tmp_0, W, ACCESS
+064E  E101     BNZ 0x652
+0650  500C     MOVF 0xC, W, ACCESS
+0652  E101     BNZ 0x656
+0654  D097     BRA 0x784
+0656  0E23     MOVLW 0x23
+0658  180B     XORWF __tmp_0, W, ACCESS
+065A  E101     BNZ 0x65E
+065C  500C     MOVF 0xC, W, ACCESS
+065E  E021     BZ 0x6A2
+0660  0E20     MOVLW 0x20
+0662  180B     XORWF __tmp_0, W, ACCESS
+0664  E101     BNZ 0x668
+0666  500C     MOVF 0xC, W, ACCESS
+0668  E01C     BZ 0x6A2
+066A  500B     MOVF __tmp_0, W, ACCESS
+066C  E001     BZ 0x670
+066E  D0FE     BRA 0x86C
+0670  500C     MOVF 0xC, W, ACCESS
+0672  E001     BZ 0x676
+0674  D0FB     BRA 0x86C
+30:              data->ledStatus = LED2_ON;
+0676  0EFD     MOVLW 0xFD
+0678  CFDB     MOVFF PLUSW2, FSR0
+067A  FFE9     NOP
+067C  0EFE     MOVLW 0xFE
+067E  CFDB     MOVFF PLUSW2, FSR0H
+0680  FFEA     NOP
+0682  0E02     MOVLW 0x2
+0684  26E9     ADDWF FSR0, F, ACCESS
+0686  0E00     MOVLW 0x0
+0688  22EA     ADDWFC FSR0H, F, ACCESS
+068A  0E01     MOVLW 0x1
+068C  6EEF     MOVWF INDF0, ACCESS
+31:              onLED();
+068E  EC5A     CALL 0x10B4, 0
+0690  F008     NOP
+32:              yield(data->state);
+0692  0EFD     MOVLW 0xFD
+0694  CFDB     MOVFF PLUSW2, FSR0
+0696  FFE9     NOP
+0698  0EFE     MOVLW 0xFE
+069A  CFDB     MOVFF PLUSW2, FSR0H
+069C  FFEA     NOP
+069E  0E20     MOVLW 0x20
+06A0  D0B7     BRA 0x810
+33:              while(1){
+086A  D71B     BRA 0x6A2
+34:                while(getClock() - data->currentClock <= CLK_OV){
+06A2  0EFD     MOVLW 0xFD
+06A4  CFDB     MOVFF PLUSW2, FSR0
+06A6  FFE9     NOP
+06A8  0EFE     MOVLW 0xFE
+06AA  CFDB     MOVFF PLUSW2, FSR0H
+06AC  FFEA     NOP
+06AE  0E03     MOVLW 0x3
+06B0  26E9     ADDWF FSR0, F, ACCESS
+06B2  0E00     MOVLW 0x0
+06B4  22EA     ADDWFC FSR0H, F, ACCESS
+06B6  CFEE     MOVFF POSTINC0, 0xF
+06B8  F00F     NOP
+06BA  CFEE     MOVFF POSTINC0, 0x10
+06BC  F010     NOP
+06BE  CFEE     MOVFF POSTINC0, 0x11
+06C0  F011     NOP
+06C2  CFEF     MOVFF INDF0, 0x12
+06C4  F012     NOP
+06C6  C00F     MOVFF 0xF, POSTINC1
+06C8  FFE6     NOP
+06CA  C010     MOVFF 0x10, POSTINC1
+06CC  FFE6     NOP
+06CE  C011     MOVFF 0x11, POSTINC1
+06D0  FFE6     NOP
+06D2  C012     MOVFF 0x12, POSTINC1
+06D4  FFE6     NOP
+06D6  ECF7     CALL 0x11EE, 0
+06D8  F008     NOP
+06DA  52E5     MOVF POSTDEC1, F, ACCESS
+06DC  CFE7     MOVFF INDF1, 0x12
+06DE  F012     NOP
+06E0  52E5     MOVF POSTDEC1, F, ACCESS
+06E2  CFE7     MOVFF INDF1, 0x11
+06E4  F011     NOP
+06E6  52E5     MOVF POSTDEC1, F, ACCESS
+06E8  CFE7     MOVFF INDF1, 0x10
+06EA  F010     NOP
+06EC  52E5     MOVF POSTDEC1, F, ACCESS
+06EE  CFE7     MOVFF INDF1, 0xF
+06F0  F00F     NOP
+06F2  0100     MOVLB 0x0
+06F4  500F     MOVF 0xF, W, ACCESS
+06F6  5C04     SUBWF elementBefore, W, ACCESS
+06F8  6E0B     MOVWF __tmp_0, ACCESS
+06FA  5010     MOVF 0x10, W, ACCESS
+06FC  5805     SUBWFB 0x5, W, ACCESS
+06FE  6E0C     MOVWF 0xC, ACCESS
+0700  5011     MOVF 0x11, W, ACCESS
+0702  5806     SUBWFB 0x6, W, ACCESS
+0704  6E0D     MOVWF 0xD, ACCESS
+0706  5012     MOVF 0x12, W, ACCESS
+0708  5807     SUBWFB 0x7, W, ACCESS
+070A  6E0E     MOVWF 0xE, ACCESS
+070C  80D8     BSF STATUS, 0, ACCESS
+070E  0EE8     MOVLW 0xE8
+0710  540B     SUBFWB __tmp_0, W, ACCESS
+0712  0E01     MOVLW 0x1
+0714  540C     SUBFWB 0xC, W, ACCESS
+0716  0E00     MOVLW 0x0
+0718  540D     SUBFWB 0xD, W, ACCESS
+071A  0E00     MOVLW 0x0
+071C  540E     SUBFWB 0xE, W, ACCESS
+071E  E308     BNC 0x730
+35:                  yield(data->state);
+0720  0EFD     MOVLW 0xFD
+0722  CFDB     MOVFF PLUSW2, FSR0
+0724  FFE9     NOP
+0726  0EFE     MOVLW 0xFE
+0728  CFDB     MOVFF PLUSW2, FSR0H
+072A  FFEA     NOP
+072C  0E23     MOVLW 0x23
+072E  D070     BRA 0x810
+36:                }
+37:                offLED();
+0730  EC5C     CALL 0x10B8, 0
+0732  F008     NOP
+38:                data->currentClock = getClock();
+0734  ECF7     CALL 0x11EE, 0
+0736  F008     NOP
+0738  C004     MOVFF elementBefore, __tmp_0
+073A  F00B     NOP
+073C  C005     MOVFF 0x5, 0xC
+073E  F00C     NOP
+0740  C006     MOVFF 0x6, 0xD
+0742  F00D     NOP
+0744  C007     MOVFF 0x7, 0xE
+0746  F00E     NOP
+0748  0EFD     MOVLW 0xFD
+074A  CFDB     MOVFF PLUSW2, FSR0
+074C  FFE9     NOP
+074E  0EFE     MOVLW 0xFE
+0750  CFDB     MOVFF PLUSW2, FSR0H
+0752  FFEA     NOP
+0754  0E03     MOVLW 0x3
+0756  26E9     ADDWF FSR0, F, ACCESS
+0758  0E00     MOVLW 0x0
+075A  22EA     ADDWFC FSR0H, F, ACCESS
+075C  C004     MOVFF elementBefore, POSTINC0
+075E  FFEE     NOP
+0760  C00C     MOVFF 0xC, POSTINC0
+0762  FFEE     NOP
+0764  C00D     MOVFF 0xD, POSTINC0
+0766  FFEE     NOP
+0768  C00E     MOVFF 0xE, POSTINC0
+076A  FFEE     NOP
+39:                data->ledStatus = LED2_OFF;
+076C  0EFD     MOVLW 0xFD
+076E  CFDB     MOVFF PLUSW2, FSR0
+0770  FFE9     NOP
+0772  0EFE     MOVLW 0xFE
+0774  CFDB     MOVFF PLUSW2, FSR0H
+0776  FFEA     NOP
+0778  0E02     MOVLW 0x2
+077A  26E9     ADDWF FSR0, F, ACCESS
+077C  0E00     MOVLW 0x0
+077E  22EA     ADDWFC FSR0H, F, ACCESS
+0780  0E02     MOVLW 0x2
+0782  6EEF     MOVWF INDF0, ACCESS
+40:                
+41:                while(getClock() - data->currentClock <= CLK_OV){
+0784  0EFD     MOVLW 0xFD
+0786  CFDB     MOVFF PLUSW2, FSR0
+0788  FFE9     NOP
+078A  0EFE     MOVLW 0xFE
+078C  CFDB     MOVFF PLUSW2, FSR0H
+078E  FFEA     NOP
+0790  0E03     MOVLW 0x3
+0792  26E9     ADDWF FSR0, F, ACCESS
+0794  0E00     MOVLW 0x0
+0796  22EA     ADDWFC FSR0H, F, ACCESS
+0798  CFEE     MOVFF POSTINC0, 0xF
+079A  F00F     NOP
+079C  CFEE     MOVFF POSTINC0, 0x10
+079E  F010     NOP
+07A0  CFEE     MOVFF POSTINC0, 0x11
+07A2  F011     NOP
+07A4  CFEF     MOVFF INDF0, 0x12
+07A6  F012     NOP
+07A8  C00F     MOVFF 0xF, POSTINC1
+07AA  FFE6     NOP
+07AC  C010     MOVFF 0x10, POSTINC1
+07AE  FFE6     NOP
+07B0  C011     MOVFF 0x11, POSTINC1
+07B2  FFE6     NOP
+07B4  C012     MOVFF 0x12, POSTINC1
+07B6  FFE6     NOP
+07B8  ECF7     CALL 0x11EE, 0
+07BA  F008     NOP
+07BC  52E5     MOVF POSTDEC1, F, ACCESS
+07BE  CFE7     MOVFF INDF1, 0x12
+07C0  F012     NOP
+07C2  52E5     MOVF POSTDEC1, F, ACCESS
+07C4  CFE7     MOVFF INDF1, 0x11
+07C6  F011     NOP
+07C8  52E5     MOVF POSTDEC1, F, ACCESS
+07CA  CFE7     MOVFF INDF1, 0x10
+07CC  F010     NOP
+07CE  52E5     MOVF POSTDEC1, F, ACCESS
+07D0  CFE7     MOVFF INDF1, 0xF
+07D2  F00F     NOP
+07D4  0100     MOVLB 0x0
+07D6  500F     MOVF 0xF, W, ACCESS
+07D8  5C04     SUBWF elementBefore, W, ACCESS
+07DA  6E0B     MOVWF __tmp_0, ACCESS
+07DC  5010     MOVF 0x10, W, ACCESS
+07DE  5805     SUBWFB 0x5, W, ACCESS
+07E0  6E0C     MOVWF 0xC, ACCESS
+07E2  5011     MOVF 0x11, W, ACCESS
+07E4  5806     SUBWFB 0x6, W, ACCESS
+07E6  6E0D     MOVWF 0xD, ACCESS
+07E8  5012     MOVF 0x12, W, ACCESS
+07EA  5807     SUBWFB 0x7, W, ACCESS
+07EC  6E0E     MOVWF 0xE, ACCESS
+07EE  80D8     BSF STATUS, 0, ACCESS
+07F0  0EE8     MOVLW 0xE8
+07F2  540B     SUBFWB __tmp_0, W, ACCESS
+07F4  0E01     MOVLW 0x1
+07F6  540C     SUBFWB 0xC, W, ACCESS
+07F8  0E00     MOVLW 0x0
+07FA  540D     SUBFWB 0xD, W, ACCESS
+07FC  0E00     MOVLW 0x0
+07FE  540E     SUBFWB 0xE, W, ACCESS
+0800  E30A     BNC 0x816
+42:                  yield(data->state);
+0802  0EFD     MOVLW 0xFD
+0804  CFDB     MOVFF PLUSW2, FSR0
+0806  FFE9     NOP
+0808  0EFE     MOVLW 0xFE
+080A  CFDB     MOVFF PLUSW2, FSR0H
+080C  FFEA     NOP
+080E  0E2A     MOVLW 0x2A
+0810  6EEE     MOVWF POSTINC0, ACCESS
+0812  6AED     CLRF POSTDEC0, ACCESS
+0814  D02B     BRA 0x86C
+43:                }
+44:                onLED();
+0816  EC5A     CALL 0x10B4, 0
+0818  F008     NOP
+45:                data->currentClock = getClock();
+081A  ECF7     CALL 0x11EE, 0
+081C  F008     NOP
+081E  C004     MOVFF elementBefore, __tmp_0
+0820  F00B     NOP
+0822  C005     MOVFF 0x5, 0xC
+0824  F00C     NOP
+0826  C006     MOVFF 0x6, 0xD
+0828  F00D     NOP
+082A  C007     MOVFF 0x7, 0xE
+082C  F00E     NOP
+082E  0EFD     MOVLW 0xFD
+0830  CFDB     MOVFF PLUSW2, FSR0
+0832  FFE9     NOP
+0834  0EFE     MOVLW 0xFE
+0836  CFDB     MOVFF PLUSW2, FSR0H
+0838  FFEA     NOP
+083A  0E03     MOVLW 0x3
+083C  26E9     ADDWF FSR0, F, ACCESS
+083E  0E00     MOVLW 0x0
+0840  22EA     ADDWFC FSR0H, F, ACCESS
+0842  C004     MOVFF elementBefore, POSTINC0
+0844  FFEE     NOP
+0846  C00C     MOVFF 0xC, POSTINC0
+0848  FFEE     NOP
+084A  C00D     MOVFF 0xD, POSTINC0
+084C  FFEE     NOP
+084E  C00E     MOVFF 0xE, POSTINC0
+0850  FFEE     NOP
+46:                data->ledStatus = LED2_ON;
+0852  0EFD     MOVLW 0xFD
+0854  CFDB     MOVFF PLUSW2, FSR0
+0856  FFE9     NOP
+0858  0EFE     MOVLW 0xFE
+085A  CFDB     MOVFF PLUSW2, FSR0H
+085C  FFEA     NOP
+085E  0E02     MOVLW 0x2
+0860  26E9     ADDWF FSR0, F, ACCESS
+0862  0E00     MOVLW 0x0
+0864  22EA     ADDWFC FSR0H, F, ACCESS
+0866  0E01     MOVLW 0x1
+0868  6EEF     MOVWF INDF0, ACCESS
+47:              }
+48:              endTasking();
+49:            }
+086C  52E5     MOVF POSTDEC1, F, ACCESS
+086E  CFE7     MOVFF INDF1, FSR2
+0870  FFD9     NOP
+0872  0012     RETURN 0
+---  C:/Documents and Settings/D300-01/Desktop/RTOS/src/PIC18/LEDSM.c  ----------------------------------
+1:             #include "LEDSM.h"
+2:             #include "Blinky.h"
+3:             #include "Clock.h"
+4:             #include "../18c.h"
+5:             
+6:             #define CLK_OV 488 //0.5s
+7:             
+8:             void initLEDStateMachine(LEDData *data){
+0B16  CFD9     MOVFF FSR2, POSTINC1
+0B18  FFE6     NOP
+0B1A  CFE1     MOVFF FSR1, FSR2
+0B1C  FFD9     NOP
+9:               data->state = LED_START;
+0B1E  0EFD     MOVLW 0xFD
+0B20  CFDB     MOVFF PLUSW2, FSR0
+0B22  FFE9     NOP
+0B24  0EFE     MOVLW 0xFE
+0B26  CFDB     MOVFF PLUSW2, FSR0H
+0B28  FFEA     NOP
+0B2A  6AEF     CLRF INDF0, ACCESS
+10:              data->currentClock = 0;
+0B2C  0EFD     MOVLW 0xFD
+0B2E  CFDB     MOVFF PLUSW2, FSR0
+0B30  FFE9     NOP
+0B32  0EFE     MOVLW 0xFE
+0B34  CFDB     MOVFF PLUSW2, FSR0H
+0B36  FFEA     NOP
+0B38  52EE     MOVF POSTINC0, F, ACCESS
+0B3A  6AEE     CLRF POSTINC0, ACCESS
+0B3C  6AEE     CLRF POSTINC0, ACCESS
+0B3E  6AEE     CLRF POSTINC0, ACCESS
+0B40  6AEE     CLRF POSTINC0, ACCESS
+11:              configureLED();
+0B42  EC58     CALL 0x10B0, 0
+0B44  F008     NOP
+12:            }
+0B46  52E5     MOVF POSTDEC1, F, ACCESS
+0B48  CFE7     MOVFF INDF1, FSR2
+0B4A  FFD9     NOP
+0B4C  0012     RETURN 0
+13:            
+14:            void LEDStateMachine(LEDData *data){
+0B4E  CFD9     MOVFF FSR2, POSTINC1
+0B50  FFE6     NOP
+0B52  CFE1     MOVFF FSR1, FSR2
+0B54  FFD9     NOP
+15:              switch(data->state){
+0B56  0EFD     MOVLW 0xFD
+0B58  CFDB     MOVFF PLUSW2, FSR0
+0B5A  FFE9     NOP
+0B5C  0EFE     MOVLW 0xFE
+0B5E  CFDB     MOVFF PLUSW2, FSR0H
+0B60  FFEA     NOP
+0B62  50EF     MOVF INDF0, W, ACCESS
+0B64  0A01     XORLW 0x1
+0B66  E101     BNZ 0xB6A
+0B68  D078     BRA 0xC5A
+0B6A  0A03     XORLW 0x3
+0B6C  E017     BZ 0xB9C
+0B6E  0A02     XORLW 0x2
+0B70  E001     BZ 0xB74
+0B72  D0D1     BRA 0xD16
+16:                case LED_START:
+17:                  data->state = LED_OFF;
+0B74  0EFD     MOVLW 0xFD
+0B76  CFDB     MOVFF PLUSW2, FSR0
+0B78  FFE9     NOP
+0B7A  0EFE     MOVLW 0xFE
+0B7C  CFDB     MOVFF PLUSW2, FSR0H
+0B7E  FFEA     NOP
+0B80  0E02     MOVLW 0x2
+0B82  6EEF     MOVWF INDF0, ACCESS
+18:                  data->currentClock = 0;
+0B84  0EFD     MOVLW 0xFD
+0B86  CFDB     MOVFF PLUSW2, FSR0
+0B88  FFE9     NOP
+0B8A  0EFE     MOVLW 0xFE
+0B8C  CFDB     MOVFF PLUSW2, FSR0H
+0B8E  FFEA     NOP
+0B90  52EE     MOVF POSTINC0, F, ACCESS
+0B92  6AEE     CLRF POSTINC0, ACCESS
+0B94  6AEE     CLRF POSTINC0, ACCESS
+0B96  6AEE     CLRF POSTINC0, ACCESS
+0B98  6AEE     CLRF POSTINC0, ACCESS
+19:                  break;
+0B9A  D0BD     BRA 0xD16
+20:                  
+21:                case LED_OFF:
+22:                  if(getClock() - data->currentClock >= CLK_OV){
+0B9C  0EFD     MOVLW 0xFD
+0B9E  CFDB     MOVFF PLUSW2, FSR0
+0BA0  FFE9     NOP
+0BA2  0EFE     MOVLW 0xFE
+0BA4  CFDB     MOVFF PLUSW2, FSR0H
+0BA6  FFEA     NOP
+0BA8  52EE     MOVF POSTINC0, F, ACCESS
+0BAA  CFEE     MOVFF POSTINC0, 0xF
+0BAC  F00F     NOP
+0BAE  CFEE     MOVFF POSTINC0, 0x10
+0BB0  F010     NOP
+0BB2  CFEE     MOVFF POSTINC0, 0x11
+0BB4  F011     NOP
+0BB6  CFEF     MOVFF INDF0, 0x12
+0BB8  F012     NOP
+0BBA  C00F     MOVFF 0xF, POSTINC1
+0BBC  FFE6     NOP
+0BBE  C010     MOVFF 0x10, POSTINC1
+0BC0  FFE6     NOP
+0BC2  C011     MOVFF 0x11, POSTINC1
+0BC4  FFE6     NOP
+0BC6  C012     MOVFF 0x12, POSTINC1
+0BC8  FFE6     NOP
+0BCA  ECF7     CALL 0x11EE, 0
+0BCC  F008     NOP
+0BCE  52E5     MOVF POSTDEC1, F, ACCESS
+0BD0  CFE7     MOVFF INDF1, 0x12
+0BD2  F012     NOP
+0BD4  52E5     MOVF POSTDEC1, F, ACCESS
+0BD6  CFE7     MOVFF INDF1, 0x11
+0BD8  F011     NOP
+0BDA  52E5     MOVF POSTDEC1, F, ACCESS
+0BDC  CFE7     MOVFF INDF1, 0x10
+0BDE  F010     NOP
+0BE0  52E5     MOVF POSTDEC1, F, ACCESS
+0BE2  CFE7     MOVFF INDF1, 0xF
+0BE4  F00F     NOP
+0BE6  0100     MOVLB 0x0
+0BE8  500F     MOVF 0xF, W, ACCESS
+0BEA  5C04     SUBWF elementBefore, W, ACCESS
+0BEC  6E0B     MOVWF __tmp_0, ACCESS
+0BEE  5010     MOVF 0x10, W, ACCESS
+0BF0  5805     SUBWFB 0x5, W, ACCESS
+0BF2  6E0C     MOVWF 0xC, ACCESS
+0BF4  5011     MOVF 0x11, W, ACCESS
+0BF6  5806     SUBWFB 0x6, W, ACCESS
+0BF8  6E0D     MOVWF 0xD, ACCESS
+0BFA  5012     MOVF 0x12, W, ACCESS
+0BFC  5807     SUBWFB 0x7, W, ACCESS
+0BFE  6E0E     MOVWF 0xE, ACCESS
+0C00  0EE8     MOVLW 0xE8
+0C02  5C0B     SUBWF __tmp_0, W, ACCESS
+0C04  0E01     MOVLW 0x1
+0C06  580C     SUBWFB 0xC, W, ACCESS
+0C08  0E00     MOVLW 0x0
+0C0A  580D     SUBWFB 0xD, W, ACCESS
+0C0C  0E00     MOVLW 0x0
+0C0E  580E     SUBWFB 0xE, W, ACCESS
+0C10  E201     BC 0xC14
+0C12  D081     BRA 0xD16
+23:                    data->currentClock = getClock();
+0C14  ECF7     CALL 0x11EE, 0
+0C16  F008     NOP
+0C18  C004     MOVFF elementBefore, __tmp_0
+0C1A  F00B     NOP
+0C1C  C005     MOVFF 0x5, 0xC
+0C1E  F00C     NOP
+0C20  C006     MOVFF 0x6, 0xD
+0C22  F00D     NOP
+0C24  C007     MOVFF 0x7, 0xE
+0C26  F00E     NOP
+0C28  0EFD     MOVLW 0xFD
+0C2A  CFDB     MOVFF PLUSW2, FSR0
+0C2C  FFE9     NOP
+0C2E  0EFE     MOVLW 0xFE
+0C30  CFDB     MOVFF PLUSW2, FSR0H
+0C32  FFEA     NOP
+0C34  52EE     MOVF POSTINC0, F, ACCESS
+0C36  C004     MOVFF elementBefore, POSTINC0
+0C38  FFEE     NOP
+0C3A  C00C     MOVFF 0xC, POSTINC0
+0C3C  FFEE     NOP
+0C3E  C00D     MOVFF 0xD, POSTINC0
+0C40  FFEE     NOP
+0C42  C00E     MOVFF 0xE, POSTINC0
+0C44  FFEE     NOP
+24:                    offLED();
+0C46  EC5C     CALL 0x10B8, 0
+0C48  F008     NOP
+25:                    data->state = LED_ON;
+0C4A  0EFD     MOVLW 0xFD
+0C4C  CFDB     MOVFF PLUSW2, FSR0
+0C4E  FFE9     NOP
+0C50  0EFE     MOVLW 0xFE
+0C52  CFDB     MOVFF PLUSW2, FSR0H
+0C54  FFEA     NOP
+0C56  0E01     MOVLW 0x1
+26:                    break;
+0C58  D05D     BRA 0xD14
+27:                  }
+28:                  break;
+29:                    
+30:                case LED_ON:
+31:                  if(getClock() - data->currentClock >= CLK_OV){
+0C5A  0EFD     MOVLW 0xFD
+0C5C  CFDB     MOVFF PLUSW2, FSR0
+0C5E  FFE9     NOP
+0C60  0EFE     MOVLW 0xFE
+0C62  CFDB     MOVFF PLUSW2, FSR0H
+0C64  FFEA     NOP
+0C66  52EE     MOVF POSTINC0, F, ACCESS
+0C68  CFEE     MOVFF POSTINC0, 0xF
+0C6A  F00F     NOP
+0C6C  CFEE     MOVFF POSTINC0, 0x10
+0C6E  F010     NOP
+0C70  CFEE     MOVFF POSTINC0, 0x11
+0C72  F011     NOP
+0C74  CFEF     MOVFF INDF0, 0x12
+0C76  F012     NOP
+0C78  C00F     MOVFF 0xF, POSTINC1
+0C7A  FFE6     NOP
+0C7C  C010     MOVFF 0x10, POSTINC1
+0C7E  FFE6     NOP
+0C80  C011     MOVFF 0x11, POSTINC1
+0C82  FFE6     NOP
+0C84  C012     MOVFF 0x12, POSTINC1
+0C86  FFE6     NOP
+0C88  ECF7     CALL 0x11EE, 0
+0C8A  F008     NOP
+0C8C  52E5     MOVF POSTDEC1, F, ACCESS
+0C8E  CFE7     MOVFF INDF1, 0x12
+0C90  F012     NOP
+0C92  52E5     MOVF POSTDEC1, F, ACCESS
+0C94  CFE7     MOVFF INDF1, 0x11
+0C96  F011     NOP
+0C98  52E5     MOVF POSTDEC1, F, ACCESS
+0C9A  CFE7     MOVFF INDF1, 0x10
+0C9C  F010     NOP
+0C9E  52E5     MOVF POSTDEC1, F, ACCESS
+0CA0  CFE7     MOVFF INDF1, 0xF
+0CA2  F00F     NOP
+0CA4  0100     MOVLB 0x0
+0CA6  500F     MOVF 0xF, W, ACCESS
+0CA8  5C04     SUBWF elementBefore, W, ACCESS
+0CAA  6E0B     MOVWF __tmp_0, ACCESS
+0CAC  5010     MOVF 0x10, W, ACCESS
+0CAE  5805     SUBWFB 0x5, W, ACCESS
+0CB0  6E0C     MOVWF 0xC, ACCESS
+0CB2  5011     MOVF 0x11, W, ACCESS
+0CB4  5806     SUBWFB 0x6, W, ACCESS
+0CB6  6E0D     MOVWF 0xD, ACCESS
+0CB8  5012     MOVF 0x12, W, ACCESS
+0CBA  5807     SUBWFB 0x7, W, ACCESS
+0CBC  6E0E     MOVWF 0xE, ACCESS
+0CBE  0EE8     MOVLW 0xE8
+0CC0  5C0B     SUBWF __tmp_0, W, ACCESS
+0CC2  0E01     MOVLW 0x1
+0CC4  580C     SUBWFB 0xC, W, ACCESS
+0CC6  0E00     MOVLW 0x0
+0CC8  580D     SUBWFB 0xD, W, ACCESS
+0CCA  0E00     MOVLW 0x0
+0CCC  580E     SUBWFB 0xE, W, ACCESS
+0CCE  E323     BNC 0xD16
+32:                    data->currentClock = getClock();
+0CD0  ECF7     CALL 0x11EE, 0
+0CD2  F008     NOP
+0CD4  C004     MOVFF elementBefore, __tmp_0
+0CD6  F00B     NOP
+0CD8  C005     MOVFF 0x5, 0xC
+0CDA  F00C     NOP
+0CDC  C006     MOVFF 0x6, 0xD
+0CDE  F00D     NOP
+0CE0  C007     MOVFF 0x7, 0xE
+0CE2  F00E     NOP
+0CE4  0EFD     MOVLW 0xFD
+0CE6  CFDB     MOVFF PLUSW2, FSR0
+0CE8  FFE9     NOP
+0CEA  0EFE     MOVLW 0xFE
+0CEC  CFDB     MOVFF PLUSW2, FSR0H
+0CEE  FFEA     NOP
+0CF0  52EE     MOVF POSTINC0, F, ACCESS
+0CF2  C004     MOVFF elementBefore, POSTINC0
+0CF4  FFEE     NOP
+0CF6  C00C     MOVFF 0xC, POSTINC0
+0CF8  FFEE     NOP
+0CFA  C00D     MOVFF 0xD, POSTINC0
+0CFC  FFEE     NOP
+0CFE  C00E     MOVFF 0xE, POSTINC0
+0D00  FFEE     NOP
+33:                    onLED();
+0D02  EC5A     CALL 0x10B4, 0
+0D04  F008     NOP
+34:                    data->state = LED_OFF;
+0D06  0EFD     MOVLW 0xFD
+0D08  CFDB     MOVFF PLUSW2, FSR0
+0D0A  FFE9     NOP
+0D0C  0EFE     MOVLW 0xFE
+0D0E  CFDB     MOVFF PLUSW2, FSR0H
+0D10  FFEA     NOP
+0D12  0E02     MOVLW 0x2
+0D14  6EEF     MOVWF INDF0, ACCESS
+35:                    break;
+36:                  }
+37:                  break;
+38:                  
+39:                default:
+40:                  break;
+41:              }
+42:            }
+0D16  52E5     MOVF POSTDEC1, F, ACCESS
+0D18  CFE7     MOVFF INDF1, FSR2
+0D1A  FFD9     NOP
+0D1C  0012     RETURN 0
+---  C:/Documents and Settings/D300-01/Desktop/RTOS/src/PIC18/Clock.c  ----------------------------------
+1:             #include "Clock.h"
+2:             #include "../18c.h"
+3:             #include "TCB.h"
+4:             #include "PriorityLinkedList.h"
+5:             #include "PreemptiveOS.h"
+6:             #include "Interrupt.h"
+7:             #include "Types.h"
+8:             #include <stdio.h>
+9:             
+10:            volatile unsigned long clock = 0;
+11:            
+12:            #if !(defined(__XC) || defined(__18CXX))
+13:              #include "timers.h"
+14:            #else
+15:                #include <timers.h>
+16:            #endif // __18CXX
+17:            
+18:            uint8 fileSelectRegH, fileSelectRegL;
+19:            uint8 topOfStackH, topOfStackL;
+20:            uint16 fsrTemp = 0, stackPointerTemp = 0;
+21:            TCB *TCBtemp;
+22:            
+23:            void initClock(void){
+24:              clock = 0;
+11D4  0100     MOVLB 0x0
+11D6  6B9A     CLRF clock, BANKED
+11D8  6B9B     CLRF 0x9B, BANKED
+11DA  6B9C     CLRF 0x9C, BANKED
+11DC  6B9D     CLRF 0x9D, BANKED
+25:              enableGlobalInterrupt();
+11DE  8EF2     BSF INTCON, 7, ACCESS
+26:              OpenTimer0( TIMER_INT_ON &
+27:                          T0_8BIT &
+28:                          T0_SOURCE_INT &
+29:                          T0_PS_1_8 );
+11E0  0ED2     MOVLW 0xD2
+11E2  6EE6     MOVWF POSTINC1, ACCESS
+11E4  EC9B     CALL 0x1136, 0
+11E6  F008     NOP
+11E8  52E5     MOVF POSTDEC1, F, ACCESS
+30:                          
+31:              INTCONbits.TMR0IF = 0;
+11EA  94F2     BCF INTCON, 2, ACCESS
+32:            }
+11EC  0012     RETURN 0
+33:            
+34:            /**
+35:             * Return the micro-controller's clock since power-up. 1 clock
+36:             * is roughly 1.024msec.
+37:             */
+38:            unsigned long getClock(void){
+39:              /*if(isTimer0Overflowed()){
+40:                clock++;
+41:                clearTimer0OverflowFlag();
+42:              }*/
+43:              return clock;
+11EE  C09A     MOVFF clock, elementBefore
+11F0  F004     NOP
+11F2  C09B     MOVFF 0x9B, 0x5
+11F4  F005     NOP
+11F6  C09C     MOVFF 0x9C, 0x6
+11F8  F006     NOP
+11FA  C09D     MOVFF 0x9D, 0x7
+11FC  F007     NOP
+44:            }
+11FE  0012     RETURN 0
+45:            #pragma interruptlow timer0isr save = FSR2H
+46:            
+47:            #pragma code high_vector = 0x08
+48:            void highPriorityIsr(void){
+49:                _asm
+50:                goto timer0isr
+0008  EF07     GOTO 0xE
+000A  F000     NOP
+51:                _endasm
+52:            }
+000C  0012     RETURN 0
+53:            
+54:            void timer0isr(){
+000E  CFD8     MOVFF STATUS, PREINC1
+0010  FFE4     NOP
+0012  CFE0     MOVFF BSR, PREINC1
+0014  FFE4     NOP
+0016  6EE4     MOVWF PREINC1, ACCESS
+0018  CFDA     MOVFF FSR2H, PREINC1
+001A  FFE4     NOP
+001C  CFE2     MOVFF FSR1H, FSR2H
+001E  FFDA     NOP
+0020  CFD9     MOVFF FSR2, PREINC1
+0022  FFE4     NOP
+0024  CFE9     MOVFF FSR0, PREINC1
+0026  FFE4     NOP
+0028  CFEA     MOVFF FSR0H, PREINC1
+002A  FFE4     NOP
+002C  CFF6     MOVFF TBLPTR, PREINC1
+002E  FFE4     NOP
+0030  CFF7     MOVFF TBLPTRH, PREINC1
+0032  FFE4     NOP
+0034  CFF5     MOVFF TABLAT, PREINC1
+0036  FFE4     NOP
+0038  CFF3     MOVFF PROD, PREINC1
+003A  FFE4     NOP
+003C  CFF4     MOVFF PRODH, PREINC1
+003E  FFE4     NOP
+0040  CFFA     MOVFF PCLATH, PREINC1
+0042  FFE4     NOP
+0044  EE00     LFSR 0, 0x0
+0046  F000     NOP
+0048  0E0B     MOVLW 0xB
+004A  04E8     DECF WREG, W, ACCESS
+004C  E303     BNC 0x54
+004E  CFEE     MOVFF POSTINC0, PREINC1
+0050  FFE4     NOP
+0052  D7FB     BRA 0x4A
+0054  EE00     LFSR 0, 0xB
+0056  F00B     NOP
+0058  0E08     MOVLW 0x8
+005A  04E8     DECF WREG, W, ACCESS
+005C  E303     BNC 0x64
+005E  CFEE     MOVFF POSTINC0, PREINC1
+0060  FFE4     NOP
+0062  D7FB     BRA 0x5A
+0064  52E6     MOVF POSTINC1, F, ACCESS
+55:            
+56:            _asm
+57:            movff TOSH, topOfStackH
+0066  CFFE     MOVFF TOSH, topOfStackH
+0068  F1FC     NOP
+58:            movff TOSL, topOfStackL
+006A  CFFD     MOVFF TOS, topOfStackL
+006C  F1FD     NOP
+59:            movff FSR1H, fileSelectRegH
+006E  CFE2     MOVFF FSR1H, fileSelectRegH
+0070  F1FA     NOP
+60:            movff FSR1L, fileSelectRegL
+0072  CFE1     MOVFF FSR1, fileSelectRegL
+0074  F1FB     NOP
+61:            _endasm
+62:                
+63:                //save all above into runningTCB
+64:            
+65:                //get highest priority from linked list
+66:            
+67:                //insert the runningTCB into linked list
+68:            
+69:                //restore all data in high priority task to TOS,BSR,WREG,STATUS
+70:                // check FSR2, FSR1, (check only)FSR0(all low & high),TBLPTRH/L,TABLAT,PRODH/L,
+71:                // WREG, BSR, STATUS
+72:                //return from interrupt
+73:                    
+74:                runningTCB->priority = 0;
+0076  C100     MOVFF runningTCB, FSR0
+0078  FFE9     NOP
+007A  C101     MOVFF 0x101, FSR0H
+007C  FFEA     NOP
+007E  0E02     MOVLW 0x2
+0080  26E9     ADDWF FSR0, F, ACCESS
+0082  0E00     MOVLW 0x0
+0084  22EA     ADDWFC FSR0H, F, ACCESS
+0086  6AEF     CLRF INDF0, ACCESS
+75:                runningTCB->next = NULL;
+0088  C100     MOVFF runningTCB, FSR0
+008A  FFE9     NOP
+008C  C101     MOVFF 0x101, FSR0H
+008E  FFEA     NOP
+0090  6AEE     CLRF POSTINC0, ACCESS
+0092  6AED     CLRF POSTDEC0, ACCESS
+76:                runningTCB->task = ((uint16)(topOfStackH) << 8) | topOfStackL;
+0094  C1FC     MOVFF topOfStackH, 0x15
+0096  F015     NOP
+0098  C015     MOVFF 0x15, 0x16
+009A  F016     NOP
+009C  6A15     CLRF 0x15, ACCESS
+009E  0101     MOVLB 0x1
+00A0  51FD     MOVF 0xFD, W, BANKED
+00A2  0100     MOVLB 0x0
+00A4  1015     IORWF 0x15, W, ACCESS
+00A6  6E13     MOVWF __tmp_1, ACCESS
+00A8  C016     MOVFF 0x16, 0x14
+00AA  F014     NOP
+00AC  C100     MOVFF runningTCB, FSR0
+00AE  FFE9     NOP
+00B0  C101     MOVFF 0x101, FSR0H
+00B2  FFEA     NOP
+00B4  0E04     MOVLW 0x4
+00B6  C013     MOVFF __tmp_1, PLUSW0
+00B8  FFEB     NOP
+00BA  0E05     MOVLW 0x5
+00BC  C014     MOVFF 0x14, PLUSW0
+00BE  FFEB     NOP
+77:                runningTCB->stackPointer = ((uint16)(fileSelectRegH) << 8) | fileSelectRegL;
+00C0  C1FA     MOVFF fileSelectRegH, 0x15
+00C2  F015     NOP
+00C4  C015     MOVFF 0x15, 0x16
+00C6  F016     NOP
+00C8  6A15     CLRF 0x15, ACCESS
+00CA  0101     MOVLB 0x1
+00CC  51FB     MOVF 0xFB, W, BANKED
+00CE  0100     MOVLB 0x0
+00D0  1015     IORWF 0x15, W, ACCESS
+00D2  6E13     MOVWF __tmp_1, ACCESS
+00D4  C016     MOVFF 0x16, 0x14
+00D6  F014     NOP
+00D8  C100     MOVFF runningTCB, FSR0
+00DA  FFE9     NOP
+00DC  C101     MOVFF 0x101, FSR0H
+00DE  FFEA     NOP
+00E0  0E06     MOVLW 0x6
+00E2  C013     MOVFF __tmp_1, PLUSW0
+00E4  FFEB     NOP
+00E6  0E07     MOVLW 0x7
+00E8  C014     MOVFF 0x14, PLUSW0
+00EA  FFEB     NOP
+78:                stackPointerTemp = runningTCB->task;
+00EC  C100     MOVFF runningTCB, FSR0
+00EE  FFE9     NOP
+00F0  C101     MOVFF 0x101, FSR0H
+00F2  FFEA     NOP
+00F4  0E04     MOVLW 0x4
+00F6  26E9     ADDWF FSR0, F, ACCESS
+00F8  0E00     MOVLW 0x0
+00FA  22EA     ADDWFC FSR0H, F, ACCESS
+00FC  CFEE     MOVFF POSTINC0, stackPointerTemp
+00FE  F0A0     NOP
+0100  CFED     MOVFF POSTDEC0, 0xA1
+0102  F0A1     NOP
+79:                fsrTemp = runningTCB->stackPointer;
+0104  C100     MOVFF runningTCB, FSR0
+0106  FFE9     NOP
+0108  C101     MOVFF 0x101, FSR0H
+010A  FFEA     NOP
+010C  0E06     MOVLW 0x6
+010E  26E9     ADDWF FSR0, F, ACCESS
+0110  0E00     MOVLW 0x0
+0112  22EA     ADDWFC FSR0H, F, ACCESS
+0114  CFEE     MOVFF POSTINC0, fsrTemp
+0116  F09E     NOP
+0118  CFED     MOVFF POSTDEC0, 0x9F
+011A  F09F     NOP
+80:                TCBtemp = removeFromHeadPriorityLinkedList(&readyQueue);
+011C  0E1A     MOVLW 0x1A
+011E  6EE6     MOVWF POSTINC1, ACCESS
+0120  0E01     MOVLW 0x1
+0122  6EE6     MOVWF POSTINC1, ACCESS
+0124  EC87     CALL 0x30E, 0
+0126  F001     NOP
+0128  52E5     MOVF POSTDEC1, F, ACCESS
+012A  52E5     MOVF POSTDEC1, F, ACCESS
+012C  CFF3     MOVFF PROD, TCBtemp
+012E  F1FE     NOP
+0130  CFF4     MOVFF PRODH, 0x1FF
+0132  F1FF     NOP
+81:                addPriorityLinkedList(&readyQueue, runningTCB, compare);
+0134  0E84     MOVLW 0x84
+0136  6EE6     MOVWF POSTINC1, ACCESS
+0138  0E02     MOVLW 0x2
+013A  6EE6     MOVWF POSTINC1, ACCESS
+013C  C100     MOVFF runningTCB, POSTINC1
+013E  FFE6     NOP
+0140  C101     MOVFF 0x101, POSTINC1
+0142  FFE6     NOP
+0144  0E1A     MOVLW 0x1A
+0146  6EE6     MOVWF POSTINC1, ACCESS
+0148  0E01     MOVLW 0x1
+014A  6EE6     MOVWF POSTINC1, ACCESS
+014C  ECFB     CALL 0x3F6, 0
+014E  F001     NOP
+0150  6E13     MOVWF __tmp_1, ACCESS
+0152  0E06     MOVLW 0x6
+0154  5EE1     SUBWF FSR1, F, ACCESS
+0156  5013     MOVF __tmp_1, W, ACCESS
+82:                runningTCB = TCBtemp;
+0158  C1FE     MOVFF TCBtemp, runningTCB
+015A  F100     NOP
+015C  C1FF     MOVFF 0x1FF, 0x101
+015E  F101     NOP
+83:                topOfStackL = (runningTCB->task) & 0x00ff;
+0160  C100     MOVFF runningTCB, FSR0
+0162  FFE9     NOP
+0164  C101     MOVFF 0x101, FSR0H
+0166  FFEA     NOP
+0168  0E04     MOVLW 0x4
+016A  26E9     ADDWF FSR0, F, ACCESS
+016C  0E00     MOVLW 0x0
+016E  22EA     ADDWFC FSR0H, F, ACCESS
+0170  CFEE     MOVFF POSTINC0, __tmp_1
+0172  F013     NOP
+0174  CFEF     MOVFF INDF0, 0x14
+0176  F014     NOP
+0178  5013     MOVF __tmp_1, W, ACCESS
+017A  0101     MOVLB 0x1
+017C  6FFD     MOVWF 0xFD, BANKED
+84:                topOfStackH = runningTCB->task >> 8;
+017E  C100     MOVFF runningTCB, FSR0
+0180  FFE9     NOP
+0182  C101     MOVFF 0x101, FSR0H
+0184  FFEA     NOP
+0186  0E04     MOVLW 0x4
+0188  26E9     ADDWF FSR0, F, ACCESS
+018A  0E00     MOVLW 0x0
+018C  22EA     ADDWFC FSR0H, F, ACCESS
+018E  CFEE     MOVFF POSTINC0, __tmp_1
+0190  F013     NOP
+0192  CFEF     MOVFF INDF0, 0x14
+0194  F014     NOP
+0196  C014     MOVFF 0x14, __tmp_1
+0198  F013     NOP
+019A  6A14     CLRF 0x14, ACCESS
+019C  C013     MOVFF __tmp_1, topOfStackH
+019E  F1FC     NOP
+85:                fileSelectRegL = (runningTCB->stackPointer) & 0x00ff;
+01A0  C100     MOVFF runningTCB, FSR0
+01A2  FFE9     NOP
+01A4  C101     MOVFF 0x101, FSR0H
+01A6  FFEA     NOP
+01A8  0E06     MOVLW 0x6
+01AA  26E9     ADDWF FSR0, F, ACCESS
+01AC  0E00     MOVLW 0x0
+01AE  22EA     ADDWFC FSR0H, F, ACCESS
+01B0  CFEE     MOVFF POSTINC0, __tmp_1
+01B2  F013     NOP
+01B4  CFEF     MOVFF INDF0, 0x14
+01B6  F014     NOP
+01B8  5013     MOVF __tmp_1, W, ACCESS
+01BA  0101     MOVLB 0x1
+01BC  6FFB     MOVWF 0xFB, BANKED
+86:                fileSelectRegH = runningTCB->stackPointer >> 8;
+01BE  C100     MOVFF runningTCB, FSR0
+01C0  FFE9     NOP
+01C2  C101     MOVFF 0x101, FSR0H
+01C4  FFEA     NOP
+01C6  0E06     MOVLW 0x6
+01C8  26E9     ADDWF FSR0, F, ACCESS
+01CA  0E00     MOVLW 0x0
+01CC  22EA     ADDWFC FSR0H, F, ACCESS
+01CE  CFEE     MOVFF POSTINC0, __tmp_1
+01D0  F013     NOP
+01D2  CFEF     MOVFF INDF0, 0x14
+01D4  F014     NOP
+01D6  C014     MOVFF 0x14, __tmp_1
+01D8  F013     NOP
+01DA  6A14     CLRF 0x14, ACCESS
+01DC  C013     MOVFF __tmp_1, fileSelectRegH
+01DE  F1FA     NOP
+87:            
+88:            _asm
+89:            movff topOfStackH, WREG
+01E0  C1FC     MOVFF topOfStackH, WREG
+01E2  FFE8     NOP
+90:            movwf TOSH, ACCESS
+01E4  6EFE     MOVWF TOSH, ACCESS
+91:            movff topOfStackL, WREG
+01E6  C1FD     MOVFF topOfStackL, WREG
+01E8  FFE8     NOP
+92:            movwf TOSL, ACCESS
+01EA  6EFD     MOVWF TOS, ACCESS
+93:            movff fileSelectRegH, WREG
+01EC  C1FA     MOVFF fileSelectRegH, WREG
+01EE  FFE8     NOP
+94:            movwf FSR1H, ACCESS
+01F0  6EE2     MOVWF FSR1H, ACCESS
+95:            movff fileSelectRegL, WREG
+01F2  C1FB     MOVFF fileSelectRegL, WREG
+01F4  FFE8     NOP
+96:            movwf FSR1L, ACCESS
+01F6  6EE1     MOVWF FSR1, ACCESS
+97:            _endasm
+98:            
+99:                clock++;
+01F8  0100     MOVLB 0x0
+01FA  2B9A     INCF clock, F, BANKED
+01FC  0E00     MOVLW 0x0
+01FE  239B     ADDWFC 0x9B, F, BANKED
+0200  239C     ADDWFC 0x9C, F, BANKED
+0202  239D     ADDWFC 0x9D, F, BANKED
+100:               clearTimer0OverflowFlag();
+0204  D830     RCALL clearTimer0OverflowFlag
+101:           }
+0206  52E5     MOVF POSTDEC1, F, ACCESS
+0208  EE00     LFSR 0, 0x12
+020A  F012     NOP
+020C  0E08     MOVLW 0x8
+020E  04E8     DECF WREG, W, ACCESS
+0210  E303     BNC 0x218
+0212  CFE5     MOVFF POSTDEC1, POSTDEC0
+0214  FFED     NOP
+0216  D7FB     BRA 0x20E
+0218  EE00     LFSR 0, 0xA
+021A  F00A     NOP
+021C  0E0B     MOVLW 0xB
+021E  04E8     DECF WREG, W, ACCESS
+0220  E303     BNC 0x228
+0222  CFE5     MOVFF POSTDEC1, POSTDEC0
+0224  FFED     NOP
+0226  D7FB     BRA 0x21E
+0228  CFE5     MOVFF POSTDEC1, PCLATH
+022A  FFFA     NOP
+022C  CFE5     MOVFF POSTDEC1, PRODH
+022E  FFF4     NOP
+0230  CFE5     MOVFF POSTDEC1, PROD
+0232  FFF3     NOP
+0234  CFE5     MOVFF POSTDEC1, TABLAT
+0236  FFF5     NOP
+0238  CFE5     MOVFF POSTDEC1, TBLPTRH
+023A  FFF7     NOP
+023C  CFE5     MOVFF POSTDEC1, TBLPTR
+023E  FFF6     NOP
+0240  CFE5     MOVFF POSTDEC1, FSR0H
+0242  FFEA     NOP
+0244  CFE5     MOVFF POSTDEC1, FSR0
+0246  FFE9     NOP
+0248  CFE5     MOVFF POSTDEC1, FSR2
+024A  FFD9     NOP
+024C  CFE5     MOVFF POSTDEC1, FSR2H
+024E  FFDA     NOP
+0250  50E5     MOVF POSTDEC1, W, ACCESS
+0252  CFE5     MOVFF POSTDEC1, BSR
+0254  FFE0     NOP
+0256  CFE5     MOVFF POSTDEC1, STATUS
+0258  FFD8     NOP
+025A  0010     RETFIE 0
+102:           
+103:           //////////////////////////////////////////
+104:           // These functions are for internal use
+105:           //////////////////////////////////////////
+106:           char isTimer0Overflowed(void){
+107:               return INTCONbits.TMR0IF;
+025C  50F2     MOVF INTCON, W, ACCESS
+025E  0B04     ANDLW 0x4
+0260  E001     BZ 0x264
+0262  0E01     MOVLW 0x1
+108:           }
+0264  0012     RETURN 0
+109:           
+110:           void clearTimer0OverflowFlag(void){
+111:             INTCONbits.TMR0IF = 0;
+0266  94F2     BCF INTCON, 2, ACCESS
+112:           }
+0268  0012     RETURN 0
+113:           
+---  C:/Documents and Settings/D300-01/Desktop/RTOS/src/PIC18/Blinky.c  ---------------------------------
+1:             #include <stdio.h>
+2:             #include <stdlib.h>
+3:             #include "../18c.h"
+4:             
+5:             
+6:             void delay(void);
+7:             
+8:             void delay(void){
+1066  CFD9     MOVFF FSR2, POSTINC1
+1068  FFE6     NOP
+106A  CFE1     MOVFF FSR1, FSR2
+106C  FFD9     NOP
+106E  0E02     MOVLW 0x2
+1070  26E1     ADDWF FSR1, F, ACCESS
+9:                 int counter = 0;
+1072  6ADE     CLRF POSTINC2, ACCESS
+1074  6ADD     CLRF POSTDEC2, ACCESS
+10:                for(counter = 0; counter<5000; counter++){
+1076  6ADE     CLRF POSTINC2, ACCESS
+1078  6ADD     CLRF POSTDEC2, ACCESS
+107A  CFDE     MOVFF POSTINC2, __tmp_0
+107C  F00B     NOP
+107E  CFDD     MOVFF POSTDEC2, 0xC
+1080  F00C     NOP
+1082  90D8     BCF STATUS, 0, ACCESS
+1084  500C     MOVF 0xC, W, ACCESS
+1086  E604     BN 0x1090
+1088  0E88     MOVLW 0x88
+108A  5C0B     SUBWF __tmp_0, W, ACCESS
+108C  0E13     MOVLW 0x13
+108E  580C     SUBWFB 0xC, W, ACCESS
+1090  E205     BC 0x109C
+1092  2ADF     INCF INDF2, F, ACCESS
+1094  0E01     MOVLW 0x1
+1096  E3F1     BNC 0x107A
+1098  2ADB     INCF PLUSW2, F, ACCESS
+109A  D7EF     BRA 0x107A
+11:            
+12:                }
+13:            }
+109C  0E02     MOVLW 0x2
+109E  5CE1     SUBWF FSR1, W, ACCESS
+10A0  E202     BC 0x10A6
+10A2  6AE1     CLRF FSR1, ACCESS
+10A4  52E5     MOVF POSTDEC1, F, ACCESS
+10A6  6EE1     MOVWF FSR1, ACCESS
+10A8  52E5     MOVF POSTDEC1, F, ACCESS
+10AA  CFE7     MOVFF INDF1, FSR2
+10AC  FFD9     NOP
+10AE  0012     RETURN 0
+14:            
+15:            void configureLED(void) {
+16:              TRISBbits.TRISB0 = 0;
+10B0  9093     BCF TRISB, 0, ACCESS
+17:            }
+10B2  0012     RETURN 0
+18:            
+19:            void onLED(void) {
+20:              PORTBbits.RB0 = 1;
+10B4  8081     BSF PORTB, 0, ACCESS
+21:            }
+10B6  0012     RETURN 0
+22:            
+23:            void offLED(void) {
+24:              PORTBbits.RB0 = 0;
+10B8  9081     BCF PORTB, 0, ACCESS
+25:            }
+10BA  0012     RETURN 0

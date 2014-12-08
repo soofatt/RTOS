@@ -42,7 +42,7 @@ unsigned long getClock(void){
   }*/
   return clock;
 }
-#pragma interruptlow timer0isr
+#pragma interruptlow timer0isr save = FSR2L
 
 #pragma code high_vector = 0x08
 void highPriorityIsr(void){
@@ -71,16 +71,18 @@ _endasm
     // WREG, BSR, STATUS
     //return from interrupt
         
-    //runningTCB->stackPointer = (uint16)((topOfStackH << 8) + topOfStackL);
     runningTCB->priority = 0;
     runningTCB->next = NULL;
+
     runningTCB->task = ((uint16)(topOfStackH) << 8) | topOfStackL;
     runningTCB->stackPointer = ((uint16)(fileSelectRegH) << 8) | fileSelectRegL;
-    stackPointerTemp = runningTCB->task;
-    fsrTemp = runningTCB->stackPointer;
+
+    //stackPointerTemp = runningTCB->task;
+    //fsrTemp = runningTCB->stackPointer;
     TCBtemp = removeFromHeadPriorityLinkedList(&readyQueue);
     addPriorityLinkedList(&readyQueue, runningTCB, compare);
     runningTCB = TCBtemp;
+
     topOfStackL = (runningTCB->task) & 0x00ff;
     topOfStackH = runningTCB->task >> 8;
     fileSelectRegL = (runningTCB->stackPointer) & 0x00ff;

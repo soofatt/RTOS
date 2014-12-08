@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Clock.h"
-#include "Blinky.h"
-#include "SevenSeg.h"
-#include "UARTLoopback.h"
+//#include "Blinky.h"
+//#include "SevenSeg.h"
+//#include "UARTLoopback.h"
 //#include "LEDSM.h"
-#include "Led2.h"
+//#include "Led2.h"
 #include "TCB.h"
 #include "PriorityLinkedList.h"
 #include "PreemptiveOS.h"
@@ -32,15 +32,15 @@
                     USART_BRGH_HIGH, 51);
 
 void main(void) {
-  char mainCount = 0;
+  int mainCount = 0;
   initPreemptiveMultitasking();
   initClock();
-  while(mainCount != 255){
+  while(mainCount != 100000){
     mainCount++;
   }
 }
 
-void Xmain(void) {
+//void Xmain(void) {
   /*Led2Data led2Data;
   LoopbackData loopbackData;
   SevenSegData sevenSegData;
@@ -77,4 +77,4 @@ void Xmain(void) {
   }
   CloseSPI();
   CloseUSART();*/
-}
+//}

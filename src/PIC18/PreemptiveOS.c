@@ -8,16 +8,17 @@
 TCB *runningTCB;
 TCB allTCB[3];
 PriorityLinkedList readyQueue;
-unsigned char stacks[2][80];
+unsigned char stacks[2][110];
 //unsigned char stackOne[80];
 //unsigned char stacktwo[80];
 
 void createTask(TCB tcbs[], int index, void (*task)(void)){
     tcbs[index].task = (uint16)task;
     tcbs[index].next = NULL;
-    tcbs[index].stackPointer = (uint16)&stacks[index-1];
+    tcbs[index].stackPointer = (uint16)&stacks[index-1]+41;
     tcbs[index].priority = 0;
     tcbs[index].taskID = index;
+    stacks[index-1][12] = FSR2H;
     addPriorityLinkedList(&readyQueue, &tcbs[index], compare);
 }
 
@@ -32,14 +33,14 @@ void initPreemptiveMultitasking(void) {
 
 void taskOne(){
     int i = 0;
-    while(i != 255){
+    while(i != 100000){
         i++;
     }
 }
 
 void taskTwo(){
     int j = 0;
-    while(j != 255){
+    while(j != 100000){
         j++;
     }
 }

@@ -1,6 +1,7 @@
 #include "SevenSeg.h"
 #include "Clock.h"
 #include "../18c.h"
+#include "spi.h"
 
 #define CLK_OV 488 //0.5s
 
