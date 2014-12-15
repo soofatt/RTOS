@@ -8,7 +8,9 @@
 TCB *runningTCB;
 TCB allTCB[3];
 PriorityLinkedList readyQueue;
-unsigned char stacks[2][110];
+#pragma udata BIGDATA
+    unsigned char stacks[2][200];
+#pragma udata
 //unsigned char stackOne[80];
 //unsigned char stacktwo[80];
 
