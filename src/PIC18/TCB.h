@@ -9,7 +9,7 @@ struct TCB{
   //void (*task)(void);
   uint16 task;//TOS
   uint16 stackPointer; //FSR1
-  //uint16 framePointer; //FSR2
+  // uint8 framePointer; //FSR2
 };
 
 #endif // TCB_H

@@ -15,7 +15,7 @@ volatile unsigned long clock = 0;
     #include <timers.h>
 #endif // __18CXX
 
-uint8 fileSelectRegH, fileSelectRegL;
+uint8 fileSelectRegH, fileSelectRegL, framePtrH;
 uint8 topOfStackH, topOfStackL;
 uint16 fsrTemp = 0, stackPointerTemp = 0;
 TCB *TCBtemp;
@@ -58,6 +58,7 @@ movff TOSH, topOfStackH
 movff TOSL, topOfStackL
 movff FSR1H, fileSelectRegH
 movff FSR1L, fileSelectRegL
+// movff FSR2H, framePtrH
 _endasm
     
     //save all above into runningTCB
@@ -76,6 +77,7 @@ _endasm
 
     runningTCB->task = ((uint16)(topOfStackH) << 8) | topOfStackL;
     runningTCB->stackPointer = ((uint16)(fileSelectRegH) << 8) | fileSelectRegL;
+    // runningTCB->framePointer = framePtrH;
 
     //stackPointerTemp = runningTCB->task;
     //fsrTemp = runningTCB->stackPointer;
@@ -87,6 +89,7 @@ _endasm
     topOfStackH = runningTCB->task >> 8;
     fileSelectRegL = (runningTCB->stackPointer) & 0x00ff;
     fileSelectRegH = runningTCB->stackPointer >> 8;
+    // framePtrH = runningTCB->framePointer;
 
 _asm
 movff topOfStackH, WREG
@@ -97,6 +100,8 @@ movff fileSelectRegH, WREG
 movwf FSR1H, ACCESS
 movff fileSelectRegL, WREG
 movwf FSR1L, ACCESS
+// movff framePtrH, WREG
+// movwf FSR2H, ACCESS
 _endasm
 
     clock++;

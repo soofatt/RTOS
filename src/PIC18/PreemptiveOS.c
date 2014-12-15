@@ -20,7 +20,8 @@ void createTask(TCB tcbs[], int index, void (*task)(void)){
     tcbs[index].stackPointer = (uint16)&stacks[index-1]+41;
     tcbs[index].priority = 0;
     tcbs[index].taskID = index;
-    stacks[index-1][12] = FSR2H;
+    // stacks[index-1][12] = FSR2H;
+	stacks[index-1][12] = ((uint16)stacks[index-1])>>8;
     addPriorityLinkedList(&readyQueue, &tcbs[index], compare);
 }
 
