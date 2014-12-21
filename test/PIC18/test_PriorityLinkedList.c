@@ -49,6 +49,24 @@ void test_removeFromHeadPriorityLinkedList_given_1_element_point_to_NULL_head_sh
 }
 
 /*
+ *          
+ *  head --> NULL
+ *  tail -----^
+ *
+ */
+void test_removeFromHeadPriorityLinkedList_given_NULL_should_return_NULL(void){
+	TCB *result;
+	PriorityLinkedList *list;
+  list = createPriorityLinkedList();
+  
+  result = removeFromHeadPriorityLinkedList(list);
+  
+  TEST_ASSERT_NULL(list->head);
+  TEST_ASSERT_NULL(list->tail);
+  TEST_ASSERT_NULL(result);
+}
+
+/*
  *          +----+     +----+
  *  head -->| #1 | --> | #2 | --> NULL
  *          +----+     +----+

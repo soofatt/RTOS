@@ -15,7 +15,9 @@ void *removeFromHeadPriorityLinkedList(PriorityLinkedList *list){
   TCB *temp;
   temp = list->head;
   
-  if(list->head->next == NULL){
+  if(list->head == NULL)
+    return NULL;
+  else if(list->head->next == NULL){
     list->head = list->head->next;
     list->tail = NULL;
   }
