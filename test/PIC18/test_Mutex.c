@@ -3,8 +3,6 @@
 #include "PriorityLinkedList.h"
 #include "PreemptiveOS.h"
 
-extern TCB *runningTCB;
-
 void setUp(void){}
 
 void tearDown(void){}
@@ -187,4 +185,6 @@ void test_releaseMutex_given_a_TCB_in_waitingQueue_should_set_owner_to_next_in_l
   
   TEST_ASSERT_EQUAL(1, mutex.count);
   TEST_ASSERT_EQUAL(&TCB2, mutex.owner);
+  TEST_ASSERT_EQUAL(&TCB2, readyQueue.head);
+  TEST_ASSERT_EQUAL(&TCB2, readyQueue.tail);
 }

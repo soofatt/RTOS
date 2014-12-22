@@ -2,8 +2,6 @@
 #include "PreemptiveOS.h"
 #include <stdio.h>
 
-extern TCB *runningTCB;
-
 void initMutex(Mutex *mutex){
   mutex->count = 1;
   mutex->owner = NULL;
@@ -22,7 +20,7 @@ int acquireMutex(Mutex *mutex){
     return 1;
   }
   else{
-    addPriorityLinkedList(&mutex->waitingQueue, runningTCB, compare);
+    addPriorityLinkedList(&mutex->waitingQueue, (void *)runningTCB, compare);
     return 0;
   }
 }
@@ -30,7 +28,13 @@ int acquireMutex(Mutex *mutex){
 void releaseMutex(Mutex *mutex){
   if(runningTCB == mutex->owner){
     mutex->count++;
-    if(mutex->count == 1)
-      mutex->owner = removeFromHeadPriorityLinkedList(&mutex->waitingQueue);
+    if(mutex->count == 1){
+      if(mutex->waitingQueue.head == NULL)
+        mutex->owner = NULL;
+      else{
+        mutex->owner = removeFromHeadPriorityLinkedList(&mutex->waitingQueue);
+        addPriorityLinkedList(&readyQueue, mutex->owner, compare);
+      }
+    }
   }
 }

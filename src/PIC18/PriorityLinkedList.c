@@ -18,13 +18,14 @@ void *removeFromHeadPriorityLinkedList(PriorityLinkedList *list){
   if(list->head == NULL)
     return NULL;
   else if(list->head->next == NULL){
-    list->head = list->head->next;
+    list->head = NULL;
     list->tail = NULL;
   }
   else{
     list->head = list->head->next;
   }
   temp->next = NULL;
+  
   return temp;
 }
 
