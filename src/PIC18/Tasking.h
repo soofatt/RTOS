@@ -3,7 +3,7 @@
 
 #define initTasking(x)  ((x)->state = 0); ((x)->currentClock = 0)
 #define startTasking(x)  switch(x){ case 0:
-#define yield(x)  x = __LINE__; return; case __LINE__:
+#define yield(x)  {x = __LINE__; return; case __LINE__:}
 #define endTasking()  }
 
 #endif // Tasking_H

@@ -11,8 +11,6 @@ PriorityLinkedList readyQueue;
 #pragma udata BIGDATA
     unsigned char stacks[2][200];
 #pragma udata
-//unsigned char stackOne[80];
-//unsigned char stacktwo[80];
 
 void createTask(TCB tcbs[], int index, void (*task)(void)){
     tcbs[index].task = (uint16)task;
@@ -21,7 +19,7 @@ void createTask(TCB tcbs[], int index, void (*task)(void)){
     tcbs[index].priority = 0;
     tcbs[index].taskID = index;
     // stacks[index-1][12] = FSR2H;
-	stacks[index-1][12] = ((uint16)stacks[index-1])>>8;
+    stacks[index-1][12] = ((uint16)stacks[index-1])>>8;
     addPriorityLinkedList(&readyQueue, &tcbs[index], compare);
 }
 

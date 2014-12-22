@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Mon Dec 08 12:03:44 2014
+Linker Map File - Created Mon Dec 22 11:04:27 2014
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -8,56 +8,56 @@ Linker Map File - Created Mon Dec 08 12:03:44 2014
            .code___init.o       code   0x000006    program   0x000002
               high_vector       code   0x000008    program   0x000232
                    .cinit    romdata   0x00023a    program   0x00001a
-     .code_PreemptiveOS.o       code   0x000254    program   0x000370
-.code_PriorityLinkedList.o       code   0x0005c4    program   0x00032e
-             .code_Led2.o       code   0x0008f2    program   0x0002c2
-            .code_LEDSM.o       code   0x000bb4    program   0x000208
-         .code_SevenSeg.o       code   0x000dbc    program   0x0001f2
-     .code_UARTLoopback.o       code   0x000fae    program   0x0000b8
-               _cinit_scn       code   0x001066    program   0x00009e
-             .code_main.o       code   0x001104    program   0x000056
-           .code_Blinky.o       code   0x00115a    program   0x000056
-            .code_uread.o       code   0x0011b0    program   0x00003e
-         .code_spi_writ.o       code   0x0011ee    program   0x00003c
-           .code_t0open.o       code   0x00122a    program   0x000038
-           .code_uwrite.o       code   0x001262    program   0x00002e
-            .code_Clock.o       code   0x001290    program   0x00002c
-                    .code       code   0x0012bc    program   0x000020
-             _startup_scn       code   0x0012dc    program   0x00001c
-        .romdata___init.o    romdata   0x0012f8    program   0x000000
-         .romdata_LEDSM.o    romdata   0x0012f8    program   0x000000
-        .idata___init.o_i    romdata   0x0012f8    program   0x000000
-        .idata_t0open.o_i    romdata   0x0012f8    program   0x000000
-        .romdata_uwrite.o    romdata   0x0012f8    program   0x000000
-        .romdata_t0open.o    romdata   0x0012f8    program   0x000000
-        .idata_uwrite.o_i    romdata   0x0012f8    program   0x000000
-         .idata_uread.o_i    romdata   0x0012f8    program   0x000000
-         .romdata_uread.o    romdata   0x0012f8    program   0x000000
-      .romdata_spi_writ.o    romdata   0x0012f8    program   0x000000
-         .idata_udefs.o_i    romdata   0x0012f8    program   0x000000
-      .idata_spi_writ.o_i    romdata   0x0012f8    program   0x000000
-         .romdata_udefs.o    romdata   0x0012f8    program   0x000000
-         .idata_c018i.o_i    romdata   0x0012f8    program   0x000000
-         .romdata_c018i.o    romdata   0x0012f8    program   0x000000
-          .idata_main.o_i    romdata   0x0012f8    program   0x000000
-          .romdata_main.o    romdata   0x0012f8    program   0x000000
-         .romdata_Clock.o    romdata   0x0012f8    program   0x000000
-  .romdata_PreemptiveOS.o    romdata   0x0012f8    program   0x000000
-.romdata_PriorityLinkedList.o    romdata   0x0012f8    program   0x000000
-  .romdata_UARTLoopback.o    romdata   0x0012f8    program   0x000000
-  .idata_UARTLoopback.o_i    romdata   0x0012f8    program   0x000000
-      .romdata_SevenSeg.o    romdata   0x0012f8    program   0x000000
-      .idata_SevenSeg.o_i    romdata   0x0012f8    program   0x000010
-          .romdata_Led2.o    romdata   0x0012f8    program   0x000000
-        .romdata_Blinky.o    romdata   0x0012f8    program   0x000000
-  .idata_PreemptiveOS.o_i    romdata   0x001308    program   0x000000
-.idata_PriorityLinkedList.o_i    romdata   0x001308    program   0x000000
-         .idata_Clock.o_i    romdata   0x001308    program   0x000008
-          .idata_Led2.o_i    romdata   0x001308    program   0x000000
-         .idata_LEDSM.o_i    romdata   0x001308    program   0x000000
-            .code_udefs.o       code   0x001310    program   0x000000
-            .code_c018i.o       code   0x001310    program   0x000000
-        .idata_Blinky.o_i    romdata   0x001310    program   0x000000
+.code_PriorityLinkedList.o       code   0x000254    program   0x000346
+     .code_PreemptiveOS.o       code   0x00059a    program   0x0002f8
+             .code_Led2.o       code   0x000892    program   0x0002c2
+            .code_LEDSM.o       code   0x000b54    program   0x000208
+         .code_SevenSeg.o       code   0x000d5c    program   0x0001f2
+     .code_UARTLoopback.o       code   0x000f4e    program   0x0000b8
+               _cinit_scn       code   0x001006    program   0x00009e
+             .code_main.o       code   0x0010a4    program   0x000056
+           .code_Blinky.o       code   0x0010fa    program   0x000056
+            .code_uread.o       code   0x001150    program   0x00003e
+         .code_spi_writ.o       code   0x00118e    program   0x00003c
+           .code_t0open.o       code   0x0011ca    program   0x000038
+           .code_uwrite.o       code   0x001202    program   0x00002e
+            .code_Clock.o       code   0x001230    program   0x00002c
+                    .code       code   0x00125c    program   0x000020
+             _startup_scn       code   0x00127c    program   0x00001c
+        .romdata___init.o    romdata   0x001298    program   0x000000
+         .romdata_LEDSM.o    romdata   0x001298    program   0x000000
+        .idata___init.o_i    romdata   0x001298    program   0x000000
+        .idata_t0open.o_i    romdata   0x001298    program   0x000000
+        .romdata_uwrite.o    romdata   0x001298    program   0x000000
+        .romdata_t0open.o    romdata   0x001298    program   0x000000
+        .idata_uwrite.o_i    romdata   0x001298    program   0x000000
+         .idata_uread.o_i    romdata   0x001298    program   0x000000
+         .romdata_uread.o    romdata   0x001298    program   0x000000
+      .romdata_spi_writ.o    romdata   0x001298    program   0x000000
+         .idata_udefs.o_i    romdata   0x001298    program   0x000000
+      .idata_spi_writ.o_i    romdata   0x001298    program   0x000000
+         .romdata_udefs.o    romdata   0x001298    program   0x000000
+         .idata_c018i.o_i    romdata   0x001298    program   0x000000
+         .romdata_c018i.o    romdata   0x001298    program   0x000000
+          .idata_main.o_i    romdata   0x001298    program   0x000000
+          .romdata_main.o    romdata   0x001298    program   0x000000
+         .romdata_Clock.o    romdata   0x001298    program   0x000000
+  .romdata_PreemptiveOS.o    romdata   0x001298    program   0x000000
+.romdata_PriorityLinkedList.o    romdata   0x001298    program   0x000000
+  .romdata_UARTLoopback.o    romdata   0x001298    program   0x000000
+  .idata_UARTLoopback.o_i    romdata   0x001298    program   0x000000
+      .romdata_SevenSeg.o    romdata   0x001298    program   0x000000
+      .idata_SevenSeg.o_i    romdata   0x001298    program   0x000010
+          .romdata_Led2.o    romdata   0x001298    program   0x000000
+        .romdata_Blinky.o    romdata   0x001298    program   0x000000
+  .idata_PreemptiveOS.o_i    romdata   0x0012a8    program   0x000000
+.idata_PriorityLinkedList.o_i    romdata   0x0012a8    program   0x000000
+         .idata_Clock.o_i    romdata   0x0012a8    program   0x000008
+          .idata_Led2.o_i    romdata   0x0012a8    program   0x000000
+         .idata_LEDSM.o_i    romdata   0x0012a8    program   0x000000
+            .code_udefs.o       code   0x0012b0    program   0x000000
+            .code_c018i.o       code   0x0012b0    program   0x000000
+        .idata_Blinky.o_i    romdata   0x0012b0    program   0x000000
     .config_300001_main.o    romdata   0x300001    program   0x000001
     .config_300002_main.o    romdata   0x300002    program   0x000001
     .config_300003_main.o    romdata   0x300003    program   0x000001
@@ -65,38 +65,39 @@ Linker Map File - Created Mon Dec 08 12:03:44 2014
                 MATH_DATA      udata   0x000000       data   0x00000b
                  .tmpdata      udata   0x00000b       data   0x000008
             timer0isr_tmp      udata   0x000013       data   0x000004
-        .idata_SevenSeg.o      idata   0x000080       data   0x000010
-           .udata_c018i.o      udata   0x000090       data   0x00000a
-           .idata_Clock.o      idata   0x00009a       data   0x000008
-           .udata_udefs.o      udata   0x0000a2       data   0x000001
-          .idata___init.o      idata   0x0000a3       data   0x000000
-          .udata___init.o      udata   0x0000a3       data   0x000000
-          .idata_uwrite.o      idata   0x0000a3       data   0x000000
-          .udata_uwrite.o      udata   0x0000a3       data   0x000000
-        .idata_spi_writ.o      idata   0x0000a3       data   0x000000
-        .udata_spi_writ.o      udata   0x0000a3       data   0x000000
-           .idata_udefs.o      idata   0x0000a3       data   0x000000
-           .idata_uread.o      idata   0x0000a3       data   0x000000
-           .udata_uread.o      udata   0x0000a3       data   0x000000
-          .idata_t0open.o      idata   0x0000a3       data   0x000000
-          .udata_t0open.o      udata   0x0000a3       data   0x000000
-           .idata_LEDSM.o      idata   0x0000a3       data   0x000000
-           .udata_LEDSM.o      udata   0x0000a3       data   0x000000
-            .udata_main.o      udata   0x0000a3       data   0x000000
-            .idata_main.o      idata   0x0000a3       data   0x000000
-           .idata_c018i.o      idata   0x0000a3       data   0x000000
-    .idata_PreemptiveOS.o      idata   0x0000a3       data   0x000000
-.udata_PriorityLinkedList.o      udata   0x0000a3       data   0x000000
-.idata_PriorityLinkedList.o      idata   0x0000a3       data   0x000000
-          .udata_Blinky.o      udata   0x0000a3       data   0x000000
-          .idata_Blinky.o      idata   0x0000a3       data   0x000000
-            .udata_Led2.o      udata   0x0000a3       data   0x000000
-            .idata_Led2.o      idata   0x0000a3       data   0x000000
-        .udata_SevenSeg.o      udata   0x0000a3       data   0x000000
-    .udata_UARTLoopback.o      udata   0x0000a3       data   0x000000
-    .idata_UARTLoopback.o      idata   0x0000a3       data   0x000000
-    .udata_PreemptiveOS.o      udata   0x000100       data   0x0000fa
-           .udata_Clock.o      udata   0x0001fa       data   0x000006
+                  BIGDATA      udata   0x000200       data   0x000190
+    .udata_PreemptiveOS.o      udata   0x000390       data   0x00001e
+        .idata_SevenSeg.o      idata   0x0003ae       data   0x000010
+           .udata_c018i.o      udata   0x0003be       data   0x00000a
+           .idata_Clock.o      idata   0x0003c8       data   0x000008
+           .udata_Clock.o      udata   0x0003d0       data   0x000006
+           .udata_udefs.o      udata   0x0003d6       data   0x000001
+          .idata___init.o      idata   0x0003d7       data   0x000000
+          .udata___init.o      udata   0x0003d7       data   0x000000
+          .idata_uwrite.o      idata   0x0003d7       data   0x000000
+          .udata_uwrite.o      udata   0x0003d7       data   0x000000
+        .idata_spi_writ.o      idata   0x0003d7       data   0x000000
+        .udata_spi_writ.o      udata   0x0003d7       data   0x000000
+           .idata_udefs.o      idata   0x0003d7       data   0x000000
+           .idata_uread.o      idata   0x0003d7       data   0x000000
+           .udata_uread.o      udata   0x0003d7       data   0x000000
+          .idata_t0open.o      idata   0x0003d7       data   0x000000
+          .udata_t0open.o      udata   0x0003d7       data   0x000000
+           .idata_LEDSM.o      idata   0x0003d7       data   0x000000
+           .udata_LEDSM.o      udata   0x0003d7       data   0x000000
+    .idata_UARTLoopback.o      idata   0x0003d7       data   0x000000
+    .udata_UARTLoopback.o      udata   0x0003d7       data   0x000000
+        .udata_SevenSeg.o      udata   0x0003d7       data   0x000000
+            .idata_Led2.o      idata   0x0003d7       data   0x000000
+            .udata_Led2.o      udata   0x0003d7       data   0x000000
+          .idata_Blinky.o      idata   0x0003d7       data   0x000000
+          .udata_Blinky.o      udata   0x0003d7       data   0x000000
+.idata_PriorityLinkedList.o      idata   0x0003d7       data   0x000000
+.udata_PriorityLinkedList.o      udata   0x0003d7       data   0x000000
+           .idata_c018i.o      idata   0x0003d7       data   0x000000
+    .idata_PreemptiveOS.o      idata   0x0003d7       data   0x000000
+            .udata_main.o      udata   0x0003d7       data   0x000000
+            .idata_main.o      idata   0x0003d7       data   0x000000
                    .stack      udata   0x000500       data   0x000100
             SFR_UNBANKED0      udata   0x000f80       data   0x000080
 
@@ -105,24 +106,24 @@ Linker Map File - Created Mon Dec 08 12:03:44 2014
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x00130f      
+                            0x000000    0x0012af      
                             0x300001    0x300003      
                             0x300006    0x300006      
-            4884 out of 33048 program addresses used, program memory utilization is 14%
+            4788 out of 33048 program addresses used, program memory utilization is 14%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-          LEDStateMachine   0x000bec    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\LEDSM.c
-               OpenTimer0   0x00122a    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0open.c
-                ReadUSART   0x0011b0    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\uread.c
-                 WriteSPI   0x0011ee    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\SPI\spi_writ.c
-               WriteUSART   0x001262    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\uwrite.c
+          LEDStateMachine   0x000b8c    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\LEDSM.c
+               OpenTimer0   0x0011ca    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0open.c
+                ReadUSART   0x001150    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\uread.c
+                 WriteSPI   0x00118e    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\SPI\spi_writ.c
+               WriteUSART   0x001202    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\uwrite.c
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x0012f6    program     static                          
-       ___return_lbl00002   0x001102    program     static                          
+       ___return_lbl00001   0x001296    program     static                          
+       ___return_lbl00002   0x0010a2    program     static                          
        ___return_lbl00002   0x00000c    program     static                          
        ___return_lbl00003   0x0001d6    program     static                          
                __config_0   0x300001    program     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\main.c
@@ -130,47 +131,47 @@ Linker Map File - Created Mon Dec 08 12:03:44 2014
                __config_2   0x300003    program     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\main.c
                __config_3   0x300006    program     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\main.c
                    __init   0x000006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-            __zero_memory   0x0012bc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                _do_cinit   0x001066    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+            __zero_memory   0x00125c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                _do_cinit   0x001006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 _startup   0x0012dc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-    addPriorityLinkedList   0x000736    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PriorityLinkedList.c
+                 _startup   0x00127c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+    addPriorityLinkedList   0x0003de    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PriorityLinkedList.c
   clearTimer0OverflowFlag   0x000236    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-                  compare   0x0005c4    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PriorityLinkedList.c
-                compare_l   0x0012d2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-             configureLED   0x0011a4    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
-                copy_loop   0x0010d8    program     static                          
-            copy_one_byte   0x0010de    program     static                          
-               createTask   0x000254    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
-                    delay   0x00115a    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
-                     done   0x001102    program     static                          
-             done_copying   0x0010ec    program     static                          
-                 getClock   0x0012aa    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+                  compare   0x000254    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PriorityLinkedList.c
+                compare_l   0x001272    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+             configureLED   0x001144    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
+                copy_loop   0x001078    program     static                          
+            copy_one_byte   0x00107e    program     static                          
+               createTask   0x00059a    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+                    delay   0x0010fa    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
+                     done   0x0010a2    program     static                          
+             done_copying   0x00108c    program     static                          
+                 getClock   0x00124a    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
           highPriorityIsr   0x000008    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-                initClock   0x001290    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-      initLEDStateMachine   0x000bb4    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\LEDSM.c
-initPreemptiveMultitasking   0x000420    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
-             initSevenSeg   0x000dbc    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
-         initUartLoopback   0x000fae    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\UARTLoopback.c
+                initClock   0x001230    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+      initLEDStateMachine   0x000b54    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\LEDSM.c
+initPreemptiveMultitasking   0x000798    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+             initSevenSeg   0x000d5c    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
+         initUartLoopback   0x000f4e    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\UARTLoopback.c
        isTimer0Overflowed   0x00022c    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-                   led2SM   0x00096e    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Led2.c
-                     loop   0x0012ec    program     static                          
-                   loop_h   0x0012ca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_l   0x0012d4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                     main   0x001104    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\main.c
-                   offLED   0x0011ac    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
-                    onLED   0x0011a8    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
-removeFromHeadPriorityLinkedList   0x00064e    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PriorityLinkedList.c
-               sevenSegSM   0x000de4    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
-                  taskOne   0x000528    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
-                  taskTwo   0x000576    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
-                     test   0x001080    program     static                          
-            testingLed2SM   0x0008f2    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Led2.c
+                   led2SM   0x00090e    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Led2.c
+                     loop   0x00128c    program     static                          
+                   loop_h   0x00126a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_l   0x001274    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                     main   0x0010a4    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\main.c
+                   offLED   0x00114c    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
+                    onLED   0x001148    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
+removeFromHeadPriorityLinkedList   0x0002de    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PriorityLinkedList.c
+               sevenSegSM   0x000d84    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
+                  taskOne   0x0007f6    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+                  taskTwo   0x000844    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+                     test   0x001020    program     static                          
+            testingLed2SM   0x000892    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Led2.c
                 timer0isr   0x00000e    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-          turnOffSevenSeg   0x000de0    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
-           turnOnSevenSeg   0x000ddc    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
-           uartLoopbackSM   0x000fdc    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\UARTLoopback.c
-               zero_block   0x0012ca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+          turnOffSevenSeg   0x000d80    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
+           turnOnSevenSeg   0x000d7c    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
+           uartLoopbackSM   0x000f7c    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\UARTLoopback.c
+               zero_block   0x00126a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
@@ -333,7 +334,7 @@ removeFromHeadPriorityLinkedList   0x00064e    program     extern C:\Documents a
                   TBLPTRH   0x000ff7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                   TBLPTRL   0x000ff6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                   TBLPTRU   0x000ff8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                  TCBtemp   0x0001fe       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+                  TCBtemp   0x0003d4       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
                     TMR0H   0x000fd7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                     TMR0L   0x000fd6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                     TMR1H   0x000fcf       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
@@ -358,7 +359,7 @@ removeFromHeadPriorityLinkedList   0x00064e    program     extern C:\Documents a
                     TXREG   0x000fad       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                     TXSTA   0x000fac       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                 TXSTAbits   0x000fac       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-             USART_Status   0x0000a2       data     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\udefs.c
+             USART_Status   0x0003d6       data     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\udefs.c
                         W   0x000fe8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    WDTCON   0x000fd1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                WDTCONbits   0x000fd1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
@@ -386,22 +387,22 @@ removeFromHeadPriorityLinkedList   0x00064e    program     extern C:\Documents a
                   __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
                   __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\LEDSM.c
                   __tmp_1   0x000013       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-                   allTCB   0x000102       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
-                    clock   0x00009a       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-                curr_byte   0x000093       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-               curr_entry   0x000095       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 data_ptr   0x000097       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-           fileSelectRegH   0x0001fa       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-           fileSelectRegL   0x0001fb       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-                  fsrTemp   0x00009e       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-              hexPatterns   0x000080       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
-                     prom   0x000090       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-               readyQueue   0x00011a       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
-               runningTCB   0x000100       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
-         stackPointerTemp   0x0000a0       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-                   stacks   0x00011e       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
-              topOfStackH   0x0001fc       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-              topOfStackL   0x0001fd       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+                   allTCB   0x000392       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+                    clock   0x0003c8       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+                curr_byte   0x0003c1       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+               curr_entry   0x0003c3       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                 data_ptr   0x0003c5       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+           fileSelectRegH   0x0003d0       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+           fileSelectRegL   0x0003d1       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+                  fsrTemp   0x0003cc       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+              hexPatterns   0x0003ae       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
+                     prom   0x0003be       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+               readyQueue   0x0003aa       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+               runningTCB   0x000390       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+         stackPointerTemp   0x0003ce       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+                   stacks   0x000200       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+              topOfStackH   0x0003d2       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+              topOfStackL   0x0003d3       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
 
 
 
@@ -417,49 +418,49 @@ removeFromHeadPriorityLinkedList   0x00064e    program     extern C:\Documents a
        ___return_lbl00003   0x0001d6    program     static                          
        isTimer0Overflowed   0x00022c    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
   clearTimer0OverflowFlag   0x000236    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-               createTask   0x000254    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
-initPreemptiveMultitasking   0x000420    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
-                  taskOne   0x000528    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
-                  taskTwo   0x000576    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
-                  compare   0x0005c4    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PriorityLinkedList.c
-removeFromHeadPriorityLinkedList   0x00064e    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PriorityLinkedList.c
-    addPriorityLinkedList   0x000736    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PriorityLinkedList.c
-            testingLed2SM   0x0008f2    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Led2.c
-                   led2SM   0x00096e    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Led2.c
-      initLEDStateMachine   0x000bb4    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\LEDSM.c
-          LEDStateMachine   0x000bec    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\LEDSM.c
-             initSevenSeg   0x000dbc    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
-           turnOnSevenSeg   0x000ddc    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
-          turnOffSevenSeg   0x000de0    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
-               sevenSegSM   0x000de4    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
-         initUartLoopback   0x000fae    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\UARTLoopback.c
-           uartLoopbackSM   0x000fdc    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\UARTLoopback.c
-                _do_cinit   0x001066    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x001080    program     static                          
-                copy_loop   0x0010d8    program     static                          
-            copy_one_byte   0x0010de    program     static                          
-             done_copying   0x0010ec    program     static                          
-                     done   0x001102    program     static                          
-       ___return_lbl00002   0x001102    program     static                          
-                     main   0x001104    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\main.c
-                    delay   0x00115a    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
-             configureLED   0x0011a4    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
-                    onLED   0x0011a8    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
-                   offLED   0x0011ac    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
-                ReadUSART   0x0011b0    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\uread.c
-                 WriteSPI   0x0011ee    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\SPI\spi_writ.c
-               OpenTimer0   0x00122a    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0open.c
-               WriteUSART   0x001262    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\uwrite.c
-                initClock   0x001290    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-                 getClock   0x0012aa    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-            __zero_memory   0x0012bc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_h   0x0012ca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-               zero_block   0x0012ca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                compare_l   0x0012d2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_l   0x0012d4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                 _startup   0x0012dc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x0012ec    program     static                          
-       ___return_lbl00001   0x0012f6    program     static                          
+                  compare   0x000254    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PriorityLinkedList.c
+removeFromHeadPriorityLinkedList   0x0002de    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PriorityLinkedList.c
+    addPriorityLinkedList   0x0003de    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PriorityLinkedList.c
+               createTask   0x00059a    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+initPreemptiveMultitasking   0x000798    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+                  taskOne   0x0007f6    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+                  taskTwo   0x000844    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+            testingLed2SM   0x000892    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Led2.c
+                   led2SM   0x00090e    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Led2.c
+      initLEDStateMachine   0x000b54    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\LEDSM.c
+          LEDStateMachine   0x000b8c    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\LEDSM.c
+             initSevenSeg   0x000d5c    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
+           turnOnSevenSeg   0x000d7c    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
+          turnOffSevenSeg   0x000d80    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
+               sevenSegSM   0x000d84    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
+         initUartLoopback   0x000f4e    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\UARTLoopback.c
+           uartLoopbackSM   0x000f7c    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\UARTLoopback.c
+                _do_cinit   0x001006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x001020    program     static                          
+                copy_loop   0x001078    program     static                          
+            copy_one_byte   0x00107e    program     static                          
+             done_copying   0x00108c    program     static                          
+                     done   0x0010a2    program     static                          
+       ___return_lbl00002   0x0010a2    program     static                          
+                     main   0x0010a4    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\main.c
+                    delay   0x0010fa    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
+             configureLED   0x001144    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
+                    onLED   0x001148    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
+                   offLED   0x00114c    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
+                ReadUSART   0x001150    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\uread.c
+                 WriteSPI   0x00118e    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\SPI\spi_writ.c
+               OpenTimer0   0x0011ca    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0open.c
+               WriteUSART   0x001202    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\uwrite.c
+                initClock   0x001230    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+                 getClock   0x00124a    program     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+            __zero_memory   0x00125c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_h   0x00126a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+               zero_block   0x00126a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                compare_l   0x001272    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_l   0x001274    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                 _startup   0x00127c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x00128c    program     static                          
+       ___return_lbl00001   0x001296    program     static                          
                __config_0   0x300001    program     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\main.c
                __config_1   0x300002    program     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\main.c
                __config_2   0x300003    program     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\main.c
@@ -478,58 +479,58 @@ removeFromHeadPriorityLinkedList   0x00064e    program     extern C:\Documents a
                  __AARGB0   0x000007       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                    __AEXP   0x000008       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                      SIGN   0x000009       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
-            __FPFLAGSbits   0x00000a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
                 __FPFLAGS   0x00000a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
-                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\LEDSM.c
-                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
-                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Led2.c
-                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
-                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PriorityLinkedList.c
-                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+            __FPFLAGSbits   0x00000a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
                   __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\main.c
+                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PriorityLinkedList.c
+                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Blinky.c
+                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Led2.c
+                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
+                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\LEDSM.c
                   __tmp_1   0x000013       data     static C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-              hexPatterns   0x000080       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
-                     prom   0x000090       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                curr_byte   0x000093       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-               curr_entry   0x000095       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 data_ptr   0x000097       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                    clock   0x00009a       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-                  fsrTemp   0x00009e       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-         stackPointerTemp   0x0000a0       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-             USART_Status   0x0000a2       data     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\udefs.c
-               runningTCB   0x000100       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
-                   allTCB   0x000102       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
-               readyQueue   0x00011a       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
-                   stacks   0x00011e       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
-           fileSelectRegH   0x0001fa       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-           fileSelectRegL   0x0001fb       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-              topOfStackH   0x0001fc       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-              topOfStackL   0x0001fd       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
-                  TCBtemp   0x0001fe       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+                   stacks   0x000200       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+               runningTCB   0x000390       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+                   allTCB   0x000392       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+               readyQueue   0x0003aa       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\PreemptiveOS.c
+              hexPatterns   0x0003ae       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\SevenSeg.c
+                     prom   0x0003be       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                curr_byte   0x0003c1       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+               curr_entry   0x0003c3       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                 data_ptr   0x0003c5       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                    clock   0x0003c8       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+                  fsrTemp   0x0003cc       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+         stackPointerTemp   0x0003ce       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+           fileSelectRegH   0x0003d0       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+           fileSelectRegL   0x0003d1       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+              topOfStackH   0x0003d2       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+              topOfStackL   0x0003d3       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+                  TCBtemp   0x0003d4       data     extern C:\Documents and Settings\D300-01\Desktop\RTOS\src\PIC18\Clock.c
+             USART_Status   0x0003d6       data     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\udefs.c
                     PORTA   0x000f80       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                 PORTAbits   0x000f80       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                    PORTB   0x000f81       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                 PORTBbits   0x000f81       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                PORTCbits   0x000f82       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                    PORTB   0x000f81       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                     PORTC   0x000f82       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                PORTDbits   0x000f83       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                PORTCbits   0x000f82       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                     PORTD   0x000f83       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                PORTDbits   0x000f83       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                 PORTEbits   0x000f84       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                     PORTE   0x000f84       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                 LATAbits   0x000f89       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                      LATA   0x000f89       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                 LATAbits   0x000f89       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                  LATBbits   0x000f8a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                      LATB   0x000f8a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                     LATC   0x000f8b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                  LATCbits   0x000f8b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                     LATD   0x000f8c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                     LATC   0x000f8b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                  LATDbits   0x000f8c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                     LATD   0x000f8c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                      LATE   0x000f8d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                  LATEbits   0x000f8d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                    TRISA   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                      DDRA   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                  DDRAbits   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                 TRISAbits   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                    TRISA   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                 TRISBbits   0x000f93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                     TRISB   0x000f93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                  DDRBbits   0x000f93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
