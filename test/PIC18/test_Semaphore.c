@@ -1,4 +1,5 @@
 #include "unity.h"
+#include "p18f4520.h"
 #include "Semaphore.h"
 #include "PriorityLinkedList.h"
 #include "PreemptiveOS.h"

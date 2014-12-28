@@ -15,6 +15,7 @@ volatile unsigned long clock = 0;
     #include <timers.h>
 #endif // __18CXX
 
+int blockStatus = 0;
 uint8 fileSelectRegH, fileSelectRegL;
 uint8 topOfStackH, topOfStackL;
 uint16 fsrTemp = 0, stackPointerTemp = 0;
@@ -52,24 +53,36 @@ void highPriorityIsr(void){
 }
 
 void timer0isr(){
+  if(blockStatus == 1){
+    disableGlobalInterrupt();
+    TCBtemp = removeFromHeadPriorityLinkedList(&readyQueue);
+    runningTCB = TCBtemp;
 
+    topOfStackL = (runningTCB->task) & 0x00ff;
+    topOfStackH = runningTCB->task >> 8;
+    fileSelectRegL = (runningTCB->stackPointer) & 0x00ff;
+    fileSelectRegH = runningTCB->stackPointer >> 8;
+
+_asm
+movff topOfStackH, WREG
+movwf TOSH, ACCESS
+movff topOfStackL, WREG
+movwf TOSL, ACCESS
+movff fileSelectRegH, WREG
+movwf FSR1H, ACCESS
+movff fileSelectRegL, WREG
+movwf FSR1L, ACCESS
+_endasm
+    blockStatus = 0;
+    enableGlobalInterrupt();
+  }
+  else{
 _asm
 movff TOSH, topOfStackH
 movff TOSL, topOfStackL
 movff FSR1H, fileSelectRegH
 movff FSR1L, fileSelectRegL
 _endasm
-    
-    //save all above into runningTCB
-
-    //get highest priority from linked list
-
-    //insert the runningTCB into linked list
-
-    //restore all data in high priority task to TOS,BSR,WREG,STATUS
-    // check FSR2, FSR1, (check only)FSR0(all low & high),TBLPTRH/L,TABLAT,PRODH/L,
-    // WREG, BSR, STATUS
-    //return from interrupt
         
     runningTCB->priority = 0;
     runningTCB->next = NULL;
@@ -98,7 +111,7 @@ movwf FSR1H, ACCESS
 movff fileSelectRegL, WREG
 movwf FSR1L, ACCESS
 _endasm
-
+  }
     clock++;
     clearTimer0OverflowFlag();
 }

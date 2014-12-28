@@ -1,6 +1,8 @@
 #ifndef INTERRUPT_H
 #define	INTERRUPT_H
 
+#include "../18c.h"
+
 #define enableGlobalInterrupt()     (INTCONbits.GIE = 1)
 #define disableGlobalInterrupt()    (INTCONbits.GIE = 0)
 #define getGlobalInterrupt()        (INTCONbits.GIE)

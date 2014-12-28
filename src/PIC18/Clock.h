@@ -1,7 +1,7 @@
 #ifndef Clock_H
 #define Clock_H
 
-
+extern int blockStatus;
 
 void initClock(void);
 unsigned long getClock(void);
