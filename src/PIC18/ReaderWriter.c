@@ -3,8 +3,14 @@
 #include "ReaderWriter.h"
 #include "PreemptiveOS.h"
 #include "Tasking.h"
-
-#define   yieldOn(lineNumber, x) if(yieldPointer[i] == x && i < maxYield) {i++; yield(lineNumber); } else;
+// ignore yield for MPLAB
+#if !(defined(__XC) || defined(__18CXX))
+  #define yieldOn(lineNumber, x) if(yieldPointer[i] == x && i < maxYield) {i++; yield(lineNumber); } else;
+#else
+  #define yieldOn();
+  #define startTasking();
+  #define endTasking();
+#endif // __18CXX
 
 char memory[5] = {'H', 'E', 'L', 'L', 'O'};
 int readerCount;
