@@ -7,8 +7,8 @@
 #if !(defined(__XC) || defined(__18CXX))
   #define yieldOn(lineNumber, x) if(yieldPointer[i] == x && i < maxYield) {i++; yield(lineNumber); } else;
 #else
-  #define yieldOn();
-  #define startTasking();
+  #define yieldOn(lineNumber, x);
+  #define startTasking(x);
   #define endTasking();
 #endif // __18CXX
 
